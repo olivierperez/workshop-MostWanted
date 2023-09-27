@@ -25,11 +25,12 @@ import kotlinx.coroutines.launch
 @Composable
 fun ExerciseDetailLoaded(
     exerciseDef: ExerciseDef,
+    page: DetailPage,
     modifier: Modifier = Modifier
 ) {
     val scope = rememberCoroutineScope()
     val pagerState = rememberPagerState(
-        initialPage = 0,
+        initialPage = page.index,
         initialPageOffsetFraction = 0f,
         pageCount = { 2 }
     )
@@ -59,7 +60,11 @@ fun ExerciseDetailLoaded(
             }
         }
     }
+}
 
+enum class DetailPage(val index: Int) {
+    Result(0),
+    Sketchup(1)
 }
 
 @Preview
@@ -83,6 +88,7 @@ fun ExerciseDetailLoadedPreview() {
                 },
                 solution = {}
             ),
+            page = DetailPage.Result,
             modifier = Modifier.fillMaxSize()
         )
     }

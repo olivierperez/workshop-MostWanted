@@ -2,20 +2,24 @@ package fr.o80.mostwanted
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import fr.o80.mostwanted.detail.ExerciseDetailRoute
+import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.exercises.ExercisesListRoute
 import fr.o80.mostwanted.explanation.ExplanationRoute
 
 const val PARAM_EXERCISE = "exerciseId"
+const val PARAM_PAGE = "page"
 
 private const val ROUTE_EXERCISES = "exercises-list"
 private const val ROUTE_EXPLANATION = "exercises-explanation/{$PARAM_EXERCISE}"
-private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}"
+private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAGE}"
 
 @androidx.compose.runtime.Composable
 fun MostWanted() {
@@ -26,13 +30,16 @@ fun MostWanted() {
     ) {
         composable(route = ROUTE_EXERCISES) {
             ExercisesListRoute(
-                onExerciseSelect = { exerciseId ->
+                goToExplanation = { exerciseId ->
                     navController.navigate(
                         ROUTE_EXPLANATION.replace(
                             "{$PARAM_EXERCISE}",
                             exerciseId.toString()
                         )
                     )
+                },
+                goToResult = { exerciseId ->
+                    navController.navigateToDetail(exerciseId, DetailPage.Result)
                 },
                 modifier = Modifier.fillMaxSize()
             )
@@ -45,12 +52,7 @@ fun MostWanted() {
         ) {
             ExplanationRoute(
                 goToSketchup = { exerciseId ->
-                    navController.navigate(
-                        ROUTE_DETAIL.replace(
-                            "{$PARAM_EXERCISE}",
-                            exerciseId.toString()
-                        )
-                    ) {
+                    navController.navigateToDetail(exerciseId, DetailPage.Sketchup) {
                         popUpTo(ROUTE_EXPLANATION) { inclusive = true }
                     }
                 },
@@ -68,5 +70,22 @@ fun MostWanted() {
             )
         }
     }
+}
+
+private fun NavHostController.navigateToDetail(
+    exerciseId: Int,
+    page: DetailPage,
+    builder: NavOptionsBuilder.() -> Unit = {}
+) {
+    navigate(
+        ROUTE_DETAIL.replace(
+            "{$PARAM_EXERCISE}",
+            exerciseId.toString()
+        ).replace(
+            "{$PARAM_PAGE}",
+            page.name
+        ),
+        builder
+    )
 }
 

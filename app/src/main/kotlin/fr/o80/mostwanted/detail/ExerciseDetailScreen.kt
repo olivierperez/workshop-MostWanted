@@ -11,12 +11,17 @@ fun ExerciseDetailScreen(
     modifier: Modifier = Modifier
 ) {
 
-    when(state) {
-        ExerciseDetailUiState.Loading -> ExerciseDetailLoading(modifier)
-        is ExerciseDetailUiState.Loaded -> ExerciseDetailLoaded(
-            state.exerciseDef,
-            modifier
+    when (state) {
+        ExerciseDetailUiState.Loading -> ExerciseDetailLoading(
+            modifier = modifier
         )
+
+        is ExerciseDetailUiState.Loaded -> ExerciseDetailLoaded(
+            exerciseDef = state.exerciseDef,
+            page = state.page,
+            modifier = modifier
+        )
+
         ExerciseDetailUiState.Error -> TODO()
     }
 

@@ -2,9 +2,10 @@ package fr.o80.mostwanted.exercises
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.o80.mostwanted.domain.HasSeenSketchupUseCase
 import fr.o80.mostwanted.domain.ObserveExercisesListUseCase
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -19,7 +20,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ExercisesListViewModel @Inject constructor(
-    observeExercisesList: ObserveExercisesListUseCase
+    observeExercisesList: ObserveExercisesListUseCase,
+    private val hasSeenSketchup: HasSeenSketchupUseCase
 ) : ViewModel() {
 
     private val _event = MutableStateFlow<ExercisesListEvent>(ExercisesListEvent.None)
@@ -35,7 +37,11 @@ class ExercisesListViewModel @Inject constructor(
     )
 
     fun onExerciseSelect(exerciseDef: ExerciseDef) {
-        _event.update { ExercisesListEvent.OpenExercise(exerciseDef.id) }
+        if (hasSeenSketchup(exerciseDef.id)) {
+            _event.update { ExercisesListEvent.OpenResult(exerciseDef.id) }
+        } else {
+            _event.update { ExercisesListEvent.OpenExplanation(exerciseDef.id) }
+        }
     }
 
     fun onEventHandled() {
@@ -45,7 +51,8 @@ class ExercisesListViewModel @Inject constructor(
 
 sealed interface ExercisesListEvent {
     object None : ExercisesListEvent
-    class OpenExercise(val id: Int) : ExercisesListEvent
+    class OpenExplanation(val id: Int) : ExercisesListEvent
+    class OpenResult(val id: Int) : ExercisesListEvent
 }
 
 data class ExercisesListUiState(

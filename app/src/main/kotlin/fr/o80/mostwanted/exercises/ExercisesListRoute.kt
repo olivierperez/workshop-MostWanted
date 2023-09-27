@@ -9,7 +9,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun ExercisesListRoute(
-    onExerciseSelect: (Int) -> Unit,
+    goToExplanation: (Int) -> Unit,
+    goToResult: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val viewModel = hiltViewModel<ExercisesListViewModel>()
@@ -19,7 +20,8 @@ fun ExercisesListRoute(
         viewModel.event.collect { event ->
             when (event) {
                 ExercisesListEvent.None -> Unit
-                is ExercisesListEvent.OpenExercise -> onExerciseSelect(event.id)
+                is ExercisesListEvent.OpenExplanation -> goToExplanation(event.id)
+                is ExercisesListEvent.OpenResult -> goToResult(event.id)
             }
             viewModel.onEventHandled()
         }
