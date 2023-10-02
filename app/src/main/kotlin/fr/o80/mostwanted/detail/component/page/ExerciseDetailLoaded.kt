@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.component.ScreenTitle
+import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.ExerciseDef
@@ -45,7 +46,7 @@ fun ExerciseDetailLoaded(
             Tab(
                 selected = pagerState.currentPage == 0,
                 onClick = { scope.launch { pagerState.animateScrollToPage(0) } },
-                text = { Text("Exercise") }
+                text = { Text("Exercice") }
             )
             Tab(
                 selected = pagerState.currentPage == 1,
@@ -75,9 +76,13 @@ fun ExerciseDetailLoadedPreview() {
             exerciseDef = ExerciseDef(
                 id = 0,
                 title = "Première étape",
-                explanation = "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                    "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                    "rendez-vous dans le fichier indiqué.",
+                explanation = {
+                    ExplanationText(
+                        "À la CIA comme partout on commence toujours par un HelloWorld! " +
+                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                            "rendez-vous dans le fichier indiqué."
+                    )
+                },
                 file = "SimpleText.kt",
                 result = {
                     Text(

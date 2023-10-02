@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 data class ExerciseDef(
     val id: Int,
     val title: String,
-    val explanation: String,
     val file: String,
+    val explanation: @Composable () -> Unit,
     val result: @Composable () -> Unit,
     val solution: @Composable () -> Unit,
 )
