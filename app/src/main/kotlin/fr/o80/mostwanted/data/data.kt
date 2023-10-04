@@ -14,8 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.component.solution.S01HelloWorld
+import fr.o80.mostwanted.component.solution.S02Layout
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
+import fr.o80.mostwanted.exercise.E02Layout
 
 val exercises = listOf(
     ExerciseDef(
@@ -55,11 +57,58 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 1,
-        title = "Deuxième truc à faire",
-        explanation = {},
-        file = "Fichier_2.kt",
-        result = {},
-        solution = { Text(text = "Maquette non-implémentée !") }
+        title = "Jouer sur la mise en page",
+        explanation = {
+            Column(
+                Modifier.fillMaxSize()
+            ) {
+                ExplanationText(
+                    """Maintenant que vous avez réussi à intégrer votre 
+                        premier Composable, vous allez découvrir comment 
+                        organiser plusieurs éléments grâce aux 
+                        <b>Composables de mise en page</b>.
+                """
+                )
+                ExplanationText(
+                    """Le but est ici d'obtenir <b>une ligne</b> constituée de 
+                        deux Composables Text, votre prénom et 
+                        votre nom.
+                """
+                )
+                ExplanationText(
+                    """Pour ce faire, il vous suffit de créer deux 
+                        Composables Text et de les insérer dans un 
+                        Composable <b>Row</b>&nbsp;:
+                """
+                )
+                Code("Row {...}")
+                ExplanationText(
+                    """Afin d'obtenir un espace entre les deux Text, vous 
+                        pouvez ajouter un troisième Composable, <b>Spacer</b>, 
+                        chargé de créer un espace entre deux éléments.
+                """
+                )
+                Code("Spacer()")
+                ExplanationText(
+                    """Chaque Composable possède un argument <b>modifier</b>, 
+                        auquel nous allons passé des modificateurs pour 
+                        changer le comportement ou l'apparence de l'élément 
+                        associé. Nous souhaitons définir la taille du 
+                        Composable <b>Spacer</b> avec une largeur de 4 dp
+                        . Nous allons donc attribuer le modificateur 
+                        suivant au Spacer&nbsp;:
+                """
+                )
+                Code("modifier = Modifier.width(4.dp)")
+                ExplanationText(
+                    """<i>Veillez à importer les librairies nécessaires</i>
+                """
+                )
+            }
+        },
+        file = "E02Layout.kt",
+        result = { E02Layout() },
+        solution = { S02Layout() }
     ),
     ExerciseDef(
         id = 2,
@@ -88,7 +137,7 @@ fun ExplanationText(text: String) {
                 Html.FROM_HTML_MODE_COMPACT
             )
             .toAnnotatedString(),
-        modifier = Modifier.padding(bottom = 16.dp)
+        modifier = Modifier.padding(vertical = 8.dp)
     )
 }
 
