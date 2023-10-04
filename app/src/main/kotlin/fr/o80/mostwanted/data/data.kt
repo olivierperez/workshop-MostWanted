@@ -16,10 +16,12 @@ import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.component.solution.S01HelloWorld
 import fr.o80.mostwanted.component.solution.S02Layout
 import fr.o80.mostwanted.component.solution.S03Screen
+import fr.o80.mostwanted.component.solution.S05Interactive
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
 import fr.o80.mostwanted.exercise.E03Screen
+import fr.o80.mostwanted.exercise.E05Interactive
 
 val exercises = listOf(
     ExerciseDef(
@@ -208,6 +210,14 @@ val exercises = listOf(
         file = "",
         result = {},
         solution = {}
+    ),
+    ExerciseDef(
+        id = 4,
+        title = "Interaction utilisateur",
+        explanation = {},
+        file = "E05Interactive.kt",
+        result = { E05Interactive() },
+        solution = { S05Interactive() }
     ),
 )
 
