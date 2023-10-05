@@ -25,20 +25,21 @@ import fr.o80.mostwanted.R
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 
 @Composable
-fun S05Interactive(
+fun S07Interactive(
     modifier: Modifier = Modifier
 ) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         var applySepia by remember { mutableStateOf(true) }
+
         Image(
             painter = painterResource(R.drawable.avatar),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .clip(CircleShape)
-                .clickable { applySepia = !applySepia }
                 .drawWithContent {
                     drawContent()
                     if (applySepia) {
@@ -48,13 +49,14 @@ fun S05Interactive(
                         )
                     }
                 }
+                .clickable { applySepia = !applySepia }
         )
         PersonName("Olivier", "GCC", "PEREZ")
     }
 }
 
 @Composable
-fun PersonName(
+private fun PersonName(
     firstName: String,
     middleName: String,
     lastName: String,
@@ -72,8 +74,8 @@ fun PersonName(
 
 @Preview
 @Composable
-private fun S05InteractivePreview() {
+private fun S07InteractivePreview() {
     WorkshopMostWantedPreviewTheme {
-        S05Interactive()
+        S07Interactive()
     }
 }

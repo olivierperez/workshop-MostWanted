@@ -15,15 +15,17 @@ import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.component.solution.S01HelloWorld
 import fr.o80.mostwanted.component.solution.S02Layout
-import fr.o80.mostwanted.component.solution.S05Interactive
+import fr.o80.mostwanted.component.solution.S05Image
+import fr.o80.mostwanted.component.solution.S06Sepia
+import fr.o80.mostwanted.component.solution.S07Interactive
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
-import fr.o80.mostwanted.exercise.E05Interactive
+import fr.o80.mostwanted.exercise.E05to07Image
 
 val exercises = listOf(
     ExerciseDef(
-        id = 0,
+        id = 1,
         title = "Première étape",
         explanation = {
             Column(
@@ -58,7 +60,7 @@ val exercises = listOf(
         solution = { S01HelloWorld() }
     ),
     ExerciseDef(
-        id = 1,
+        id = 2,
         title = "Jouer sur la mise en page",
         explanation = {
             Column(
@@ -113,28 +115,59 @@ val exercises = listOf(
         solution = { S02Layout() }
     ),
     ExerciseDef(
-        id = 2,
-        title = "Le fameux",
+        id = 3,
+        title = "...",
         explanation = {},
         file = "Fichier_3.kt",
         result = {},
         solution = { Text(text = "Maquette non-implémentée !") }
     ),
     ExerciseDef(
-        id = 3,
-        title = "Jamais 304",
+        id = 4,
+        title = "...",
         explanation = {},
         file = "Fichier_4.kt",
         result = {},
         solution = { Text(text = "Maquette non-implémentée !") }
     ),
     ExerciseDef(
-        id = 4,
+        id = 5,
+        title = "Gestion des images",
+        explanation = {
+            ExplanationText(
+                """Là c'est pour apprendre à faire appel aux ressources pour afficher une image.
+                """
+            )
+        },
+        file = "E05to07Image.kt",
+        result = { E05to07Image() },
+        solution = { S05Image() }
+    ),
+    ExerciseDef(
+        id = 6,
+        title = "Sepia",
+        explanation = {
+            ExplanationText(
+                """Là c'est pour introduire le sepia qui sera utilisé dans l'exercice suivant.x
+                """
+            )
+        },
+        file = "E05to07Image.kt",
+        result = { E05to07Image() },
+        solution = { S06Sepia() }
+    ),
+    ExerciseDef(
+        id = 7,
         title = "Interaction utilisateur",
-        explanation = {},
-        file = "E05Interactive.kt",
-        result = { E05Interactive() },
-        solution = { S05Interactive() }
+        explanation = {
+            ExplanationText(
+                """Là l'utilisateur peut jouer avec l'écran.
+                """
+            )
+        },
+        file = "E05to07Image.kt",
+        result = { E05to07Image() },
+        solution = { S07Interactive() }
     ),
 )
 
@@ -165,8 +198,7 @@ fun Code(code: String) {
                 )
             }
             .padding(start = 8.dp)
-            .padding(vertical = 4.dp)
-        ,
+            .padding(vertical = 4.dp),
         style = MaterialTheme.typography.bodyMedium
     )
 }
