@@ -129,15 +129,15 @@ val exercises = listOf(
                 """
             )
             Code(
-                " Scaffold(\n" +
-                        "        topBar = {\n" +
-                        "            CenterAlignedTopAppBar(\n" +
-                        "                title = {\n" +
-                        "                    Text(text = \"Best People\")\n" +
-                        "                }\n" +
-                        "            )\n" +
-                        "        }\n" +
-                        "    )"
+                """|Scaffold(
+                   |    topBar = {
+                   |        CenterAlignedTopAppBar(
+                   |            title = {
+                   |                Text(text = "Best People")
+                   |            }
+                   |        )
+                   |    }
+                   |)""".trimMargin()
             )
             ExplanationText(
                 """Nous allons ensuite nous occuper du contenu de cet écran. 
@@ -149,30 +149,44 @@ val exercises = listOf(
                 """
             )
             Code(
-                "Column {\n" +
-                        "            Row(horizontalArrangement = Arrangement.spacedBy(4.dp)\n" +
-                        "            ) { ... }\n" +
-                        "            Text(\n" +
-                        "                text = ...\n" +
-                        "            )\n" +
-                        "        }"
+                """|Column {
+                   |    Row(
+                   |        horizontalArrangement =
+                   |            Arrangement.spacedBy(4.dp)
+                   |    ) { ... }
+                   |    Text(
+                   |        text = ...
+                   |    )
+                   |}""".trimMargin()
             )
             ExplanationText(
                 """Après avoir implémenté ce code et lancé l'app, quelque 
                     chose cloche... Si vous ne voyez pas de contenu, c'est 
-                    normal ! Le Composable Columnn ne sait pas comment se 
-                    dessiner dans l'écran. Il faut donc que nous lui 
-                    indiquions quelle place prendre et comment dessiner son 
-                    contenu. Nous voulons qu'il prenne toute la place dont il 
-                    dispose et qu'il centre son contenu verticalement et 
-                    horizontalement.
+                    normal&nbsp;! Le Composable Scaffold <b>n'oblige pas son contenu à 
+                    se dessiner après la topBar</b>, votre contenu s'affiche donc 
+                    <b>sous la topBar</b>. Pour gérer ce cas, le Scaffold met à notre disposition 
+                    des PaddingValues pour nous conseiller une zone dans laquelle dessiner.
+                    Ce PaddingValues est à utiliser en tant que <b>.padding(...)</b>
+                    du contenu du Scaffold.
                 """
             )
             Code(
-                "Column(modifier = Modifier.fillMaxSize(),\n" +
-                        "            verticalArrangement = Arrangement.Center,\n" +
-                        "            horizontalAlignment = Alignment.CenterHorizontally\n" +
-                        "        ) { ... }"
+                """|Scaffold(
+                   |    ...
+                   |) { paddingValues ->
+                   |    Column(
+                   |        modifier = Modifier
+                   |            .padding(paddingValues)
+                   |    ) { ... }
+                   |}""".trimMargin()
+            )
+            ExplanationText(
+                """Pour terminer la composition de cet écran, jouez avec
+                    les paramètres du Composable <b>Column</b> pour centrer
+                    verticalement et horizontalement.
+                    Puis ajoutez le modifier <b>fillMaxSize</b> à la Column
+                    pour lui indiquer de prendre toute la place disponible.
+                """
             )
             ExplanationText(
                 """Chaque Composable possède un argument <b>modifier</b>, 
