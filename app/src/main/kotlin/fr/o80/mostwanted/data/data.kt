@@ -88,13 +88,13 @@ val exercises = listOf(
                     """Afin d'obtenir un espace entre les deux Text, vous 
                         pouvez ajouter une valeur à l'argument 
                         <b>horizontalArrangement</b> du Composable Row, comme
-                         ceci&nbsp;:
+                        ceci&nbsp;:
                 """
                 )
                 Code("horizontalArrangement = Arrangement.spacedBy(4.dp)")
                 ExplanationText(
                     """Cet argument permet de définir un espace de 4 dp entre
-                         chaque Composable présent dans la Row.
+                        chaque Composable présent dans la Row.
                 """
                 )
                 ExplanationText(
@@ -115,17 +115,17 @@ val exercises = listOf(
                 """Nous allons maintenant créer un écran structuré dans 
                     lequel intégrer nos Composables. Un écran est généralement 
                     composé d'une <b>topBar</b>, d'une <b>bottomBar</b>, d'un
-                     <b>floatingActionButton</b> et d'un contenu central.
+                    <b>floatingActionButton</b> et d'un contenu central.
                 """
             )
             ExplanationText(
                 """En Jetpack Compose, il est possible de créer cette 
                     structure grâce au Composable <b>Scaffold</b>. Le but ici
-                     est de créer ce Composable avec l'attribut <b>topBar</b> 
-                     qui comportera le texte suivant : <i>BestPeople</i>. 
-                     Nous allons ici utiliser le Composable 
-                     <b>CenterAlignedTopAppBar</b> enfin de centrer le titre 
-                     au milieu de l'élément :
+                    est de créer ce Composable avec l'attribut <b>topBar</b> 
+                    qui comportera le texte suivant : <i>BestPeople</i>. 
+                    Nous allons ici utiliser le Composable 
+                    <b>CenterAlignedTopAppBar</b> enfin de centrer le titre 
+                    au milieu de l'élément :
                 """
             )
             Code(
@@ -141,8 +141,8 @@ val exercises = listOf(
             )
             ExplanationText(
                 """Nous allons ensuite nous occuper du contenu de cet écran. 
-                    Nous souhaitons avoir un <b>Text</b> supplémentaire, 
-                    placé en dessous des deux autres précédemment créés. Pour
+                     Nous souhaitons avoir un <b>Text</b> supplémentaire, 
+                     placé en dessous des deux autres précédemment créés. Pour
                      ce faire, nous allons intégrer au contenu du Scaffold le 
                      Composable <b>Column</b> permettant, tout comme Row, 
                      d'organiser les éléments entre eux.
@@ -190,10 +190,10 @@ val exercises = listOf(
             )
             ExplanationText(
                 """Chaque Composable possède un argument <b>modifier</b>, 
-                        auquel nous allons passé des modificateurs pour 
-                        changer le comportement ou l'apparence de l'élément 
-                        associé. Ce paramètre vient s'ajouter aux paramètres 
-                        spécifiques proposés par chaque Composable.
+                    auquel nous allons passé des modificateurs pour 
+                    changer le comportement ou l'apparence de l'élément 
+                    associé. Ce paramètre vient s'ajouter aux paramètres 
+                    spécifiques proposés par chaque Composable.
                 """
             )
             ExplanationText(
