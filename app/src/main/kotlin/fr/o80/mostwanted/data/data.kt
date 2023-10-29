@@ -24,6 +24,9 @@ import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
 import fr.o80.mostwanted.exercise.E03Screen
 import fr.o80.mostwanted.exercise.E05to07Image
+import fr.o80.mostwanted.exercise.e05.Explanation05
+import fr.o80.mostwanted.exercise.e06.Explanation06
+import fr.o80.mostwanted.exercise.e07.Explanation07
 
 val exercises = listOf(
     ExerciseDef(
@@ -216,12 +219,7 @@ val exercises = listOf(
     ExerciseDef(
         id = 4,
         title = "Gestion des images",
-        explanation = {
-            ExplanationText(
-                """Là c'est pour apprendre à faire appel aux ressources pour afficher une image.
-                """
-            )
-        },
+        explanation = { Explanation05() },
         file = "E05to07Image.kt",
         result = { E05to07Image() },
         solution = { S05Image() }
@@ -229,12 +227,7 @@ val exercises = listOf(
     ExerciseDef(
         id = 5,
         title = "Sepia",
-        explanation = {
-            ExplanationText(
-                """Là c'est pour introduire le sepia qui sera utilisé dans l'exercice suivant.x
-                """
-            )
-        },
+        explanation = { Explanation06() },
         file = "E05to07Image.kt",
         result = { E05to07Image() },
         solution = { S06Sepia() }
@@ -242,12 +235,7 @@ val exercises = listOf(
     ExerciseDef(
         id = 6,
         title = "Interaction utilisateur",
-        explanation = {
-            ExplanationText(
-                """Là l'utilisateur peut jouer avec l'écran.
-                """
-            )
-        },
+        explanation = { Explanation07() },
         file = "E05to07Image.kt",
         result = { E05to07Image() },
         solution = { S07Interactive() }
