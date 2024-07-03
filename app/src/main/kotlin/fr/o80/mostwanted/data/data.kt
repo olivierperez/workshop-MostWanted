@@ -113,29 +113,27 @@ val exercises = listOf(
         explanation = {
             ExplanationText(
                 """Nous allons maintenant créer un écran structuré dans 
-                    lequel intégrer nos Composables. Un écran est généralement 
-                    composé d'une <b>topBar</b>, d'une <b>bottomBar</b>, d'un
-                    <b>floatingActionButton</b> et d'un contenu central.
+                    lequel intégrer nos Composables. On peut facilement imaginer
+                    un écran composé d'une <b>topBar</b>, d'une <b>bottomBar</b>
+                    et d'un contenu central.
                 """
             )
             ExplanationText(
                 """En Jetpack Compose, il est possible de créer cette 
                     structure grâce au Composable <b>Scaffold</b>. Le but ici
-                    est de créer ce Composable avec l'attribut <b>topBar</b> 
-                    qui comportera le texte suivant : <i>BestPeople</i>. 
-                    Nous allons ici utiliser le Composable 
-                    <b>CenterAlignedTopAppBar</b> enfin de centrer le titre 
-                    au milieu de l'élément :
+                    est de l'utiliser pour afficher le titre <i>Wanted People</i>,
+                    et pour préciser <i>Dead or alive</i> en bas de page.
+                """
+            )
+            ExplanationText(
+                """Pour afficher un titre centré nous allons ici utiliser
+                    le Composable <b>CenterAlignedTopAppBar</b>&nbsp;:
                 """
             )
             Code(
-                """|Scaffold(
-                   |    topBar = {
-                   |        CenterAlignedTopAppBar(
-                   |            title = {
-                   |                Text(text = "Best People")
-                   |            }
-                   |        )
+                """|CenterAlignedTopAppBar(
+                   |    title = {
+                   |        Text(text = "Wanted People")
                    |    }
                    |)""".trimMargin()
             )
@@ -150,10 +148,9 @@ val exercises = listOf(
             )
             Code(
                 """|Column {
-                   |    Row(
-                   |        horizontalArrangement =
-                   |            Arrangement.spacedBy(4.dp)
-                   |    ) { ... }
+                   |    Text(
+                   |        text = ...
+                   |    )
                    |    Text(
                    |        text = ...
                    |    )
@@ -165,7 +162,7 @@ val exercises = listOf(
                     normal&nbsp;! Le Composable Scaffold <b>n'oblige pas son contenu à 
                     se dessiner après la topBar</b>, votre contenu s'affiche donc 
                     <b>sous la topBar</b>. Pour gérer ce cas, le Scaffold met à notre disposition 
-                    des PaddingValues pour nous conseiller une zone dans laquelle dessiner.
+                    des PaddingValues pour nous conseiller une zone dans laquelle présenter le contenu.
                     Ce PaddingValues est à utiliser en tant que <b>.padding(...)</b>
                     du contenu du Scaffold.
                 """
