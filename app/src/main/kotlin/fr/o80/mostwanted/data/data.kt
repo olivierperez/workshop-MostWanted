@@ -115,7 +115,7 @@ val exercises = listOf(
         solution = { S02Layout() }
     ),
     ExerciseDef(
-        id = 2,
+        id = 3,
         title = "Créer un écran structuré",
         explanation = {
             ExplanationText(
@@ -209,7 +209,7 @@ val exercises = listOf(
         solution = { S03Screen() }
     ),
     ExerciseDef(
-        id = 3,
+        id = 4,
         title = "Jamais 304",
         explanation = {},
         file = "",
@@ -217,7 +217,7 @@ val exercises = listOf(
         solution = {}
     ),
     ExerciseDef(
-        id = 4,
+        id = 5,
         title = "Gestion des images",
         explanation = { Explanation05() },
         file = "E05to07Image.kt",
@@ -225,7 +225,7 @@ val exercises = listOf(
         solution = { S05Image() }
     ),
     ExerciseDef(
-        id = 5,
+        id = 6,
         title = "Sepia",
         explanation = { Explanation06() },
         file = "E05to07Image.kt",
@@ -233,7 +233,7 @@ val exercises = listOf(
         solution = { S06Sepia() }
     ),
     ExerciseDef(
-        id = 6,
+        id = 7,
         title = "Interaction utilisateur",
         explanation = { Explanation07() },
         file = "E05to07Image.kt",
