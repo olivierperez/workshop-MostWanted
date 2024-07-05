@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.exercise.e05
+package fr.o80.mostwanted.data.explanation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,12 +8,12 @@ import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
 
 @Composable
-fun Explanation05() {
+fun Explanation06() {
     Column(
         Modifier.fillMaxSize()
     ) {
         ExplanationText(
-            """Là c'est pour apprendre à faire appel aux ressources pour afficher une image.
+            """Là c'est pour introduire le sepia qui sera utilisé dans l'exercice suivant.x
                 """
         )
         ExplanationText(
