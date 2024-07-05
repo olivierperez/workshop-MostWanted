@@ -10,9 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithContent
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,15 +30,8 @@ fun S06Sepia(
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .clip(CircleShape)
-                .drawWithContent {
-                    drawContent()
-                    drawRect(
-                        color = Color(0xFF79613C),
-                        blendMode = BlendMode.Color
-                    )
-                }
         )
-        PersonName("Olivier", "GCC", "PEREZ")
+        PersonName("Olivier", "Gnu", "PEREZ")
     }
 }
 

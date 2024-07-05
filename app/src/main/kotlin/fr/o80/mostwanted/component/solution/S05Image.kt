@@ -4,12 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -27,10 +25,9 @@ fun S05Image(
     ) {
         Image(
             painter = painterResource(R.drawable.avatar),
-            contentDescription = "Most Wanted Avatar",
-            modifier = Modifier.clip(CircleShape)
+            contentDescription = "Most Wanted Avatar"
         )
-        PersonName("Olivier", "GCC", "PEREZ")
+        PersonName("Olivier", "Gnu", "PEREZ")
     }
 }
 

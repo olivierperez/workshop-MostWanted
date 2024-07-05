@@ -17,6 +17,7 @@ import fr.o80.mostwanted.component.solution.S03Screen
 import fr.o80.mostwanted.component.solution.S05Image
 import fr.o80.mostwanted.component.solution.S06Sepia
 import fr.o80.mostwanted.component.solution.S07Interactive
+import fr.o80.mostwanted.component.solution.S08Animation
 import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation02
 import fr.o80.mostwanted.data.explanation.Explanation03
@@ -24,11 +25,12 @@ import fr.o80.mostwanted.data.explanation.Explanation04
 import fr.o80.mostwanted.data.explanation.Explanation05
 import fr.o80.mostwanted.data.explanation.Explanation06
 import fr.o80.mostwanted.data.explanation.Explanation07
+import fr.o80.mostwanted.data.explanation.Explanation08
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
 import fr.o80.mostwanted.exercise.E03Screen
-import fr.o80.mostwanted.exercise.E05to07Image
+import fr.o80.mostwanted.exercise.E05to08Image
 
 val exercises = listOf(
     ExerciseDef(
@@ -68,7 +70,7 @@ val exercises = listOf(
         title = "Gestion des images",
         explanation = { Explanation05() },
         file = "E05to07Image.kt",
-        result = { E05to07Image() },
+        result = { E05to08Image() },
         solution = { S05Image() }
     ),
     ExerciseDef(
@@ -76,7 +78,7 @@ val exercises = listOf(
         title = "Sepia",
         explanation = { Explanation06() },
         file = "E05to07Image.kt",
-        result = { E05to07Image() },
+        result = { E05to08Image() },
         solution = { S06Sepia() }
     ),
     ExerciseDef(
@@ -84,8 +86,16 @@ val exercises = listOf(
         title = "Interaction utilisateur",
         explanation = { Explanation07() },
         file = "E05to07Image.kt",
-        result = { E05to07Image() },
+        result = { E05to08Image() },
         solution = { S07Interactive() }
+    ),
+    ExerciseDef(
+        id = 8,
+        title = "Animation",
+        explanation = { Explanation08() },
+        file = "E05to08Image.kt",
+        result = { E05to08Image() },
+        solution = { S08Animation() }
     ),
 )
 
