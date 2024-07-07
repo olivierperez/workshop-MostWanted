@@ -78,7 +78,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 6,
-        title = "Sepia",
+        title = "Clip image",
         explanation = { Explanation06() },
         file = "E05to07Image.kt",
         result = { E05to08Image() },
