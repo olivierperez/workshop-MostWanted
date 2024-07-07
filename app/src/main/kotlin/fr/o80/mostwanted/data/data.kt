@@ -15,9 +15,11 @@ import fr.o80.mostwanted.component.solution.S01HelloWorld
 import fr.o80.mostwanted.component.solution.S02Layout
 import fr.o80.mostwanted.component.solution.S03Screen
 import fr.o80.mostwanted.component.solution.S05Image
-import fr.o80.mostwanted.component.solution.S06Sepia
+import fr.o80.mostwanted.component.solution.S06ClipCircle
 import fr.o80.mostwanted.component.solution.S07Interactive
 import fr.o80.mostwanted.component.solution.S08Animation
+import fr.o80.mostwanted.component.solution.S09Complex
+import fr.o80.mostwanted.component.solution.S09UsePreview
 import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation02
 import fr.o80.mostwanted.data.explanation.Explanation03
@@ -26,6 +28,7 @@ import fr.o80.mostwanted.data.explanation.Explanation05
 import fr.o80.mostwanted.data.explanation.Explanation06
 import fr.o80.mostwanted.data.explanation.Explanation07
 import fr.o80.mostwanted.data.explanation.Explanation08
+import fr.o80.mostwanted.data.explanation.Explanation09
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
@@ -79,7 +82,7 @@ val exercises = listOf(
         explanation = { Explanation06() },
         file = "E05to07Image.kt",
         result = { E05to08Image() },
-        solution = { S06Sepia() }
+        solution = { S06ClipCircle() }
     ),
     ExerciseDef(
         id = 7,
@@ -96,6 +99,14 @@ val exercises = listOf(
         file = "E05to08Image.kt",
         result = { E05to08Image() },
         solution = { S08Animation() }
+    ),
+    ExerciseDef(
+        id = 9,
+        title = "Preview",
+        explanation = { Explanation09() },
+        file = "E09Image.kt",
+        result = { S09UsePreview() },
+        solution = { S09Complex() }
     ),
 )
 

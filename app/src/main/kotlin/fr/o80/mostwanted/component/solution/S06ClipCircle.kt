@@ -17,7 +17,7 @@ import fr.o80.mostwanted.R
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 
 @Composable
-fun S06Sepia(
+fun S06ClipCircle(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -54,8 +54,8 @@ private fun PersonName(
 
 @Preview
 @Composable
-private fun S06SepiaPreview() {
+private fun S06ClipCirclePreview() {
     WorkshopMostWantedPreviewTheme {
-        S06Sepia()
+        S06ClipCircle()
     }
 }

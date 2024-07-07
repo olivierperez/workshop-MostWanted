@@ -100,7 +100,7 @@ private fun ClickMyPictureText(
 
 @Preview
 @Composable
-private fun S07InteractivePreview() {
+private fun S08AnimationPreview() {
     WorkshopMostWantedPreviewTheme {
         S07Interactive()
     }
