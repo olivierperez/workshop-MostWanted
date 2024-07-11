@@ -1,13 +1,15 @@
 [versions]
-activity-compose = "1.7.2"
-androidx-junit = "1.1.5"
-core-ktx = "1.12.0"
-espressoCore = "3.5.1"
-hiltVersion = "2.47"
+activity-compose = "1.9.0"
+androidx-junit = "1.2.1"
+core-ktx = "1.13.1"
+espressoCore = "3.6.1"
+hiltVersion = "2.51.1"
+hiltCompiler = "1.2.0"
+hiltNavCompose = "1.2.0"
 junit = "4.13.2"
-kotlinx-collections-immutable = "0.3.5"
-lifecycle-runtime-ktx = "2.6.2"
-navVersion = "2.7.3"
+kotlinx-collections-immutable = "0.3.7"
+lifecycle-runtime-ktx = "2.8.3"
+navVersion = "2.7.7"
 
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -23,9 +25,9 @@ androidx-compose-test = { module = "androidx.compose.ui:ui-test-junit4" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
-hilt-androidx-kapt = { module = "androidx.hilt:hilt-compiler", version = "1.0.0" }
+hilt-androidx-kapt = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 hilt-kapt = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion" }
-hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version = "1.0.0" }
+hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavCompose" }
 junit = { module = "junit:junit", version.ref = "junit" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections-immutable" }
 lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
