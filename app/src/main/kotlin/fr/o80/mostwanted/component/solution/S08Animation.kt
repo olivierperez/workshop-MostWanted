@@ -52,9 +52,9 @@ fun S08Animation(
             painter = painterResource(R.drawable.avatar),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
+                .padding(bottom = 8.dp)
                 .clip(RoundedCornerShape(corner))
                 .clickable { activate = !activate }
-                .padding(bottom = 8.dp)
         )
         AnimatedVisibility(
             visible = activate,
