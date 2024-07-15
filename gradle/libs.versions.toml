@@ -1,6 +1,7 @@
 [versions]
 activity-compose = "1.9.0"
 androidx-junit = "1.2.1"
+composeBomVersion = "2024.06.00"
 core-ktx = "1.13.1"
 compose-animation = "1.6.8"
 espressoCore = "3.6.1"
@@ -26,6 +27,7 @@ androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-ui-testmanifest = { module = "androidx.compose.ui:ui-test-manifest" }
 androidx-test = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
 androidx-compose-test = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }

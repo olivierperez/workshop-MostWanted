@@ -42,16 +42,17 @@ android {
 dependencies {
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
+    implementation(platform(libs.compose.bom))
     implementation(libs.activity.compose)
     implementation(libs.androidx.compose.lifecycleruntime)
     implementation(libs.androidx.compose.lifecycleruntime)
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(libs.bundles.compose.ui)
 
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.test)
     androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(platform(libs.compose.bom))
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.testmanifest)

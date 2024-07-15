@@ -56,9 +56,9 @@ dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
+    implementation(platform(libs.compose.bom))
     implementation(libs.activity.compose)
     implementation(libs.androidx.compose.lifecycleruntime)
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(libs.bundles.compose.ui)
 
     implementation(libs.navigation)
@@ -71,7 +71,7 @@ dependencies {
 
     androidTestImplementation(libs.androidx.test)
     androidTestImplementation(libs.espresso.core)
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.androidx.compose.test)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
