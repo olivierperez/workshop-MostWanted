@@ -1,8 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
-    kotlin("kapt")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
@@ -50,11 +50,6 @@ android {
         }
     }
 }
-
-kapt {
-    correctErrorTypes = true
-}
-
 
 dependencies {
     implementation(project(":exercises"))
@@ -70,8 +65,7 @@ dependencies {
 
     implementation(libs.navigation)
 
-    kapt(libs.hilt.androidx.kapt)
-    kapt(libs.hilt.kapt)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation)
     implementation(libs.hilt.android)
 
