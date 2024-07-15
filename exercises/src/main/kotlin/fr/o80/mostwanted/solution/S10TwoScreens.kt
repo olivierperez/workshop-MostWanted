@@ -37,13 +37,13 @@ fun S10TwoScreens(modifier: Modifier = Modifier) {
         bottomBar = {
             NavigationBar {
                 NavigationBarItem(
-                    selected = true,
+                    selected = currentPage == 0,
                     onClick = { currentPage = 0 },
                     icon = { Icon(Icons.Default.Home, contentDescription = "") },
                     label = { Text(text = "Home") }
                 )
                 NavigationBarItem(
-                    selected = true,
+                    selected = currentPage == 1,
                     onClick = { currentPage = 1 },
                     icon = { Icon(Icons.Default.Info, contentDescription = "") },
                     label = { Text(text = "Info") }
