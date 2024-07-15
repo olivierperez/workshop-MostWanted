@@ -14,6 +14,7 @@ import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.component.solution.S01HelloWorld
 import fr.o80.mostwanted.component.solution.S02Layout
 import fr.o80.mostwanted.component.solution.S03Screen
+import fr.o80.mostwanted.component.solution.S04Preview
 import fr.o80.mostwanted.component.solution.S05Image
 import fr.o80.mostwanted.component.solution.S06ClipCircle
 import fr.o80.mostwanted.component.solution.S07Interactive
@@ -35,6 +36,7 @@ import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
 import fr.o80.mostwanted.exercise.E03Screen
+import fr.o80.mostwanted.exercise.E04Preview
 import fr.o80.mostwanted.exercise.E05to08Image
 import fr.o80.mostwanted.exercise.E10TwoScreens
 
@@ -65,11 +67,11 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 4,
-        title = "Jamais 304",
+        title = "Le système de Preview",
         explanation = { Explanation04() },
-        file = "",
-        result = {},
-        solution = {}
+        file = "E04Preview.kt",
+        result = { E04Preview() },
+        solution = { S04Preview() }
     ),
     ExerciseDef(
         id = 5,
@@ -139,16 +141,16 @@ fun Code(code: String) {
     Text(
         text = code,
         modifier = Modifier
-                .drawBehind {
-                    drawLine(
-                        color = Color.Gray,
-                        start = Offset(0f, 0f),
-                        end = Offset(0f, size.height),
-                        strokeWidth = 4f
-                    )
-                }
-                .padding(start = 8.dp)
-                .padding(vertical = 4.dp),
+            .drawBehind {
+                drawLine(
+                    color = Color.Gray,
+                    start = Offset(0f, 0f),
+                    end = Offset(0f, size.height),
+                    strokeWidth = 4f
+                )
+            }
+            .padding(start = 8.dp)
+            .padding(vertical = 4.dp),
         style = MaterialTheme.typography.bodyMedium
     )
 }
