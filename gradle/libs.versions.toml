@@ -2,6 +2,7 @@
 activity-compose = "1.9.0"
 androidx-junit = "1.2.1"
 core-ktx = "1.13.1"
+compose-animation = "1.6.8"
 espressoCore = "3.6.1"
 hiltVersion = "2.51.1"
 hiltCompiler = "1.2.0"
@@ -10,11 +11,14 @@ junit = "4.13.2"
 kotlinx-collections-immutable = "0.3.7"
 lifecycle-runtime-ktx = "2.8.3"
 navVersion = "2.7.7"
+agp = "8.5.0"
+kotlin = "1.8.10"
 
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
 androidx-compose-lifecycleruntime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-animation-android = { module = "androidx.compose.animation:animation-android", version.ref = "compose-animation" }
 androidx-compose-ui-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
@@ -34,6 +38,8 @@ lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", v
 navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navVersion" }
 
 [plugins]
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 
 [bundles]
-compose-ui = ["androidx-compose-ui-ui", "androidx-compose-ui-graphics", "androidx-compose-ui-tooling-preview", "androidx-compose-material3"]
+compose-ui = ["androidx-compose-ui-ui", "androidx-compose-ui-graphics", "androidx-compose-ui-tooling-preview", "androidx-compose-material3", "androidx-compose-animation-android"]

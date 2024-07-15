@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.component.ExerciseCard
 import fr.o80.mostwanted.component.ScreenTitle
 import fr.o80.mostwanted.data.exercises
 import fr.o80.mostwanted.domain.model.ExerciseDef

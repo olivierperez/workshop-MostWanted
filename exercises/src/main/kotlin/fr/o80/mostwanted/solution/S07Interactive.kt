@@ -1,17 +1,10 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.animateIntAsState
-import androidx.compose.animation.expandIn
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.shrinkOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
@@ -19,7 +12,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -28,42 +21,29 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.R
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.exercises.R
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun S08Animation(
+fun S07Interactive(
     modifier: Modifier = Modifier
 ) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        var activate by remember { mutableStateOf(false) }
-        val corner by animateIntAsState(
-            targetValue = if (activate) 0 else 50,
-            label = "Image rounding"
-        )
+        var corner by remember { mutableIntStateOf(0) }
 
-        ClickMyPictureText(
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
+        ClickMyPictureText()
         Image(
             painter = painterResource(R.drawable.avatar),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
-                .padding(bottom = 8.dp)
                 .clip(RoundedCornerShape(corner))
-                .clickable { activate = !activate }
+                .clickable { corner = 50 - corner }
         )
-        AnimatedVisibility(
-            visible = activate,
-            label = "Name visibility",
-            enter = fadeIn() + expandIn(expandFrom = Alignment.Center),
-            exit = fadeOut() + shrinkOut(shrinkTowards = Alignment.Center),
-        ) {
-            PersonName("Olivier", "Gnu", "PEREZ")
-        }
+        PersonName("Olivier", "Gnu", "PEREZ")
     }
 }
 
@@ -100,8 +80,8 @@ private fun ClickMyPictureText(
 
 @Preview
 @Composable
-private fun S08AnimationPreview() {
-    WorkshopMostWantedPreviewTheme {
+private fun S07InteractivePreview() {
+    PreviewTheme {
         S07Interactive()
     }
 }

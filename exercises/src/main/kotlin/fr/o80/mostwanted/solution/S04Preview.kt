@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,8 +11,8 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import fr.o80.mostwanted.component.atom.spikedCircleBackground
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.spikedCircleBackground
 
 @Composable
 fun S04Preview(
@@ -41,7 +41,7 @@ fun S04UsePreview(modifier: Modifier = Modifier) {
 @Preview(device = Devices.PHONE)
 @Composable
 private fun S04PreviewPreview1() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S04Preview()
     }
 }
@@ -49,7 +49,7 @@ private fun S04PreviewPreview1() {
 @Preview(device = Devices.TABLET)
 @Composable
 private fun S04PreviewPreview2() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S04Preview()
     }
 }
@@ -57,7 +57,7 @@ private fun S04PreviewPreview2() {
 @Preview(showSystemUi = true)
 @Composable
 private fun S04PreviewPreview3() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S04Preview()
     }
 }
