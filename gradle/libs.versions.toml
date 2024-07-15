@@ -10,8 +10,8 @@ kotlinx-collections-immutable = "0.3.7"
 lifecycle-runtime-ktx = "2.8.3"
 navVersion = "2.7.7"
 agp = "8.5.1"
-kotlin = "1.9.10"
-ksp = "1.9.10-1.0.13"
+kotlin = "2.0.0"
+ksp = "2.0.0-1.0.23"
 hilt = "2.48.1"
 
 [libraries]
@@ -39,6 +39,7 @@ navigation = { module = "androidx.navigation:navigation-compose", version.ref = 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
