@@ -1,9 +1,9 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
 fun S01HelloWorld() {
@@ -15,7 +15,7 @@ fun S01HelloWorld() {
 @Preview
 @Composable
 private fun S01HelloWorldPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S01HelloWorld()
     }
 }

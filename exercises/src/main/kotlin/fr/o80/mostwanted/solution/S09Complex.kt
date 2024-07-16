@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -23,9 +23,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.R
-import fr.o80.mostwanted.component.atom.spikedCircleBackground
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.exercises.R
+import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.spikedCircleBackground
 
 @Composable
 fun S09Complex(modifier: Modifier = Modifier) {
@@ -75,7 +75,7 @@ fun S09UsePreview(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun S09ComplexPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S09Complex()
     }
 }
@@ -83,7 +83,7 @@ private fun S09ComplexPreview() {
 @Preview
 @Composable
 private fun S09UsePreviewPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S09UsePreview(Modifier.size(256.dp))
     }
 }

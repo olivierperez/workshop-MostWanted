@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.atom
+package fr.o80.mostwanted.internals
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache

@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -6,7 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
 fun S02Layout() {
@@ -23,7 +23,7 @@ fun S02Layout() {
 @Preview
 @Composable
 private fun S02LayoutPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S02Layout()
     }
 }

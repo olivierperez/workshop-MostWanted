@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "WorkshopMostWanted"
 include(":app")
+include(":exercises")

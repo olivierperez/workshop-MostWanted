@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -26,7 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,13 +37,13 @@ fun S10TwoScreens(modifier: Modifier = Modifier) {
         bottomBar = {
             NavigationBar {
                 NavigationBarItem(
-                    selected = true,
+                    selected = currentPage == 0,
                     onClick = { currentPage = 0 },
                     icon = { Icon(Icons.Default.Home, contentDescription = "") },
                     label = { Text(text = "Home") }
                 )
                 NavigationBarItem(
-                    selected = true,
+                    selected = currentPage == 1,
                     onClick = { currentPage = 1 },
                     icon = { Icon(Icons.Default.Info, contentDescription = "") },
                     label = { Text(text = "Info") }
@@ -97,7 +97,7 @@ fun Info(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun S10TwoScreensPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S10TwoScreens()
     }
 }

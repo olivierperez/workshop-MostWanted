@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.component.solution
+package fr.o80.mostwanted.solution
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -13,8 +13,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.R
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.exercises.R
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
 fun S06ClipCircle(
@@ -55,7 +55,7 @@ private fun PersonName(
 @Preview
 @Composable
 private fun S06ClipCirclePreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         S06ClipCircle()
     }
 }
