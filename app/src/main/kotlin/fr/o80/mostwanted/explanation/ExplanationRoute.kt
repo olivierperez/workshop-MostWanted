@@ -10,6 +10,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 @Composable
 fun ExplanationRoute(
     goToSketchup: (Int) -> Unit,
+    goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val viewModel = hiltViewModel<ExplanationViewModel>()
@@ -28,6 +29,7 @@ fun ExplanationRoute(
     ExplanationScreen(
         state = state,
         goToSketchup = viewModel::goToSketchup,
+        goBack = goBack,
         modifier = modifier
     )
 }

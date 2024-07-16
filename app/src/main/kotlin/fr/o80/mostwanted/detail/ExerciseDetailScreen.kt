@@ -8,6 +8,7 @@ import fr.o80.mostwanted.detail.component.page.ExerciseDetailLoading
 @Composable
 fun ExerciseDetailScreen(
     state: ExerciseDetailUiState,
+    goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -19,6 +20,7 @@ fun ExerciseDetailScreen(
         is ExerciseDetailUiState.Loaded -> ExerciseDetailLoaded(
             exerciseDef = state.exerciseDef,
             page = state.page,
+            goBack = goBack,
             modifier = modifier
         )
 

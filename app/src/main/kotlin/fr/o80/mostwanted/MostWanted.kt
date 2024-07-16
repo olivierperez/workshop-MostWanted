@@ -56,6 +56,7 @@ fun MostWanted() {
                         popUpTo(ROUTE_EXPLANATION) { inclusive = true }
                     }
                 },
+                goBack = { navController.navigateUp() },
                 modifier = Modifier.fillMaxSize()
             )
         }
@@ -66,6 +67,7 @@ fun MostWanted() {
             )
         ) {
             ExerciseDetailRoute(
+                goBack = { navController.navigateUp() },
                 modifier = Modifier.fillMaxSize()
             )
         }

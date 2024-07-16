@@ -9,12 +9,14 @@ import fr.o80.mostwanted.explanation.component.page.Loading
 fun ExplanationScreen(
     state: ExplanationUiState,
     goToSketchup: () -> Unit,
+    goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     when (state) {
         is ExplanationUiState.Loaded -> ExplanationLoaded(
             exerciseDef = state.exerciseDef,
             goToSketchup = goToSketchup,
+            goBack = goBack,
             modifier = modifier
         )
 

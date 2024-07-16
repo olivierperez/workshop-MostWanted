@@ -8,6 +8,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
 fun ExerciseDetailRoute(
+    goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val viewModel = hiltViewModel<ExerciseDetailViewModel>()
@@ -15,6 +16,7 @@ fun ExerciseDetailRoute(
 
     ExerciseDetailScreen(
         state = state,
+        goBack = goBack,
         modifier = modifier
     )
 }
