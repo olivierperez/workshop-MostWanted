@@ -88,7 +88,7 @@ fun Explanation03() {
         )
         ExplanationText(
             """Chaque Composable possède un argument <b>modifier</b>, 
-                    auquel nous allons passé des modificateurs pour 
+                    auquel nous allons passer des modificateurs pour 
                     changer le comportement ou l'apparence de l'élément 
                     associé. Ce paramètre vient s'ajouter aux paramètres 
                     spécifiques proposés par chaque Composable.

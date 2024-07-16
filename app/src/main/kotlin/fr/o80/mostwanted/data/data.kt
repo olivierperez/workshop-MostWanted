@@ -77,7 +77,7 @@ val exercises = listOf(
         id = 5,
         title = "Gestion des images",
         explanation = { Explanation05() },
-        file = "E05to07Image.kt",
+        file = "E05to08Image.kt",
         result = { E05to08Image() },
         solution = { S05Image() }
     ),
@@ -85,7 +85,7 @@ val exercises = listOf(
         id = 6,
         title = "Clip image",
         explanation = { Explanation06() },
-        file = "E05to07Image.kt",
+        file = "E05to08Image.kt",
         result = { E05to08Image() },
         solution = { S06ClipCircle() }
     ),
@@ -93,7 +93,7 @@ val exercises = listOf(
         id = 7,
         title = "Interaction utilisateur",
         explanation = { Explanation07() },
-        file = "E05to07Image.kt",
+        file = "E05to08Image.kt",
         result = { E05to08Image() },
         solution = { S07Interactive() }
     ),
@@ -109,7 +109,7 @@ val exercises = listOf(
         id = 9,
         title = "Preview",
         explanation = { Explanation09() },
-        file = "E09Image.kt",
+        file = "S09Image.kt",
         result = { S09UsePreview() },
         solution = { S09Complex() }
     ),

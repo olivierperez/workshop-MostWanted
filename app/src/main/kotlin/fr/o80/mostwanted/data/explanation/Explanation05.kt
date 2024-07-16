@@ -13,14 +13,36 @@ fun Explanation05() {
         Modifier.fillMaxSize()
     ) {
         ExplanationText(
-            """Là c'est pour apprendre à faire appel aux ressources pour afficher une image.
+            """Nous allons maintenant nous pencher sur un Composable 
+                particulier, <b>Image</b>. Il nous permet de rendre notre 
+                application plus visuelle en affichant une ressource image.
                 """
         )
         ExplanationText(
-            """Todo
-                     <b>Composables de mise en page</b>.
+            """Ce Composable permet d'afficher une image de type PNG, JPEG, 
+                WEBP, mais aussi une ressource issue de votre application.
                 """
         )
-        Code("Text(\"Hello World!\")")
+        ExplanationText(
+            """Pour afficher une image, il suffit de donner sa 
+                source à la propriété <b>painter</b> de notre Composable, 
+                comme ceci :
+                """
+        )
+        Code("Image(\n" +
+                "            painter = painterResource(\"source de l'image\")" +
+                ",\n" +
+                "        )" +
+                "")
+        ExplanationText(
+            """Essayez maintenant d'afficher l'avatar présent dans les 
+                ressources de l'application, dont la source est <b>R.drawable.avatar<b/>.
+                """
+        )
+        ExplanationText(
+            """Grâce aux exercices précédents, vous êtes maintenant capable 
+                de créer un écran complexe. Essayez donc de reproduire la 
+                maquette !"""
+        )
     }
 }
