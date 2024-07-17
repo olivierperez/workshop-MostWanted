@@ -32,13 +32,15 @@ import fr.o80.mostwanted.data.explanation.Explanation07
 import fr.o80.mostwanted.data.explanation.Explanation08
 import fr.o80.mostwanted.data.explanation.Explanation09
 import fr.o80.mostwanted.data.explanation.Explanation10
+import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercise.E01HelloWorld
 import fr.o80.mostwanted.exercise.E02Layout
 import fr.o80.mostwanted.exercise.E03Screen
 import fr.o80.mostwanted.exercise.E04Preview
 import fr.o80.mostwanted.exercise.E05to08Image
-import fr.o80.mostwanted.exercise.E10TwoScreens
+import fr.o80.mostwanted.exercise.E10to11TwoScreens
+import fr.o80.mostwanted.solution.S11AnimationNavigation
 
 val exercises = listOf(
     ExerciseDef(
@@ -117,9 +119,17 @@ val exercises = listOf(
         id = 10,
         title = "Two screens",
         explanation = { Explanation10() },
-        file = "E10TwoScreens.kt",
-        result = { E10TwoScreens() },
+        file = "E10to11TwoScreens.kt",
+        result = { E10to11TwoScreens() },
         solution = { S10TwoScreens() }
+    ),
+    ExerciseDef(
+        id = 11,
+        title = "Animation navigation",
+        explanation = { Explanation11() },
+        file = "E10to11TwoScreens.kt",
+        result = { E10to11TwoScreens() },
+        solution = { S11AnimationNavigation() }
     ),
 )
 

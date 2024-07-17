@@ -13,7 +13,7 @@ fun Explanation10() {
         Modifier.fillMaxSize()
     ) {
         ExplanationText(
-            """Nous arrivons au dernier exercice de cet atelier. Bravo 
+            """Nous arrivons aux derniers exercices de cet atelier. Bravo 
                 d'être arrivé·e jusqu'ici, vous êtes presque prêt·e à aller 
                 sur le terrain !
                 """
@@ -45,41 +45,20 @@ fun Explanation10() {
         Code("selected = currentPage == 0,\n" +
                 "onClick = { currentPage = 0 },")
         ExplanationText(
-            """Pour le contenu de l'écran, nous allons mettre en place un 
-                <b>AnimatedContent</b> afin de créer une animation au 
-                changement de page.
-            """
-        )
-        Code("AnimatedContent(\n" +
-                "            targetState = currentPage,\n" +
-                "            label = \"Main-page\",\n" +
-                "            modifier = Modifier\n" +
-                "                .fillMaxSize()\n" +
-                "                .padding(paddingValues),\n" +
-                "            transitionSpec = {\n" +
-                "                fadeIn(animationSpec = tween(220, delayMillis = 90))\n" +
-                "                    .togetherWith(fadeOut(tween(90)))\n" +
-                "            }\n" +
-                "        ) {}")
-        ExplanationText(
-            """Le contenu de ce Composable sera conditionné par la valeur de 
+            """Le contenu de chaque écran sera conditionné par la valeur de 
                 la variable <b>currentPage</b>. Pour cela, vous pouvez 
-                utiliser l'expression <b>when</b> :
+                utiliser une <b>Box</b> en lui passant le <b>paddingValues</b>
+                 du Scaffold puis utiliser l'expression <b>when</b> pour 
+                 afficher son contenu :
             """
         )
-        Code("page ->\n" +
-                "            when (page) {\n" +
+        Code("when (currentPage) {\n" +
                 "                0 -> Home()\n" +
                 "                1 -> Info()\n" +
                 "            }")
         ExplanationText(
             """Il vous reste maintenant à créer le contenu des deux écrans 
-                dans deux nouveaux Composables <b>Home()</b> et <b>Info()</b>.
-            """
-        )
-        ExplanationText(
-            """Vous êtes maintenant un·e expert·e du <b>Renseignement Jetpack 
-                Compose</b> !
+                dans les deux nouveaux Composables <b>Home()</b> et <b>Info()</b>.
             """
         )
     }
