@@ -46,12 +46,13 @@ fun Explanation07() {
                 """
         )
         ExplanationText(
-            """Nous allons maintenant modifier le modifier <b>clip</b> que 
-                nous avons écrit dans l'exercice précédent pour lui attribuer
-                 la valeur de notre variable.
+            """Voyez-vous comment faire varier la forme du clip en vous
+                basant sur une autre forme que CircleShape ?
                 """
         )
-        Code(".clip(RoundedCornerShape(corner))")
+        ExplanationText(
+            """Vous n'avez pas trouvé ? Que pensez-vous de RoundedCornerShape ?"""
+        )
         ExplanationText(
             """Si vous observez votre travail, l'image est maintenant 
                 redevenue carrée. Pour qu'elle obtienne une forme ronde, il 
@@ -60,11 +61,10 @@ fun Explanation07() {
         )
         ExplanationText(
             """C'est ici que nous allons utiliser notre attribut 
-                <b>clickable</b>. Lors d'un clic, nous allons modifier la 
-                valeur de notre variable pour jouer sur la forme de l'image.
+                <b>clickable</b>. Essayez donc de modifier la valeur de notre
+                 variable pour jouer sur la forme de l'image.
                 """
         )
-        Code(".clickable { corner = 50 - corner }")
         ExplanationText(
             """Vous pouvez maintenant observer l'image interactive depuis
                  votre rendu !

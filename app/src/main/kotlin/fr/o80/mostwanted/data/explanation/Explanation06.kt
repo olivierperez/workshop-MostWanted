@@ -29,7 +29,12 @@ fun Explanation06() {
                 lui attribuant un clip de type <b>CircleShape</b>
                 """
         )
-
         Code("modifier = Modifier.clip(CircleShape)")
+        ExplanationText(
+            """Comme vous pouvez le constater, vous pouvez attribuer ce 
+                comportement à un modifier. Vous pouvez donc arrondir les bords
+                 de n'importe quel Composable !
+                """
+        )
     }
 }
