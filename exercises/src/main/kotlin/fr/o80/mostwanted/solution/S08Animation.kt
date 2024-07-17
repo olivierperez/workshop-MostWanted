@@ -59,6 +59,8 @@ fun S08Animation(
         AnimatedVisibility(
             visible = activate,
             label = "Name visibility",
+            enter = fadeIn() + expandIn(expandFrom = Alignment.Center),
+            exit = fadeOut() + shrinkOut(shrinkTowards = Alignment.Center),
         ) {
             PersonName("Olivier", "Gnu", "PEREZ")
         }
