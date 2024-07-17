@@ -11,17 +11,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
-import fr.o80.mostwanted.solution.S01HelloWorld
-import fr.o80.mostwanted.solution.S02Layout
-import fr.o80.mostwanted.solution.S03Screen
-import fr.o80.mostwanted.solution.S04Preview
-import fr.o80.mostwanted.solution.S05Image
-import fr.o80.mostwanted.solution.S06ClipCircle
-import fr.o80.mostwanted.solution.S07Interactive
-import fr.o80.mostwanted.solution.S08Animation
-import fr.o80.mostwanted.solution.S09Complex
-import fr.o80.mostwanted.solution.S09UsePreview
-import fr.o80.mostwanted.solution.S10TwoScreens
 import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation02
 import fr.o80.mostwanted.data.explanation.Explanation03
@@ -34,13 +23,24 @@ import fr.o80.mostwanted.data.explanation.Explanation09
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import fr.o80.mostwanted.exercise.E01HelloWorld
-import fr.o80.mostwanted.exercise.E02Layout
-import fr.o80.mostwanted.exercise.E03Screen
-import fr.o80.mostwanted.exercise.E04Preview
-import fr.o80.mostwanted.exercise.E05to08Image
-import fr.o80.mostwanted.exercise.E10to11TwoScreens
-import fr.o80.mostwanted.solution.S11AnimationNavigation
+import fr.o80.mostwanted.exercises.E01HelloWorld
+import fr.o80.mostwanted.exercises.E02Layout
+import fr.o80.mostwanted.exercises.E03Screen
+import fr.o80.mostwanted.exercises.E04Preview
+import fr.o80.mostwanted.exercises.E05to08Image
+import fr.o80.mostwanted.exercises.E10to11TwoScreens
+import fr.o80.mostwanted.solutions.S03Screen
+import fr.o80.mostwanted.solutions.Solution01HelloWorld
+import fr.o80.mostwanted.solutions.Solution02Layout
+import fr.o80.mostwanted.solutions.Solution04Preview
+import fr.o80.mostwanted.solutions.Solution05Image
+import fr.o80.mostwanted.solutions.Solution06ClipCircle
+import fr.o80.mostwanted.solutions.Solution07Interactive
+import fr.o80.mostwanted.solutions.Solution08Animation
+import fr.o80.mostwanted.solutions.Solution09Complex
+import fr.o80.mostwanted.solutions.Solution09UsePreview
+import fr.o80.mostwanted.solutions.Solution10TwoScreens
+import fr.o80.mostwanted.solutions.Solution11AnimationNavigation
 
 val exercises = listOf(
     ExerciseDef(
@@ -49,7 +49,7 @@ val exercises = listOf(
         explanation = { Explanation01() },
         file = "E01HelloWorld.kt",
         result = { E01HelloWorld() },
-        solution = { S01HelloWorld() }
+        solution = { Solution01HelloWorld() }
     ),
     ExerciseDef(
         id = 2,
@@ -57,7 +57,7 @@ val exercises = listOf(
         explanation = { Explanation02() },
         file = "E02Layout.kt",
         result = { E02Layout() },
-        solution = { S02Layout() }
+        solution = { Solution02Layout() }
     ),
     ExerciseDef(
         id = 3,
@@ -73,7 +73,7 @@ val exercises = listOf(
         explanation = { Explanation04() },
         file = "E04Preview.kt",
         result = { E04Preview() },
-        solution = { S04Preview() }
+        solution = { Solution04Preview() }
     ),
     ExerciseDef(
         id = 5,
@@ -81,7 +81,7 @@ val exercises = listOf(
         explanation = { Explanation05() },
         file = "E05to08Image.kt",
         result = { E05to08Image() },
-        solution = { S05Image() }
+        solution = { Solution05Image() }
     ),
     ExerciseDef(
         id = 6,
@@ -89,7 +89,7 @@ val exercises = listOf(
         explanation = { Explanation06() },
         file = "E05to08Image.kt",
         result = { E05to08Image() },
-        solution = { S06ClipCircle() }
+        solution = { Solution06ClipCircle() }
     ),
     ExerciseDef(
         id = 7,
@@ -97,7 +97,7 @@ val exercises = listOf(
         explanation = { Explanation07() },
         file = "E05to08Image.kt",
         result = { E05to08Image() },
-        solution = { S07Interactive() }
+        solution = { Solution07Interactive() }
     ),
     ExerciseDef(
         id = 8,
@@ -105,15 +105,15 @@ val exercises = listOf(
         explanation = { Explanation08() },
         file = "E05to08Image.kt",
         result = { E05to08Image() },
-        solution = { S08Animation() }
+        solution = { Solution08Animation() }
     ),
     ExerciseDef(
         id = 9,
         title = "Preview",
         explanation = { Explanation09() },
         file = "S09Image.kt",
-        result = { S09UsePreview() },
-        solution = { S09Complex() }
+        result = { Solution09UsePreview() },
+        solution = { Solution09Complex() }
     ),
     ExerciseDef(
         id = 10,
@@ -121,7 +121,7 @@ val exercises = listOf(
         explanation = { Explanation10() },
         file = "E10to11TwoScreens.kt",
         result = { E10to11TwoScreens() },
-        solution = { S10TwoScreens() }
+        solution = { Solution10TwoScreens() }
     ),
     ExerciseDef(
         id = 11,
@@ -129,7 +129,7 @@ val exercises = listOf(
         explanation = { Explanation11() },
         file = "E10to11TwoScreens.kt",
         result = { E10to11TwoScreens() },
-        solution = { S11AnimationNavigation() }
+        solution = { Solution11AnimationNavigation() }
     ),
 )
 

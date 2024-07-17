@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -28,7 +28,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.spikedCircleBackground
 
 @Composable
-fun S09Complex(modifier: Modifier = Modifier) {
+fun Solution09Complex(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier.height(64.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -56,7 +56,7 @@ fun S09Complex(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun S09UsePreview(modifier: Modifier = Modifier) {
+fun Solution09UsePreview(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -76,7 +76,7 @@ fun S09UsePreview(modifier: Modifier = Modifier) {
 @Composable
 private fun S09ComplexPreview() {
     PreviewTheme {
-        S09Complex()
+        Solution09Complex()
     }
 }
 
@@ -84,6 +84,6 @@ private fun S09ComplexPreview() {
 @Composable
 private fun S09UsePreviewPreview() {
     PreviewTheme {
-        S09UsePreview(Modifier.size(256.dp))
+        Solution09UsePreview(Modifier.size(256.dp))
     }
 }

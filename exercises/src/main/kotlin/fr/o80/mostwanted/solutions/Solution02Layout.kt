@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun S02Layout() {
+fun Solution02Layout() {
     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(
             text = "Prénom"
@@ -22,8 +22,8 @@ fun S02Layout() {
 
 @Preview
 @Composable
-private fun S02LayoutPreview() {
+private fun Solution02LayoutPreview() {
     PreviewTheme {
-        S02Layout()
+        Solution02Layout()
     }
 }
