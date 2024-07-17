@@ -19,7 +19,8 @@ fun Explanation11() {
                 l'exercice précédent et ajoutez-y un <b>AnimatedContent</b> :
             """
         )
-        Code("AnimatedContent(\n" +
+        Code(
+            "AnimatedContent(\n" +
                 "            targetState = currentPage,\n" +
                 "            label = \"Main-page\",\n" +
                 "            modifier = Modifier\n" +
@@ -29,7 +30,8 @@ fun Explanation11() {
                 "                fadeIn(animationSpec = tween(220, delayMillis = 90))\n" +
                 "                    .togetherWith(fadeOut(tween(90)))\n" +
                 "            }\n" +
-                "        ) {}")
+                "        ) {}"
+        )
         ExplanationText(
             """Félicitations, vous êtes maintenant un·e expert·e du 
                 <b>Renseignement Jetpack Compose</b> !

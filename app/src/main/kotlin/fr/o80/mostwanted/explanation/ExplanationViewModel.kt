@@ -3,10 +3,10 @@ package fr.o80.mostwanted.explanation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.o80.mostwanted.PARAM_EXERCISE
 import fr.o80.mostwanted.domain.GetExerciseByIdUseCase
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow

@@ -53,7 +53,8 @@ private fun ExerciseSketchupPreview() {
                         text = "Solution",
                         style = MaterialTheme.typography.displayMedium,
                         modifier = Modifier.rotate(-30f)
-                    ) }
+                    )
+                }
             ),
             modifier = Modifier.fillMaxSize()
         )

@@ -38,11 +38,13 @@ fun Explanation04() {
                 que vous souhaitez visualiser à l'intérieur :
                 """
         )
-        Code("@Preview\n" +
-                   "@Composable\n" +
-                   "private fun Preview() {\n" +
-                   "   Composable()\n" +
-                   "}")
+        Code(
+            "@Preview\n" +
+                "@Composable\n" +
+                "private fun Preview() {\n" +
+                "   Composable()\n" +
+                "}"
+        )
         ExplanationText(
             """Récupérez un Composable développé lors d'un exercice précédent
                  puis amusez-vous à l'afficher au sein de quelques Preview, en 
