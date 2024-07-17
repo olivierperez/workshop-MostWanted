@@ -23,12 +23,12 @@ import fr.o80.mostwanted.data.explanation.Explanation09
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import fr.o80.mostwanted.exercises.E01HelloWorld
-import fr.o80.mostwanted.exercises.E02Layout
-import fr.o80.mostwanted.exercises.E03Screen
-import fr.o80.mostwanted.exercises.E04Preview
-import fr.o80.mostwanted.exercises.E05to08Image
-import fr.o80.mostwanted.exercises.E10to11TwoScreens
+import fr.o80.mostwanted.exercises.Exercise01HelloWorld
+import fr.o80.mostwanted.exercises.Exercise02Layout
+import fr.o80.mostwanted.exercises.Exercise03Screen
+import fr.o80.mostwanted.exercises.Exercise04Preview
+import fr.o80.mostwanted.exercises.Exercise05to08Image
+import fr.o80.mostwanted.exercises.Exercise10to11TwoScreens
 import fr.o80.mostwanted.solutions.S03Screen
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution02Layout
@@ -47,71 +47,71 @@ val exercises = listOf(
         id = 1,
         title = "Première étape",
         explanation = { Explanation01() },
-        file = "E01HelloWorld.kt",
-        result = { E01HelloWorld() },
+        file = "Exercise01HelloWorld.kt",
+        result = { Exercise01HelloWorld() },
         solution = { Solution01HelloWorld() }
     ),
     ExerciseDef(
         id = 2,
         title = "Jouer sur la mise en page",
         explanation = { Explanation02() },
-        file = "E02Layout.kt",
-        result = { E02Layout() },
+        file = "Exercise02Layout.kt",
+        result = { Exercise02Layout() },
         solution = { Solution02Layout() }
     ),
     ExerciseDef(
         id = 3,
         title = "Créer un écran structuré",
         explanation = { Explanation03() },
-        file = "E03Screen.kt",
-        result = { E03Screen() },
+        file = "Exercise03Screen.kt",
+        result = { Exercise03Screen() },
         solution = { S03Screen() }
     ),
     ExerciseDef(
         id = 4,
         title = "Le système de Preview",
         explanation = { Explanation04() },
-        file = "E04Preview.kt",
-        result = { E04Preview() },
+        file = "Exercise04Preview.kt",
+        result = { Exercise04Preview() },
         solution = { Solution04Preview() }
     ),
     ExerciseDef(
         id = 5,
         title = "Gestion des images",
         explanation = { Explanation05() },
-        file = "E05to08Image.kt",
-        result = { E05to08Image() },
+        file = "Exercise05to08Image.kt",
+        result = { Exercise05to08Image() },
         solution = { Solution05Image() }
     ),
     ExerciseDef(
         id = 6,
         title = "Clip image",
         explanation = { Explanation06() },
-        file = "E05to08Image.kt",
-        result = { E05to08Image() },
+        file = "Exercise05to08Image.kt",
+        result = { Exercise05to08Image() },
         solution = { Solution06ClipCircle() }
     ),
     ExerciseDef(
         id = 7,
         title = "Interaction utilisateur",
         explanation = { Explanation07() },
-        file = "E05to08Image.kt",
-        result = { E05to08Image() },
+        file = "Exercise05to08Image.kt",
+        result = { Exercise05to08Image() },
         solution = { Solution07Interactive() }
     ),
     ExerciseDef(
         id = 8,
         title = "Animation",
         explanation = { Explanation08() },
-        file = "E05to08Image.kt",
-        result = { E05to08Image() },
+        file = "Exercise05to08Image.kt",
+        result = { Exercise05to08Image() },
         solution = { Solution08Animation() }
     ),
     ExerciseDef(
         id = 9,
         title = "Preview",
         explanation = { Explanation09() },
-        file = "S09Image.kt",
+        file = "Exercise09Image.kt",
         result = { Solution09UsePreview() },
         solution = { Solution09Complex() }
     ),
@@ -119,16 +119,16 @@ val exercises = listOf(
         id = 10,
         title = "Two screens",
         explanation = { Explanation10() },
-        file = "E10to11TwoScreens.kt",
-        result = { E10to11TwoScreens() },
+        file = "Exercise10to11TwoScreens.kt",
+        result = { Exercise10to11TwoScreens() },
         solution = { Solution10TwoScreens() }
     ),
     ExerciseDef(
         id = 11,
         title = "Animation navigation",
         explanation = { Explanation11() },
-        file = "E10to11TwoScreens.kt",
-        result = { E10to11TwoScreens() },
+        file = "Exercise10to11TwoScreens.kt",
+        result = { Exercise10to11TwoScreens() },
         solution = { Solution11AnimationNavigation() }
     ),
 )

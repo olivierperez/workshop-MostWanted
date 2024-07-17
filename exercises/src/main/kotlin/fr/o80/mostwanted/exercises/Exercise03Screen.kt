@@ -3,6 +3,6 @@ package fr.o80.mostwanted.exercises
 import androidx.compose.runtime.Composable
 
 @Composable
-fun E01HelloWorld() {
+fun Exercise03Screen() {
 
 }
