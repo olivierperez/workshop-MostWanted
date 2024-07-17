@@ -22,12 +22,12 @@ fun Explanation01() {
         ExplanationText(
             """Avec Jetpack Compose <b>tout est "Composable</b>" et un Composable
                         est <b>une fonction Kotlin</b> qui porte l'annotation @Composable.
-                        On peut le rendre configurable à l'aide de paramètres qu'on passe à lors de l'appel
+                        On peut le rendre configurable à l'aide de paramètres qu'on passe lors de l'appel
                         à cette fonction.
                 """
         )
         ExplanationText(
-            """Un des Composables les plus simples fournits par Jetpack Compose est
+            """Un des Composables les plus simples fournis par Jetpack Compose est
                         le <b>Text</b>. Pour commencer votre initiation, quoi de mieux que de faire
                         un magnifique Hello World ? Rendez-vous dans le fichier indiqué et ajoutez-y
                         le code suivant&nbsp;:

@@ -13,14 +13,18 @@ fun Explanation09() {
         Modifier.fillMaxSize()
     ) {
         ExplanationText(
-            """@Preview
+            """Vous êtes maintenant capable de créer un écran complexe 
+                interactif, félicitations ! Essayez maintenant de reproduire 
+                le contenu de la maquette, pour voir le résultat de votre 
+                code, utilisez les Preview.
                 """
         )
         ExplanationText(
-            """Todo
-                     <b>Composables de mise en page</b>.
+            """<i>Pour ajouter une icône, vous pouvez utiliser le Composable 
+                Icon, et donner l'icône que vous souhaitez à 
+                l'attribut imageVector. Nous aurons ici besoin de l'icône 
+                Icons.Default.Check.</i>
                 """
         )
-        Code("Text(\"Hello World!\")")
     }
 }

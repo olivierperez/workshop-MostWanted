@@ -5,7 +5,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -31,7 +30,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun S10TwoScreens(modifier: Modifier = Modifier) {
+fun S11AnimationNavigation(modifier: Modifier = Modifier) {
     var currentPage by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -52,12 +51,18 @@ fun S10TwoScreens(modifier: Modifier = Modifier) {
             }
         }
     ) { paddingValues ->
-        Box(
+        AnimatedContent(
+            targetState = currentPage,
+            label = "Main-page",
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues),
-        ) {
-            when (currentPage) {
+            transitionSpec = {
+                fadeIn(animationSpec = tween(220, delayMillis = 90))
+                    .togetherWith(fadeOut(tween(90)))
+            }
+        ) { page ->
+            when (page) {
                 0 -> Home()
                 1 -> Info()
             }
@@ -91,8 +96,8 @@ private fun Info(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun S10TwoScreensPreview() {
+private fun S11AnimationNavigationPreview() {
     PreviewTheme {
-        S10TwoScreens()
+        S11AnimationNavigation()
     }
 }
