@@ -1,15 +1,13 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -17,7 +15,7 @@ import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun S06ClipCircle(
+fun Solution05Image(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -27,9 +25,7 @@ fun S06ClipCircle(
     ) {
         Image(
             painter = painterResource(R.drawable.avatar),
-            contentDescription = "Most Wanted Avatar",
-            modifier = Modifier
-                .clip(CircleShape)
+            contentDescription = "Most Wanted Avatar"
         )
         PersonName("Olivier", "Gnu", "PEREZ")
     }
@@ -54,8 +50,8 @@ private fun PersonName(
 
 @Preview
 @Composable
-private fun S06ClipCirclePreview() {
+private fun Solution05ImagePreview() {
     PreviewTheme {
-        S06ClipCircle()
+        Solution05Image()
     }
 }

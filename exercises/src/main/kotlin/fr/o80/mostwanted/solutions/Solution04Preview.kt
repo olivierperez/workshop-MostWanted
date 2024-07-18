@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,19 +15,19 @@ import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.spikedCircleBackground
 
 @Composable
-fun S04Preview(
+fun Solution04Preview(
     modifier: Modifier = Modifier
 ) {
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        S04UsePreview()
+        Solution04UsePreview()
     }
 }
 
 @Composable
-fun S04UsePreview(modifier: Modifier = Modifier) {
+fun Solution04UsePreview(modifier: Modifier = Modifier) {
     Text(
         text = "Use @Preview\nto see\nyour result\nin the IDE",
         textAlign = TextAlign.Center,
@@ -40,24 +40,24 @@ fun S04UsePreview(modifier: Modifier = Modifier) {
 
 @Preview(device = Devices.PHONE)
 @Composable
-private fun S04PreviewPreview1() {
+private fun Solution04PreviewPreview1() {
     PreviewTheme {
-        S04Preview()
+        Solution04Preview()
     }
 }
 
 @Preview(device = Devices.TABLET)
 @Composable
-private fun S04PreviewPreview2() {
+private fun Solution04PreviewPreview2() {
     PreviewTheme {
-        S04Preview()
+        Solution04Preview()
     }
 }
 
 @Preview(showSystemUi = true)
 @Composable
-private fun S04PreviewPreview3() {
+private fun Solution04PreviewPreview3() {
     PreviewTheme {
-        S04Preview()
+        Solution04Preview()
     }
 }

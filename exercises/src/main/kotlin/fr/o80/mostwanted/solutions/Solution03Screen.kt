@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

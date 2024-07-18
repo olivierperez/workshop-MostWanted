@@ -1,17 +1,11 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -29,9 +23,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.internals.PreviewTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun S10TwoScreens(modifier: Modifier = Modifier) {
+fun Solution10TwoScreens(modifier: Modifier = Modifier) {
     var currentPage by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -91,8 +84,8 @@ private fun Info(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun S10TwoScreensPreview() {
+private fun Solution10TwoScreensPreview() {
     PreviewTheme {
-        S10TwoScreens()
+        Solution10TwoScreens()
     }
 }

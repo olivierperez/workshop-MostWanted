@@ -32,9 +32,11 @@ fun Explanation10() {
                 <b>NavigationBarItem</b>.
                 """
         )
-        Code("NavigationBar {\n" +
+        Code(
+            "NavigationBar {\n" +
                 "                NavigationBarItem()\n" +
-                "}")
+                "}"
+        )
         ExplanationText(
             """Vous pouvez créer une variable à la racine de la fonction de 
                 l'exercice pour vous permettre de stocker la page sur 
@@ -42,8 +44,10 @@ fun Explanation10() {
                 pourrez l'utiliser dans vos <b>NavigationBarItem</b> :
             """
         )
-        Code("selected = currentPage == 0,\n" +
-                "onClick = { currentPage = 0 },")
+        Code(
+            "selected = currentPage == 0,\n" +
+                "onClick = { currentPage = 0 },"
+        )
         ExplanationText(
             """Le contenu de chaque écran sera conditionné par la valeur de 
                 la variable <b>currentPage</b>. Pour cela, vous pouvez 
@@ -52,10 +56,12 @@ fun Explanation10() {
                  afficher son contenu :
             """
         )
-        Code("when (currentPage) {\n" +
+        Code(
+            "when (currentPage) {\n" +
                 "                0 -> Home()\n" +
                 "                1 -> Info()\n" +
-                "            }")
+                "            }"
+        )
         ExplanationText(
             """Il vous reste maintenant à créer le contenu des deux écrans 
                 dans les deux nouveaux Composables <b>Home()</b> et <b>Info()</b>.

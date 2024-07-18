@@ -29,11 +29,13 @@ fun Explanation05() {
                 comme ceci :
                 """
         )
-        Code("Image(\n" +
+        Code(
+            "Image(\n" +
                 "            painter = painterResource(\"source de l'image\")" +
                 ",\n" +
                 "        )" +
-                "")
+                ""
+        )
         ExplanationText(
             """Essayez maintenant d'afficher l'avatar présent dans les 
                 ressources de l'application, dont la source est <b>R.drawable.avatar<b/>.

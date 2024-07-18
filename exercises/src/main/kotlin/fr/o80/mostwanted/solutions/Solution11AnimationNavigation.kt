@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solution
+package fr.o80.mostwanted.solutions
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -28,9 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.internals.PreviewTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun S11AnimationNavigation(modifier: Modifier = Modifier) {
+fun Solution11AnimationNavigation(modifier: Modifier = Modifier) {
     var currentPage by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -96,8 +94,8 @@ private fun Info(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun S11AnimationNavigationPreview() {
+private fun Solution11AnimationNavigationPreview() {
     PreviewTheme {
-        S11AnimationNavigation()
+        Solution11AnimationNavigation()
     }
 }

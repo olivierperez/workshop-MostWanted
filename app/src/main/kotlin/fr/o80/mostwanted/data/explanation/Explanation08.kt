@@ -42,10 +42,12 @@ fun Explanation08() {
                 <b>visible</b> de notre AnimatedVisibility :
         """
         )
-        Code("AnimatedVisibility(\n" +
+        Code(
+            "AnimatedVisibility(\n" +
                 "            visible = activate,\n" +
                 "            label = \"Name visibility\",\n" +
-                ")")
+                ")"
+        )
         ExplanationText(
             """<i>Note : Vous pouvez modifier l'apparence des transitions de 
                 l'animation grâce aux propriétés <b>enter</b> et <b>exit</b>.</i>
