@@ -1,7 +1,12 @@
 package fr.o80.mostwanted
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.NavType
@@ -13,21 +18,39 @@ import fr.o80.mostwanted.detail.ExerciseDetailRoute
 import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.exercises.ExercisesListRoute
 import fr.o80.mostwanted.explanation.ExplanationRoute
+import fr.o80.mostwanted.home.HomeRoute
+import fr.o80.mostwanted.home.HomeViewModel
 
 const val PARAM_EXERCISE = "exerciseId"
 const val PARAM_PAGE = "page"
 
+private const val ROUTE_HOME = "home"
 private const val ROUTE_EXERCISES = "exercises-list"
 private const val ROUTE_EXPLANATION = "exercises-explanation/{$PARAM_EXERCISE}"
 private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAGE}"
 
-@androidx.compose.runtime.Composable
+@Composable
 fun MostWanted() {
     val navController = rememberNavController()
+    val viewModel = hiltViewModel<NavigationViewModel>()
+    val settings by viewModel.settings.collectAsStateWithLifecycle()
+
     NavHost(
         navController = navController,
-        startDestination = ROUTE_EXERCISES
+        startDestination = if (settings == null) {
+            ROUTE_HOME
+        } else {
+            ROUTE_EXERCISES
+        }
     ) {
+        composable(route = ROUTE_HOME) {
+            HomeRoute(
+                goToExercises = {
+                    navController.navigate(ROUTE_EXERCISES)
+                },
+                modifier = Modifier.fillMaxSize()
+            )
+        }
         composable(route = ROUTE_EXERCISES) {
             ExercisesListRoute(
                 goToExplanation = { exerciseId ->

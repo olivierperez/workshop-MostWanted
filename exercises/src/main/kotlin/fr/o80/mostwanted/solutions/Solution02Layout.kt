@@ -9,13 +9,16 @@ import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun Solution02Layout() {
+fun Solution02Layout(
+    firstName: String,
+    lastName: String,
+) {
     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(
-            text = "Prénom"
+            text = firstName
         )
         Text(
-            text = "Nom"
+            text = lastName
         )
     }
 }
@@ -24,6 +27,9 @@ fun Solution02Layout() {
 @Composable
 private fun Solution02LayoutPreview() {
     PreviewTheme {
-        Solution02Layout()
+        Solution02Layout(
+            firstName = "John",
+            lastName = "Doe"
+        )
     }
 }
