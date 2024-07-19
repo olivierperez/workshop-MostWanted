@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -11,12 +12,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.domain.model.Avatar
 
 @Composable
 fun Solution05Image(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    firstName: String,
+    lastName: String,
+    avatar: String
 ) {
     Column(
         modifier = modifier,
@@ -24,17 +28,16 @@ fun Solution05Image(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Image(
-            painter = painterResource(R.drawable.avatar),
-            contentDescription = "Most Wanted Avatar"
+            painter = painterResource(Avatar.valueOf(avatar).drawable),
+            contentDescription = "Avatar",
         )
-        PersonName("Olivier", "Gnu", "PEREZ")
+        PersonName(firstName, lastName)
     }
 }
 
 @Composable
 private fun PersonName(
     firstName: String,
-    middleName: String,
     lastName: String,
     modifier: Modifier = Modifier
 ) {
@@ -43,7 +46,6 @@ private fun PersonName(
         horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Text(text = firstName)
-        Text(text = middleName)
         Text(text = lastName)
     }
 }
@@ -52,6 +54,10 @@ private fun PersonName(
 @Composable
 private fun Solution05ImagePreview() {
     PreviewTheme {
-        Solution05Image()
+        Solution05Image(
+            firstName = "John",
+            lastName = "Doe",
+            avatar = Avatar.RED.name
+        )
     }
 }

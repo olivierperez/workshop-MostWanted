@@ -8,18 +8,23 @@ import fr.o80.mostwanted.PARAM_EXERCISE
 import fr.o80.mostwanted.PARAM_PAGE
 import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.domain.GetExerciseByIdUseCase
+import fr.o80.mostwanted.domain.GetSettingsUseCase
 import fr.o80.mostwanted.domain.MarkSketchupAsSeenUseCase
 import fr.o80.mostwanted.domain.model.ExerciseDef
+import fr.o80.mostwanted.domain.model.Settings
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ExerciseDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     getExerciseById: GetExerciseByIdUseCase,
-    markSketchupAsSeen: MarkSketchupAsSeenUseCase
+    markSketchupAsSeen: MarkSketchupAsSeenUseCase,
+    private val getSettingsUseCase: GetSettingsUseCase
 ) : ViewModel() {
 
     private val exerciseId: Int = savedStateHandle[PARAM_EXERCISE]
@@ -29,11 +34,9 @@ class ExerciseDetailViewModel @Inject constructor(
         ?.let { DetailPage.valueOf(it) }
         ?: DetailPage.Result
 
-    private val _state = flowOf(
-        getExerciseById(exerciseId)
-            ?.let { exerciseDef -> ExerciseDetailUiState.Loaded(exerciseDef, page) }
-            ?: ExerciseDetailUiState.Error
-    )
+    private val _state =
+        MutableStateFlow<ExerciseDetailUiState>(ExerciseDetailUiState.Loading)
+
     val state = _state.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5_000),
@@ -42,14 +45,33 @@ class ExerciseDetailViewModel @Inject constructor(
 
     init {
         markSketchupAsSeen(exerciseId)
+        viewModelScope.launch {
+            val settings = getSettingsUseCase()
+            val exerciseDef = getExerciseById(exerciseId)
+
+            if (settings != null && exerciseDef != null) {
+                _state.update {
+                    ExerciseDetailUiState.Loaded(
+                        exerciseDef,
+                        page,
+                        settings
+                    )
+                }
+            } else {
+                _state.update {
+                    ExerciseDetailUiState.Error
+                }
+            }
+        }
     }
 }
 
 sealed interface ExerciseDetailUiState {
-    object Loading : ExerciseDetailUiState
-    object Error : ExerciseDetailUiState
+    data object Loading : ExerciseDetailUiState
+    data object Error : ExerciseDetailUiState
     data class Loaded(
         val exerciseDef: ExerciseDef,
-        val page: DetailPage
+        val page: DetailPage,
+        val settings: Settings
     ) : ExerciseDetailUiState
 }

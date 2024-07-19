@@ -57,7 +57,7 @@ val exercises = listOf(
         explanation = { Explanation02() },
         file = "Exercise02Layout.kt",
         result = { Exercise02Layout() },
-        solution = { Solution02Layout() }
+        solution = { settings -> Solution02Layout(settings.firstName, settings.lastName) }
     ),
     ExerciseDef(
         id = 3,
@@ -65,7 +65,7 @@ val exercises = listOf(
         explanation = { Explanation03() },
         file = "Exercise03Screen.kt",
         result = { Exercise03Screen() },
-        solution = { S03Screen() }
+        solution = { settings -> S03Screen(settings.firstName, settings.lastName) }
     ),
     ExerciseDef(
         id = 4,
@@ -81,7 +81,12 @@ val exercises = listOf(
         explanation = { Explanation05() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { Solution05Image() }
+        solution = { settings -> Solution05Image(
+            firstName = settings.firstName,
+            lastName = settings.lastName,
+            avatar = settings.avatar
+            )
+        }
     ),
     ExerciseDef(
         id = 6,
@@ -89,7 +94,11 @@ val exercises = listOf(
         explanation = { Explanation06() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { Solution06ClipCircle() }
+        solution = { settings -> Solution06ClipCircle(
+            firstName = settings.firstName,
+            lastName = settings.lastName,
+            avatar = settings.avatar
+        ) }
     ),
     ExerciseDef(
         id = 7,
@@ -97,7 +106,11 @@ val exercises = listOf(
         explanation = { Explanation07() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { Solution07Interactive() }
+        solution = { settings -> Solution07Interactive(
+            firstName = settings.firstName,
+            lastName = settings.lastName,
+            avatar = settings.avatar
+        ) }
     ),
     ExerciseDef(
         id = 8,
@@ -105,7 +118,11 @@ val exercises = listOf(
         explanation = { Explanation08() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { Solution08Animation() }
+        solution = { settings -> Solution08Animation(
+            firstName = settings.firstName,
+            lastName = settings.lastName,
+            avatar = settings.avatar
+        ) }
     ),
     ExerciseDef(
         id = 9,
@@ -113,7 +130,11 @@ val exercises = listOf(
         explanation = { Explanation09() },
         file = "Exercise09Image.kt",
         result = { Solution09UsePreview() },
-        solution = { Solution09Complex() }
+        solution = { settings -> Solution09Complex(
+            firstName = settings.firstName,
+            lastName = settings.lastName,
+            avatar = settings.avatar
+        ) }
     ),
     ExerciseDef(
         id = 10,

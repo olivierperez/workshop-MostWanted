@@ -12,12 +12,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.detail.component.organism.ResultFrame
+import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
+import fr.o80.mostwanted.domain.model.Settings
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 
 @Composable
 fun ExerciseSketchup(
     exerciseDef: ExerciseDef,
+    settings: Settings,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -26,7 +29,7 @@ fun ExerciseSketchup(
         ResultFrame(
             modifier = Modifier.padding(16.dp)
         ) {
-            exerciseDef.solution()
+            exerciseDef.solution(settings)
         }
     }
 }
@@ -56,6 +59,7 @@ private fun ExerciseSketchupPreview() {
                     )
                 }
             ),
+            settings = Settings("John", "Doe", Avatar.RED.name),
             modifier = Modifier.fillMaxSize()
         )
     }

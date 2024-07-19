@@ -30,9 +30,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.domain.model.Avatar
 
 @Composable
 fun Solution08Animation(
+    firstName: String,
+    lastName: String,
+    avatar: String,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -49,7 +53,7 @@ fun Solution08Animation(
             modifier = Modifier.padding(bottom = 8.dp)
         )
         Image(
-            painter = painterResource(R.drawable.avatar),
+            painter = painterResource(Avatar.valueOf(avatar).drawable),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .padding(bottom = 8.dp)
@@ -62,7 +66,7 @@ fun Solution08Animation(
             enter = fadeIn() + expandIn(expandFrom = Alignment.Center),
             exit = fadeOut() + shrinkOut(shrinkTowards = Alignment.Center),
         ) {
-            PersonName("Olivier", "Gnu", "PEREZ")
+            PersonName(firstName, lastName)
         }
     }
 }
@@ -70,7 +74,6 @@ fun Solution08Animation(
 @Composable
 private fun PersonName(
     firstName: String,
-    middleName: String,
     lastName: String,
     modifier: Modifier = Modifier
 ) {
@@ -79,7 +82,6 @@ private fun PersonName(
         horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Text(text = firstName)
-        Text(text = middleName)
         Text(text = lastName)
     }
 }
@@ -102,6 +104,10 @@ private fun ClickMyPictureText(
 @Composable
 private fun Solution08AnimationPreview() {
     PreviewTheme {
-        Solution07Interactive()
+        Solution07Interactive(
+            firstName = "John",
+            lastName = "Doe",
+            avatar = Avatar.RED.name
+        )
     }
 }
