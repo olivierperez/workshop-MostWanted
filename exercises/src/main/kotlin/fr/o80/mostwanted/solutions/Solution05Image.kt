@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,7 +19,7 @@ fun Solution05Image(
     modifier: Modifier = Modifier,
     firstName: String,
     lastName: String,
-    avatar: String
+    avatar: Avatar
 ) {
     Column(
         modifier = modifier,
@@ -28,7 +27,7 @@ fun Solution05Image(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Image(
-            painter = painterResource(Avatar.valueOf(avatar).drawable),
+            painter = painterResource(avatar.drawable),
             contentDescription = "Avatar",
         )
         PersonName(firstName, lastName)
@@ -57,7 +56,7 @@ private fun Solution05ImagePreview() {
         Solution05Image(
             firstName = "John",
             lastName = "Doe",
-            avatar = Avatar.RED.name
+            avatar = Avatar.RED
         )
     }
 }

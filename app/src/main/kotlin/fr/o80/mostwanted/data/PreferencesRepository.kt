@@ -32,7 +32,7 @@ class PreferencesRepository @Inject constructor(
                 Settings(
                     preferences[FIRST_NAME]!!,
                     preferences[LAST_NAME]!!,
-                    preferences[AVATAR]!!
+                    Avatar.valueOf(preferences[AVATAR]!!)
                 )
             } else {
                 null
@@ -43,7 +43,7 @@ class PreferencesRepository @Inject constructor(
         context.dataStore.edit { preferences ->
             preferences[FIRST_NAME] = settings.firstName
             preferences[LAST_NAME] = settings.lastName
-            preferences[AVATAR] = settings.avatar
+            preferences[AVATAR] = settings.avatar.name
         }
     }
 }

@@ -22,6 +22,7 @@ import fr.o80.mostwanted.data.explanation.Explanation08
 import fr.o80.mostwanted.data.explanation.Explanation09
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
+import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.Exercise01HelloWorld
 import fr.o80.mostwanted.exercises.Exercise02Layout
@@ -41,6 +42,7 @@ import fr.o80.mostwanted.solutions.Solution09Complex
 import fr.o80.mostwanted.solutions.Solution09UsePreview
 import fr.o80.mostwanted.solutions.Solution10TwoScreens
 import fr.o80.mostwanted.solutions.Solution11AnimationNavigation
+import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
     ExerciseDef(
@@ -81,10 +83,11 @@ val exercises = listOf(
         explanation = { Explanation05() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { settings -> Solution05Image(
-            firstName = settings.firstName,
-            lastName = settings.lastName,
-            avatar = settings.avatar
+        solution = { settings ->
+            Solution05Image(
+                firstName = settings.firstName,
+                lastName = settings.lastName,
+                avatar = settings.avatar.toExercise()
             )
         }
     ),
@@ -94,11 +97,13 @@ val exercises = listOf(
         explanation = { Explanation06() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { settings -> Solution06ClipCircle(
-            firstName = settings.firstName,
-            lastName = settings.lastName,
-            avatar = settings.avatar
-        ) }
+        solution = { settings ->
+            Solution06ClipCircle(
+                firstName = settings.firstName,
+                lastName = settings.lastName,
+                avatar = settings.avatar.toExercise()
+            )
+        }
     ),
     ExerciseDef(
         id = 7,
@@ -106,11 +111,13 @@ val exercises = listOf(
         explanation = { Explanation07() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { settings -> Solution07Interactive(
-            firstName = settings.firstName,
-            lastName = settings.lastName,
-            avatar = settings.avatar
-        ) }
+        solution = { settings ->
+            Solution07Interactive(
+                firstName = settings.firstName,
+                lastName = settings.lastName,
+                avatar = settings.avatar.toExercise()
+            )
+        }
     ),
     ExerciseDef(
         id = 8,
@@ -118,11 +125,13 @@ val exercises = listOf(
         explanation = { Explanation08() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
-        solution = { settings -> Solution08Animation(
-            firstName = settings.firstName,
-            lastName = settings.lastName,
-            avatar = settings.avatar
-        ) }
+        solution = { settings ->
+            Solution08Animation(
+                firstName = settings.firstName,
+                lastName = settings.lastName,
+                avatar = settings.avatar.toExercise()
+            )
+        }
     ),
     ExerciseDef(
         id = 9,
@@ -130,11 +139,13 @@ val exercises = listOf(
         explanation = { Explanation09() },
         file = "Exercise09Image.kt",
         result = { Solution09UsePreview() },
-        solution = { settings -> Solution09Complex(
-            firstName = settings.firstName,
-            lastName = settings.lastName,
-            avatar = settings.avatar
-        ) }
+        solution = { settings ->
+            Solution09Complex(
+                firstName = settings.firstName,
+                lastName = settings.lastName,
+                avatar = settings.avatar.toExercise()
+            )
+        }
     ),
     ExerciseDef(
         id = 10,
@@ -153,6 +164,12 @@ val exercises = listOf(
         solution = { Solution11AnimationNavigation() }
     ),
 )
+
+private fun Avatar.toExercise(): AvatarFromExercises = when (this) {
+    Avatar.RED -> AvatarFromExercises.RED
+    Avatar.BLUE -> AvatarFromExercises.BLUE
+    Avatar.ORANGE -> AvatarFromExercises.ORANGE
+}
 
 @Composable
 fun ExplanationText(text: String) {

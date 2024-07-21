@@ -6,7 +6,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.NavType
@@ -19,13 +18,13 @@ import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.exercises.ExercisesListRoute
 import fr.o80.mostwanted.explanation.ExplanationRoute
 import fr.o80.mostwanted.home.HomeRoute
-import fr.o80.mostwanted.home.HomeViewModel
 
 const val PARAM_EXERCISE = "exerciseId"
 const val PARAM_PAGE = "page"
 
 private const val ROUTE_HOME = "home"
 private const val ROUTE_EXERCISES = "exercises-list"
+private const val ROUTE_LOADING = "loading"
 private const val ROUTE_EXPLANATION = "exercises-explanation/{$PARAM_EXERCISE}"
 private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAGE}"
 
@@ -33,16 +32,19 @@ private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAG
 fun MostWanted() {
     val navController = rememberNavController()
     val viewModel = hiltViewModel<NavigationViewModel>()
-    val settings by viewModel.settings.collectAsStateWithLifecycle()
+    val startPage by viewModel.startPage.collectAsStateWithLifecycle()
 
     NavHost(
         navController = navController,
-        startDestination = if (settings == null) {
-            ROUTE_HOME
-        } else {
-            ROUTE_EXERCISES
+        startDestination = when (startPage) {
+            StartPage.HOME -> ROUTE_HOME
+            StartPage.EXERCISES -> ROUTE_EXERCISES
+            null -> ROUTE_LOADING
         }
     ) {
+        composable(ROUTE_LOADING) {
+            // Empty
+        }
         composable(route = ROUTE_HOME) {
             HomeRoute(
                 goToExercises = {

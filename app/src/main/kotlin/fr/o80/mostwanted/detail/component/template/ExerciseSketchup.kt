@@ -59,7 +59,7 @@ private fun ExerciseSketchupPreview() {
                     )
                 }
             ),
-            settings = Settings("John", "Doe", Avatar.RED.name),
+            settings = Settings("John", "Doe", Avatar.RED),
             modifier = Modifier.fillMaxSize()
         )
     }

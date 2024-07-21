@@ -117,7 +117,7 @@ fun ExerciseDetailLoadedPreview() {
                 solution = {}
             ),
             page = DetailPage.Result,
-            settings = Settings("John", "Doe", Avatar.RED.name),
+            settings = Settings("John", "Doe", Avatar.RED),
             goBack = {},
             modifier = Modifier.fillMaxSize()
         )

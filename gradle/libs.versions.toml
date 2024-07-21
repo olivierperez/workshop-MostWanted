@@ -15,8 +15,6 @@ agp = "8.5.1"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.23"
 hilt = "2.51.1"
-datastoreCoreAndroid = "1.1.1"
-datastoreCoreJvm = "1.1.1"
 
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }

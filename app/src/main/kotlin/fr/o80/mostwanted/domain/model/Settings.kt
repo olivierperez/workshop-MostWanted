@@ -5,7 +5,7 @@ import fr.o80.mostwanted.R
 data class Settings(
     val firstName: String,
     val lastName: String,
-    val avatar: String
+    val avatar: Avatar
 )
 
 enum class Avatar(val drawable: Int) {

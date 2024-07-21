@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.o80.mostwanted.domain.GetSettingsUseCase
-import fr.o80.mostwanted.domain.model.Settings
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
@@ -17,9 +16,9 @@ class NavigationViewModel @Inject constructor(
     private val getSettingsUseCase: GetSettingsUseCase
 ) : ViewModel() {
 
-    private val _settings = MutableStateFlow<Settings?>(null)
+    private val _startPage = MutableStateFlow<StartPage?>(null)
 
-    val settings = _settings.stateIn(
+    val startPage = _startPage.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5_000),
         initialValue = null
@@ -28,9 +27,18 @@ class NavigationViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val settings = getSettingsUseCase()
-            _settings.update {
-                settings
+            _startPage.update {
+                if (settings == null) {
+                    StartPage.HOME
+                } else {
+                    StartPage.EXERCISES
+                }
             }
         }
     }
+}
+
+enum class StartPage {
+    HOME,
+    EXERCISES
 }

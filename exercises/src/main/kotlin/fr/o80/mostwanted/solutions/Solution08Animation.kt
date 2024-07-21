@@ -28,7 +28,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.domain.model.Avatar
 
@@ -36,7 +35,7 @@ import fr.o80.mostwanted.internals.domain.model.Avatar
 fun Solution08Animation(
     firstName: String,
     lastName: String,
-    avatar: String,
+    avatar: Avatar,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -53,7 +52,7 @@ fun Solution08Animation(
             modifier = Modifier.padding(bottom = 8.dp)
         )
         Image(
-            painter = painterResource(Avatar.valueOf(avatar).drawable),
+            painter = painterResource(avatar.drawable),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .padding(bottom = 8.dp)
@@ -107,7 +106,7 @@ private fun Solution08AnimationPreview() {
         Solution07Interactive(
             firstName = "John",
             lastName = "Doe",
-            avatar = Avatar.RED.name
+            avatar = Avatar.RED
         )
     }
 }
