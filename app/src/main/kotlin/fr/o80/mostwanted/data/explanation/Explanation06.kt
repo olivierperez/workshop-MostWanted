@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
 
 @Composable
@@ -29,7 +28,6 @@ fun Explanation06() {
                 lui attribuant un clip de type <b>CircleShape</b>
                 """
         )
-        Code("modifier = Modifier.clip(CircleShape)")
         ExplanationText(
             """Comme vous pouvez le constater, vous pouvez attribuer ce 
                 comportement à un modifier. Vous pouvez donc arrondir les bords

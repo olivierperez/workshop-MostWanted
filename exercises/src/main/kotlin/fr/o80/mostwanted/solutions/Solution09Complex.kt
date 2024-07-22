@@ -23,19 +23,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.domain.model.Avatar
 import fr.o80.mostwanted.internals.spikedCircleBackground
 
 @Composable
-fun Solution09Complex(modifier: Modifier = Modifier) {
+fun Solution09Complex(
+    firstName: String,
+    lastName: String,
+    avatar: Avatar,
+    modifier: Modifier = Modifier
+) {
     Row(
         modifier = modifier.height(64.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Image(
-            painter = painterResource(R.drawable.avatar),
+            painter = painterResource(avatar.drawable),
             contentDescription = "Avatar"
         )
         Column(
@@ -44,14 +49,29 @@ fun Solution09Complex(modifier: Modifier = Modifier) {
                 .fillMaxHeight(),
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text("Audrey Gentili")
-            Text("Olivier Perez")
+            PersonName(firstName, lastName)
+            Text("Special Agent")
         }
         Icon(
             imageVector = Icons.Default.Check,
             contentDescription = "Check",
             modifier = Modifier.padding(16.dp)
         )
+    }
+}
+
+@Composable
+private fun PersonName(
+    firstName: String,
+    lastName: String,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Text(text = firstName)
+        Text(text = lastName)
     }
 }
 
@@ -76,7 +96,11 @@ fun Solution09UsePreview(modifier: Modifier = Modifier) {
 @Composable
 private fun S09ComplexPreview() {
     PreviewTheme {
-        Solution09Complex()
+        Solution09Complex(
+            firstName = "John",
+            lastName = "Doe",
+            avatar = Avatar.RED
+        )
     }
 }
 

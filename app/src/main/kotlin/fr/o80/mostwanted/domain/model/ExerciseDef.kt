@@ -8,5 +8,5 @@ data class ExerciseDef(
     val file: String,
     val explanation: @Composable () -> Unit,
     val result: @Composable () -> Unit,
-    val solution: @Composable () -> Unit,
+    val solution: @Composable (Settings) -> Unit,
 )

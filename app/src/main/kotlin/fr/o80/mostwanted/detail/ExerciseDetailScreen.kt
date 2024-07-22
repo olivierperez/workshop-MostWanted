@@ -20,6 +20,7 @@ fun ExerciseDetailScreen(
         is ExerciseDetailUiState.Loaded -> ExerciseDetailLoaded(
             exerciseDef = state.exerciseDef,
             page = state.page,
+            settings = state.settings,
             goBack = goBack,
             modifier = modifier
         )

@@ -21,11 +21,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.exercises.R
 import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.internals.domain.model.Avatar
 
 @Composable
 fun Solution07Interactive(
+    firstName: String,
+    lastName: String,
+    avatar: Avatar,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -37,20 +40,19 @@ fun Solution07Interactive(
 
         ClickMyPictureText()
         Image(
-            painter = painterResource(R.drawable.avatar),
+            painter = painterResource(avatar.drawable),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .clip(RoundedCornerShape(corner))
                 .clickable { corner = 50 - corner }
         )
-        PersonName("Olivier", "Gnu", "PEREZ")
+        PersonName(firstName, lastName)
     }
 }
 
 @Composable
 private fun PersonName(
     firstName: String,
-    middleName: String,
     lastName: String,
     modifier: Modifier = Modifier
 ) {
@@ -59,7 +61,6 @@ private fun PersonName(
         horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Text(text = firstName)
-        Text(text = middleName)
         Text(text = lastName)
     }
 }
@@ -82,6 +83,10 @@ private fun ClickMyPictureText(
 @Composable
 private fun Solution07InteractivePreview() {
     PreviewTheme {
-        Solution07Interactive()
+        Solution07Interactive(
+            firstName = "John",
+            lastName = "Doe",
+            avatar = Avatar.RED
+        )
     }
 }

@@ -37,8 +37,13 @@ fun Explanation05() {
                 ""
         )
         ExplanationText(
-            """Essayez maintenant d'afficher l'avatar présent dans les 
-                ressources de l'application, dont la source est <b>R.drawable.avatar<b/>.
+            """Essayez maintenant d'afficher votre avatar, présent dans les 
+                ressources de l'application. Vous pouvez y accéder grâce à <b>R.drawable<b/>.
+                """
+        )
+        ExplanationText(
+            """Modifiez sa taille grâce à l'attribut size du <b>modifier</b> 
+                du Composable. Attribuez-lui la valeur <i>120.dp</i>.
                 """
         )
         ExplanationText(

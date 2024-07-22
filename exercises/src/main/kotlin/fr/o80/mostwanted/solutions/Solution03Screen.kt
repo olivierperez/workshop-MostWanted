@@ -22,18 +22,21 @@ import fr.o80.mostwanted.internals.PreviewTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun S03Screen() {
+fun S03Screen(
+    firstName: String,
+    lastName: String,
+) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(text = "Wanted People")
+                    Text(text = "Agent Badge")
                 }
             )
         },
         bottomBar = {
             Text(
-                text = "Dead or Alive",
+                text = "CIA",
                 style = MaterialTheme.typography.labelMedium
             )
         }
@@ -49,12 +52,12 @@ fun S03Screen() {
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = "Audrey")
+                Text(text = firstName)
                 Icon(Icons.Default.Star, contentDescription = null)
-                Text(text = "Olivier")
+                Text(text = lastName)
             }
             Text(
-                text = "Développeurs"
+                text = "Special Agent"
             )
         }
     }
@@ -64,6 +67,9 @@ fun S03Screen() {
 @Composable
 private fun S03ScreenPreview() {
     PreviewTheme {
-        S03Screen()
+        S03Screen(
+            firstName = "John",
+            lastName = "Doe"
+        )
     }
 }

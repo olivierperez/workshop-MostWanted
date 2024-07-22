@@ -22,8 +22,8 @@ fun Explanation03() {
         ExplanationText(
             """En Jetpack Compose, il est possible de créer cette 
                     structure grâce au Composable <b>Scaffold</b>. Le but ici
-                    est de l'utiliser pour afficher le titre <i>Wanted People</i>,
-                    et pour préciser <i>Dead or alive</i> en bas de page.
+                    est de l'utiliser pour afficher le titre <i>Agent Badge</i>,
+                    et pour préciser <i>CIA</i> en bas de page.
                 """
         )
         ExplanationText(
@@ -34,7 +34,7 @@ fun Explanation03() {
         Code(
             """|CenterAlignedTopAppBar(
                    |    title = {
-                   |        Text(text = "Wanted People")
+                   |        Text(text = "Agent Badge")
                    |    }
                    |)""".trimMargin()
         )

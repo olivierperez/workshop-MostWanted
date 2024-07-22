@@ -23,7 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
+import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
+import fr.o80.mostwanted.domain.model.Settings
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 import kotlinx.coroutines.launch
 
@@ -32,6 +34,7 @@ import kotlinx.coroutines.launch
 fun ExerciseDetailLoaded(
     exerciseDef: ExerciseDef,
     page: DetailPage,
+    settings: Settings,
     goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -73,7 +76,11 @@ fun ExerciseDetailLoaded(
         HorizontalPager(state = pagerState) { page ->
             when (page) {
                 0 -> ExerciseResult(exerciseDef = exerciseDef, modifier = Modifier.fillMaxSize())
-                1 -> ExerciseSketchup(exerciseDef = exerciseDef, modifier = Modifier.fillMaxSize())
+                1 -> ExerciseSketchup(
+                    exerciseDef = exerciseDef,
+                    settings = settings,
+                    modifier = Modifier.fillMaxSize()
+                )
             }
         }
     }
@@ -110,6 +117,7 @@ fun ExerciseDetailLoadedPreview() {
                 solution = {}
             ),
             page = DetailPage.Result,
+            settings = Settings("John", "Doe", Avatar.RED),
             goBack = {},
             modifier = Modifier.fillMaxSize()
         )
