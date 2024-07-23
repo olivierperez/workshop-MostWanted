@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation04() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Preview")
         ExplanationText(
             """Vous savez maintenant créer un écran avec plusieurs 
                 Composables à l'intérieur !
@@ -32,6 +34,7 @@ fun Explanation04() {
                 de prévisualiser vos Composables de manière dynamique.
                 """
         )
+        ExplanationTitle("Mise en place")
         ExplanationText(
             """Pour cela, il vous suffit de créer une nouvelle méthode 
                 annotée d'un <b>@Preview</b>, puis d'appeler le Composable 

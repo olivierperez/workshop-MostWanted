@@ -5,12 +5,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation06() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Clip d'une image")
         ExplanationText(
             """En se basant sur le code que vous avez développé lors de 
                 l'exercice précédent, nous allons essayer d'améliorer le 

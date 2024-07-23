@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation02() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Mise en page")
         ExplanationText(
             """Maintenant que vous avez réussi à intégrer votre 
                         premier Composable, vous allez découvrir comment 
@@ -25,6 +27,7 @@ fun Explanation02() {
                         votre nom.
                 """
         )
+        ExplanationTitle("Row")
         ExplanationText(
             """Pour ce faire, il vous suffit de créer deux 
                         Composables Text et de les insérer dans un 

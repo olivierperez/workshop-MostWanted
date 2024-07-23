@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation05() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Image")
         ExplanationText(
             """Nous allons maintenant nous pencher sur un Composable 
                 particulier, <b>Image</b>. Il nous permet de rendre notre 
@@ -23,6 +25,7 @@ fun Explanation05() {
                 WEBP, mais aussi une ressource issue de votre application.
                 """
         )
+        ExplanationTitle("Accès aux ressources")
         ExplanationText(
             """Pour afficher une image, il suffit de donner sa 
                 source à la propriété <b>painter</b> de notre Composable, 
@@ -39,11 +42,6 @@ fun Explanation05() {
         ExplanationText(
             """Essayez maintenant d'afficher votre avatar, présent dans les 
                 ressources de l'application. Vous pouvez y accéder grâce à <b>R.drawable<b/>.
-                """
-        )
-        ExplanationText(
-            """Modifiez sa taille grâce à l'attribut size du <b>modifier</b> 
-                du Composable. Attribuez-lui la valeur <i>120.dp</i>.
                 """
         )
         ExplanationText(

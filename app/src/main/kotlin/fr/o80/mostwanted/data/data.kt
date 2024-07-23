@@ -9,7 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation02
@@ -47,7 +49,7 @@ import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 val exercises = listOf(
     ExerciseDef(
         id = 1,
-        title = "Première étape",
+        title = "Mission n°1",
         explanation = { Explanation01() },
         file = "Exercise01HelloWorld.kt",
         result = { Exercise01HelloWorld() },
@@ -55,7 +57,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 2,
-        title = "Jouer sur la mise en page",
+        title = "Mission n°2",
         explanation = { Explanation02() },
         file = "Exercise02Layout.kt",
         result = { Exercise02Layout() },
@@ -63,7 +65,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 3,
-        title = "Créer un écran structuré",
+        title = "Mission n°3",
         explanation = { Explanation03() },
         file = "Exercise03Screen.kt",
         result = { Exercise03Screen() },
@@ -71,7 +73,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 4,
-        title = "Le système de Preview",
+        title = "Mission n°4",
         explanation = { Explanation04() },
         file = "Exercise04Preview.kt",
         result = { Exercise04Preview() },
@@ -79,7 +81,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 5,
-        title = "Gestion des images",
+        title = "Mission n°5",
         explanation = { Explanation05() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -93,7 +95,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 6,
-        title = "Clip image",
+        title = "Mission n°6",
         explanation = { Explanation06() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -107,7 +109,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 7,
-        title = "Interaction utilisateur",
+        title = "Mission n°7",
         explanation = { Explanation07() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -121,7 +123,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 8,
-        title = "Animation",
+        title = "Mission n°8",
         explanation = { Explanation08() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -135,7 +137,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 9,
-        title = "Preview",
+        title = "Mission n°9",
         explanation = { Explanation09() },
         file = "Exercise09Image.kt",
         result = { Solution09UsePreview() },
@@ -149,7 +151,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 10,
-        title = "Two screens",
+        title = "Mission n°10",
         explanation = { Explanation10() },
         file = "Exercise10to11TwoScreens.kt",
         result = { Exercise10to11TwoScreens() },
@@ -157,7 +159,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 11,
-        title = "Animation navigation",
+        title = "Mission n°11",
         explanation = { Explanation11() },
         file = "Exercise10to11TwoScreens.kt",
         result = { Exercise10to11TwoScreens() },
@@ -172,6 +174,17 @@ private fun Avatar.toExercise(): AvatarFromExercises = when (this) {
 }
 
 @Composable
+fun ExplanationTitle(text: String) {
+    Text(
+        text = text,
+        modifier = Modifier.padding(12.dp),
+        color = Color.Blue,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.Bold
+    )
+}
+
+@Composable
 fun ExplanationText(text: String) {
     Text(
         text = Html
@@ -180,7 +193,7 @@ fun ExplanationText(text: String) {
                 Html.FROM_HTML_MODE_COMPACT
             )
             .toAnnotatedString(),
-        modifier = Modifier.padding(vertical = 8.dp)
+        modifier = Modifier.padding(vertical = 4.dp)
     )
 }
 
@@ -194,7 +207,7 @@ fun Code(code: String) {
                     color = Color.Gray,
                     start = Offset(0f, 0f),
                     end = Offset(0f, size.height),
-                    strokeWidth = 4f
+                    strokeWidth = 8f
                 )
             }
             .padding(start = 8.dp)
