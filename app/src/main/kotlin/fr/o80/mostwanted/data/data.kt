@@ -49,7 +49,7 @@ import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 val exercises = listOf(
     ExerciseDef(
         id = 1,
-        title = "Mission n°1",
+        title = "\uD83D\uDE80 Mission n°1",
         explanation = { Explanation01() },
         file = "Exercise01HelloWorld.kt",
         result = { Exercise01HelloWorld() },
@@ -57,7 +57,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 2,
-        title = "Mission n°2",
+        title = "\uD83E\uDEAA Mission n°2",
         explanation = { Explanation02() },
         file = "Exercise02Layout.kt",
         result = { Exercise02Layout() },
@@ -65,7 +65,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 3,
-        title = "Mission n°3",
+        title = "\uD83C\uDFD7\uFE0F Mission n°3",
         explanation = { Explanation03() },
         file = "Exercise03Screen.kt",
         result = { Exercise03Screen() },
@@ -73,7 +73,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 4,
-        title = "Mission n°4",
+        title = "\uD83D\uDD0E Mission n°4",
         explanation = { Explanation04() },
         file = "Exercise04Preview.kt",
         result = { Exercise04Preview() },
@@ -81,7 +81,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 5,
-        title = "Mission n°5",
+        title = "\uD83D\uDDBC\uFE0F Mission n°5",
         explanation = { Explanation05() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -95,7 +95,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 6,
-        title = "Mission n°6",
+        title = "✂\uFE0F Mission n°6",
         explanation = { Explanation06() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -109,7 +109,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 7,
-        title = "Mission n°7",
+        title = "\uD83D\uDC46 Mission n°7",
         explanation = { Explanation07() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -123,7 +123,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 8,
-        title = "Mission n°8",
+        title = "\uD83C\uDF17 Mission n°8",
         explanation = { Explanation08() },
         file = "Exercise05to08Image.kt",
         result = { Exercise05to08Image() },
@@ -137,7 +137,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 9,
-        title = "Mission n°9",
+        title = "\uD83E\uDE82 Mission n°9",
         explanation = { Explanation09() },
         file = "Exercise09Image.kt",
         result = { Solution09UsePreview() },
@@ -151,7 +151,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 10,
-        title = "Mission n°10",
+        title = "\uD83D\uDDFA\uFE0F Mission n°10",
         explanation = { Explanation10() },
         file = "Exercise10to11TwoScreens.kt",
         result = { Exercise10to11TwoScreens() },
@@ -159,7 +159,7 @@ val exercises = listOf(
     ),
     ExerciseDef(
         id = 11,
-        title = "Mission n°11",
+        title = "\uD83C\uDFC1 Mission n°11",
         explanation = { Explanation11() },
         file = "Exercise10to11TwoScreens.kt",
         result = { Exercise10to11TwoScreens() },
