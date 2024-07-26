@@ -22,7 +22,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun S03Screen(
+fun Solution03Screen(
     firstName: String,
     lastName: String,
 ) {
@@ -67,7 +67,7 @@ fun S03Screen(
 @Composable
 private fun S03ScreenPreview() {
     PreviewTheme {
-        S03Screen(
+        Solution03Screen(
             firstName = "John",
             lastName = "Doe"
         )

@@ -30,7 +30,7 @@ import fr.o80.mostwanted.exercises.Exercise03Screen
 import fr.o80.mostwanted.exercises.Exercise04Preview
 import fr.o80.mostwanted.exercises.Exercise05to08Image
 import fr.o80.mostwanted.exercises.Exercise10to11TwoScreens
-import fr.o80.mostwanted.solutions.S03Screen
+import fr.o80.mostwanted.solutions.Solution03Screen
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution02Layout
 import fr.o80.mostwanted.solutions.Solution04Preview
@@ -67,7 +67,7 @@ val exercises = listOf(
         explanation = { Explanation03() },
         file = "Exercise03Screen.kt",
         result = { Exercise03Screen() },
-        solution = { settings -> S03Screen(settings.firstName, settings.lastName) }
+        solution = { settings -> Solution03Screen(settings.firstName, settings.lastName) }
     ),
     ExerciseDef(
         id = 4,
