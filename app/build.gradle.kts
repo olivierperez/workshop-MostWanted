@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -78,4 +80,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.testmanifest)
 
     implementation(libs.androidx.datastore.preferences)
+}
+
+tasks.withType<KotlinCompilationTask<*>> {
+    compilerOptions.freeCompilerArgs.add("-opt-in=androidx.compose.foundation.ExperimentalFoundationApi")
+    compilerOptions.freeCompilerArgs.add("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
 }
