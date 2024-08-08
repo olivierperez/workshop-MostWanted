@@ -6,13 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation11() {
     Column(
         Modifier.fillMaxSize()
     ) {
-
+        ExplanationTitle("Transition")
         ExplanationText(
             """Pour terminer, nous aimerions rendre la transition entre les 
                 deux écrans plus fluide. Reprenez le code créé lors de 
@@ -33,8 +34,8 @@ fun Explanation11() {
                 "        ) {}"
         )
         ExplanationText(
-            """Félicitations, vous êtes maintenant un·e expert·e du 
-                <b>Renseignement Jetpack Compose</b> !
+            """Félicitations agent, vous êtes maintenant un·e expert·e du 
+                <b>Jetpack Compose</b> !
             """
         )
     }

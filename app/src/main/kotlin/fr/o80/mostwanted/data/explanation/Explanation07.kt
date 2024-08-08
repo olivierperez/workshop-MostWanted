@@ -6,24 +6,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation07() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Interaction utilisateur")
         ExplanationText(
             """Nous allons maintenant rendre notre écran <b>interactif</b> et 
                 obtenir le comportement présent sur la maquette  ! Pour cela,
                  reprenez le code précédemment écrit.
                 """
         )
-        ExplanationText(
-            """Chaque modifier présente un attribut <b>clickable</b> qui 
-                permet de transmettre un comportement au clic sur le 
-                Composable associé.
-                """
-        )
+        ExplanationTitle("Gestion d'une variable")
         ExplanationText(
             """Nous voulons ici faire varier la taille des 4 coins de notre 
                 image. Pour ce faire, nous allons créer une variable dans le 
@@ -45,6 +42,7 @@ fun Explanation07() {
             """La variable <b>corner</b> est ici initialisée à 0.
                 """
         )
+        ExplanationTitle("Modification du clip")
         ExplanationText(
             """Voyez-vous comment faire varier la forme du clip en vous
                 basant sur une autre forme que CircleShape ?
@@ -59,9 +57,15 @@ fun Explanation07() {
                 faut que notre variable <b>corner</b> soit égale à 50.
                 """
         )
+        ExplanationTitle("Clickable")
         ExplanationText(
-            """C'est ici que nous allons utiliser notre attribut 
-                <b>clickable</b>. Essayez donc de modifier la valeur de notre
+            """Chaque modifier présente un attribut <b>clickable</b> qui 
+                permet de transmettre un comportement au clic sur le 
+                Composable associé.
+                """
+        )
+        ExplanationText(
+            """Essayez donc de modifier la valeur de notre
                  variable pour jouer sur la forme de l'image.
                 """
         )

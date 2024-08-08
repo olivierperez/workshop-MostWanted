@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation08() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Animation")
         ExplanationText(
             """Nous souhaitons maintenant intégrer une animation. Lors du 
                 clic sur l'image, nous voulons aussi modifier la visibilité 
@@ -30,6 +32,7 @@ fun Explanation08() {
                  l'<b>AnimatedVisibility</b>.
                 """
         )
+        ExplanationTitle("Gestion de la visibilité")
         ExplanationText(
             """Comme dans l'exercice précédent, nous allons initialiser une 
                 seconde variable qui nous permettra de contenir l'état de 
@@ -53,6 +56,7 @@ fun Explanation08() {
                 l'animation grâce aux propriétés <b>enter</b> et <b>exit</b>.</i>
         """
         )
+        ExplanationTitle("Changement d'état")
         ExplanationText(
             """Nous souhaitons que l'animation du texte s'effectue avec 
                 l'interactivité de l'image. Nous allons donc conditionner la 
@@ -68,6 +72,7 @@ fun Explanation08() {
                  on pourrait l'utiliser pour transformer notre Boolean en Float.
         """
         )
+        ExplanationTitle("Modification du clickable")
         ExplanationText(
             """Il nous reste maintenant à jouer sur notre variable pour gérer
                  la visibilité de notre écran. Nous allons modifier le 

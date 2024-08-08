@@ -6,12 +6,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun Explanation03() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Scaffold")
         ExplanationText(
             """Nous allons maintenant créer un écran structuré dans 
                     lequel intégrer nos Composables. On peut facilement imaginer
@@ -26,6 +28,7 @@ fun Explanation03() {
                     et pour préciser <i>CIA</i> en bas de page.
                 """
         )
+        ExplanationTitle("TopAppBar")
         ExplanationText(
             """Pour afficher un titre centré nous allons ici utiliser
                     le Composable <b>CenterAlignedTopAppBar</b>&nbsp;:
@@ -38,6 +41,7 @@ fun Explanation03() {
                    |    }
                    |)""".trimMargin()
         )
+        ExplanationTitle("Column")
         ExplanationText(
             """Nous allons ensuite nous occuper du contenu de cet écran. 
                      Nous souhaitons avoir un <b>Text</b> supplémentaire, 
@@ -57,6 +61,15 @@ fun Explanation03() {
                    |    )
                    |}""".trimMargin()
         )
+        ExplanationTitle("Icône")
+        ExplanationText(
+            """Pour ajouter une icône, vous pouvez utiliser le Composable 
+                Icon, et donner l'icône que vous souhaitez à 
+                l'attribut imageVector. Nous aurons ici besoin de l'icône 
+                Icons.Default.Star.
+                """
+        )
+        ExplanationTitle("Padding Values")
         ExplanationText(
             """Après avoir implémenté ce code et lancé l'app, quelque 
                     chose cloche... Si vous ne voyez pas de contenu, c'est 
@@ -78,6 +91,7 @@ fun Explanation03() {
                    |    ) { ... }
                    |}""".trimMargin()
         )
+        ExplanationTitle("Modifier")
         ExplanationText(
             """Pour terminer la composition de cet écran, jouez avec
                     les paramètres du Composable <b>Column</b> pour centrer
