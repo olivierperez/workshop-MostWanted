@@ -42,35 +42,41 @@ import fr.o80.mostwanted.solutions.Solution0404Image
 import fr.o80.mostwanted.solutions.Solution0501Skill
 import fr.o80.mostwanted.solutions.Solution0502Skill
 import fr.o80.mostwanted.solutions.Solution0503Skill
-import fr.o80.mostwanted.solutions.Solution11AnimationNavigation
+import fr.o80.mostwanted.solutions.Solution0601NavigationBar
+import fr.o80.mostwanted.solutions.Solution0602NavigationBar
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
-    ExerciseDef(id = 1,
+    ExerciseDef(
+        id = 1,
         title = "Hello World!",
         explanation = { Explanation01() },
         file = "Exercise01HelloWorld.kt",
         result = { Exercise01HelloWorld() },
         solution = { Solution01HelloWorld() }),
-    ExerciseDef(id = 2,
+    ExerciseDef(
+        id = 2,
         title = "Scaffold 01",
         explanation = { Explanation02() },
         file = "ExerciseMain.kt",
         result = { ExerciseMain() },
         solution = { Solution0201Scaffold() }),
-    ExerciseDef(id = 3,
+    ExerciseDef(
+        id = 3,
         title = "Scaffold 02",
         explanation = { Explanation02() },
         file = "ExerciseMain.kt",
         result = { ExerciseMain() },
         solution = { Solution0202Scaffold() }),
-    ExerciseDef(id = 4,
+    ExerciseDef(
+        id = 4,
         title = "Scaffold 03",
         explanation = { Explanation02() },
         file = "ExerciseMain.kt",
         result = { ExerciseMain() },
         solution = { Solution0203Scaffold() }),
-    ExerciseDef(id = 5,
+    ExerciseDef(
+        id = 5,
         title = "Profile 01",
         explanation = { Explanation02() },
         file = "ExerciseProfile.kt",
@@ -81,7 +87,8 @@ val exercises = listOf(
                 settings.lastName
             )
         }),
-    ExerciseDef(id = 6,
+    ExerciseDef(
+        id = 6,
         title = "Profile 02",
         explanation = { Explanation03() },
         file = "ExerciseMain.kt",
@@ -92,7 +99,8 @@ val exercises = listOf(
                 settings.lastName
             )
         }),
-    ExerciseDef(id = 7,
+    ExerciseDef(
+        id = 7,
         title = "Image 01",
         explanation = { Explanation05() },
         file = "ExerciseImage.kt",
@@ -100,7 +108,8 @@ val exercises = listOf(
         solution = { settings ->
             Solution0401Image(settings.avatar.toExercise())
         }),
-    ExerciseDef(id = 8,
+    ExerciseDef(
+        id = 8,
         title = "Image 02",
         explanation = { Explanation06() },
         file = "ExerciseImage.kt",
@@ -108,7 +117,8 @@ val exercises = listOf(
         solution = { settings ->
             Solution0402Image(settings.avatar.toExercise())
         }),
-    ExerciseDef(id = 9,
+    ExerciseDef(
+        id = 9,
         title = "Image 03",
         explanation = { Explanation07() },
         file = "ExerciseImage.kt",
@@ -116,7 +126,8 @@ val exercises = listOf(
         solution = { settings ->
             Solution0403Image(settings.avatar.toExercise())
         }),
-    ExerciseDef(id = 10,
+    ExerciseDef(
+        id = 10,
         title = "Image 04",
         explanation = { Explanation10() },
         file = "ExerciseMain.kt",
@@ -128,20 +139,23 @@ val exercises = listOf(
                 settings.avatar.toExercise()
             )
         }),
-    ExerciseDef(id = 11,
+    ExerciseDef(
+        id = 11,
         title = "Skill 01",
         explanation = { Explanation10() },
         file = "ExerciseSkill.kt",
         result = { ExerciseSkill() },
         solution = { Solution0501Skill() }),
-    ExerciseDef(id = 12,
-        title = "Skill 01",
+    ExerciseDef(
+        id = 12,
+        title = "Skill 02",
         explanation = { Explanation10() },
         file = "ExerciseSkill.kt",
         result = { ExerciseSkill() },
         solution = { Solution0502Skill() }),
-    ExerciseDef(id = 13,
-        title = "Skill 01",
+    ExerciseDef(
+        id = 13,
+        title = "Skill 03",
         explanation = { Explanation10() },
         file = "ExerciseMain.kt",
         result = { ExerciseMain() },
@@ -152,12 +166,28 @@ val exercises = listOf(
                 settings.avatar.toExercise()
             )
         }),
-    ExerciseDef(id = 11,
-        title = "Animation navigation",
+    ExerciseDef(
+        id = 14,
+        title = "Barre de navigation",
         explanation = { Explanation11() },
-        file = "Exercise10to11TwoScreens.kt",
+        file = "ExerciseNavigation.kt",
         result = { Exercise10to11TwoScreens() },
-        solution = { Solution11AnimationNavigation() }),
+        solution = { Solution0601NavigationBar() }
+    ),
+    ExerciseDef(
+        id = 15,
+        title = "Badge recto/verso",
+        explanation = { Explanation11() },
+        file = "Todo.kt",
+        result = { Exercise10to11TwoScreens() },
+        solution = { settings ->
+            Solution0602NavigationBar(
+                settings.firstName,
+                settings.lastName,
+                settings.avatar.toExercise()
+            )
+        }
+    ),
 )
 
 /*val exercises = listOf(

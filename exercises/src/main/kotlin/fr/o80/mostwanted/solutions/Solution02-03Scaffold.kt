@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
@@ -26,7 +27,8 @@ fun Solution0203Scaffold() {
         bottomBar = {
             Text(
                 text = "Badge",
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelMedium,
+                modifier = Modifier.padding(4.dp)
             )
         }
     ) { paddingValues ->

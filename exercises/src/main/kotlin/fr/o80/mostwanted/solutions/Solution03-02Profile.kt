@@ -32,7 +32,8 @@ fun Solution0302Profile(
         bottomBar = {
             Text(
                 text = "Badge",
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelMedium,
+                modifier = Modifier.padding(4.dp)
             )
         }
     ) { paddingValues ->
