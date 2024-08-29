@@ -23,12 +23,13 @@ import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import fr.o80.mostwanted.exercises.Exercise01HelloWorld
-import fr.o80.mostwanted.exercises.Exercise10to11TwoScreens
-import fr.o80.mostwanted.exercises.ExerciseImage
-import fr.o80.mostwanted.exercises.ExerciseMain
-import fr.o80.mostwanted.exercises.ExerciseProfile
-import fr.o80.mostwanted.exercises.ExerciseSkill
+import fr.o80.mostwanted.exercises.CIABadge
+import fr.o80.mostwanted.exercises.CIAIdentity
+import fr.o80.mostwanted.exercises.CIAImage
+import fr.o80.mostwanted.exercises.CIAProfile
+import fr.o80.mostwanted.exercises.CIASkill
+import fr.o80.mostwanted.exercises.ExerciseHelloWorld
+import fr.o80.mostwanted.exercises.ExerciseNavigation
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution0201Scaffold
 import fr.o80.mostwanted.solutions.Solution0202Scaffold
@@ -51,135 +52,154 @@ val exercises = listOf(
         id = 1,
         title = "Hello World!",
         explanation = { Explanation01() },
-        file = "Exercise01HelloWorld.kt",
-        result = { Exercise01HelloWorld() },
-        solution = { Solution01HelloWorld() }),
+        file = "ExerciseHelloWorld.kt",
+        result = { ExerciseHelloWorld() },
+        solution = { Solution01HelloWorld() }
+    ),
     ExerciseDef(
         id = 2,
-        title = "Scaffold 01",
+        title = "Badge Layout",
         explanation = { Explanation02() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
-        solution = { Solution0201Scaffold() }),
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
+        solution = { Solution0201Scaffold() }
+    ),
     ExerciseDef(
         id = 3,
-        title = "Scaffold 02",
+        title = "Badge Content",
         explanation = { Explanation02() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
-        solution = { Solution0202Scaffold() }),
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
+        solution = { Solution0202Scaffold() }
+    ),
     ExerciseDef(
         id = 4,
-        title = "Scaffold 03",
+        title = "Styling",
         explanation = { Explanation02() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
-        solution = { Solution0203Scaffold() }),
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
+        solution = { Solution0203Scaffold() }
+    ),
     ExerciseDef(
         id = 5,
-        title = "Profile 01",
+        title = "Profile Layout",
         explanation = { Explanation02() },
-        file = "ExerciseProfile.kt",
-        result = { ExerciseProfile() },
+        file = "CIAProfile.kt",
+        result = { CIAProfile() },
         solution = { settings ->
             Solution0301Profile(
                 settings.firstName,
                 settings.lastName
             )
-        }),
+        }
+    ),
     ExerciseDef(
         id = 6,
-        title = "Profile 02",
+        title = "Add Profile to Identity",
         explanation = { Explanation03() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
         solution = { settings ->
             Solution0302Profile(
                 settings.firstName,
                 settings.lastName
             )
-        }),
+        }
+    ),
     ExerciseDef(
         id = 7,
-        title = "Image 01",
+        title = "Avatar Image",
         explanation = { Explanation05() },
-        file = "ExerciseImage.kt",
-        result = { ExerciseImage() },
+        file = "CIAImage.kt",
+        result = { CIAImage() },
         solution = { settings ->
-            Solution0401Image(settings.avatar.toExercise())
-        }),
+            Solution0401Image(
+                settings.avatar.toExercise()
+            )
+        }
+    ),
     ExerciseDef(
         id = 8,
-        title = "Image 02",
+        title = "Avatar Clip",
         explanation = { Explanation06() },
-        file = "ExerciseImage.kt",
-        result = { ExerciseImage() },
+        file = "CIAImage.kt",
+        result = { CIAImage() },
         solution = { settings ->
-            Solution0402Image(settings.avatar.toExercise())
-        }),
+            Solution0402Image(
+                settings.avatar.toExercise()
+            )
+        }
+    ),
     ExerciseDef(
         id = 9,
-        title = "Image 03",
+        title = "Interactive Avatar",
         explanation = { Explanation07() },
-        file = "ExerciseImage.kt",
-        result = { ExerciseImage() },
+        file = "CIAImage.kt",
+        result = { CIAImage() },
         solution = { settings ->
-            Solution0403Image(settings.avatar.toExercise())
-        }),
+            Solution0403Image(
+                settings.avatar.toExercise()
+            )
+        }
+    ),
     ExerciseDef(
         id = 10,
-        title = "Image 04",
+        title = "Add Avatar to Identity",
         explanation = { Explanation10() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
         solution = { settings ->
             Solution0404Image(
                 settings.firstName,
                 settings.lastName,
                 settings.avatar.toExercise()
             )
-        }),
+        }
+    ),
     ExerciseDef(
         id = 11,
-        title = "Skill 01",
+        title = "Agent Skill",
         explanation = { Explanation10() },
-        file = "ExerciseSkill.kt",
-        result = { ExerciseSkill() },
-        solution = { Solution0501Skill() }),
+        file = "CIASkill.kt",
+        result = { CIASkill() },
+        solution = { Solution0501Skill() }
+    ),
     ExerciseDef(
         id = 12,
-        title = "Skill 02",
+        title = "Best Skill",
         explanation = { Explanation10() },
-        file = "ExerciseSkill.kt",
-        result = { ExerciseSkill() },
-        solution = { Solution0502Skill() }),
+        file = "CIASkill.kt",
+        result = { CIASkill() },
+        solution = { Solution0502Skill() }
+    ),
     ExerciseDef(
         id = 13,
-        title = "Skill 03",
+        title = "Add Skill to Identity",
         explanation = { Explanation10() },
-        file = "ExerciseMain.kt",
-        result = { ExerciseMain() },
+        file = "CIAIdentity.kt",
+        result = { CIAIdentity() },
         solution = { settings ->
             Solution0503Skill(
                 settings.firstName,
                 settings.lastName,
                 settings.avatar.toExercise()
             )
-        }),
+        }
+    ),
     ExerciseDef(
         id = 14,
-        title = "Barre de navigation",
+        title = "Navigation Bar",
         explanation = { Explanation11() },
         file = "ExerciseNavigation.kt",
-        result = { Exercise10to11TwoScreens() },
+        result = { ExerciseNavigation() },
         solution = { Solution0601NavigationBar() }
     ),
     ExerciseDef(
         id = 15,
-        title = "Badge recto/verso",
+        title = "Two sided Badge",
         explanation = { Explanation11() },
-        file = "Todo.kt",
-        result = { Exercise10to11TwoScreens() },
+        file = "CIABadge.kt",
+        result = { CIABadge() },
         solution = { settings ->
             Solution0602NavigationBar(
                 settings.firstName,
@@ -189,127 +209,6 @@ val exercises = listOf(
         }
     ),
 )
-
-/*val exercises = listOf(
-    ExerciseDef(
-        id = 1,
-        title = "\uD83D\uDE80 Mission n°1",
-        explanation = { Explanation01() },
-        file = "Exercise01HelloWorld.kt",
-        result = { Exercise01HelloWorld() },
-        solution = { Solution01HelloWorld() }
-    ),
-    ExerciseDef(
-        id = 2,
-        title = "\uD83E\uDEAA Mission n°2",
-        explanation = { Explanation02() },
-        file = "Exercise02Layout.kt",
-        result = { Exercise02Layout() },
-        solution = { settings -> Solution02Layout(settings.firstName, settings.lastName) }
-    ),
-    ExerciseDef(
-        id = 3,
-        title = "\uD83C\uDFD7\uFE0F Mission n°3",
-        explanation = { Explanation03() },
-        file = "Exercise03Screen.kt",
-        result = { Exercise03Screen() },
-        solution = { settings -> Solution03Screen(settings.firstName, settings.lastName) }
-    ),
-    ExerciseDef(
-        id = 4,
-        title = "\uD83D\uDD0E Mission n°4",
-        explanation = { Explanation04() },
-        file = "Exercise04Preview.kt",
-        result = { Exercise04Preview() },
-        solution = { Solution04Preview() }
-    ),
-    ExerciseDef(
-        id = 5,
-        title = "\uD83D\uDDBC\uFE0F Mission n°5",
-        explanation = { Explanation05() },
-        file = "Exercise05to08Image.kt",
-        result = { Exercise05to08Image() },
-        solution = { settings ->
-            Solution05Image(
-                firstName = settings.firstName,
-                lastName = settings.lastName,
-                avatar = settings.avatar.toExercise()
-            )
-        }
-    ),
-    ExerciseDef(
-        id = 6,
-        title = "✂\uFE0F Mission n°6",
-        explanation = { Explanation06() },
-        file = "Exercise05to08Image.kt",
-        result = { Exercise05to08Image() },
-        solution = { settings ->
-            Solution06ClipCircle(
-                firstName = settings.firstName,
-                lastName = settings.lastName,
-                avatar = settings.avatar.toExercise()
-            )
-        }
-    ),
-    ExerciseDef(
-        id = 7,
-        title = "\uD83D\uDC46 Mission n°7",
-        explanation = { Explanation07() },
-        file = "Exercise05to08Image.kt",
-        result = { Exercise05to08Image() },
-        solution = { settings ->
-            Solution07Interactive(
-                firstName = settings.firstName,
-                lastName = settings.lastName,
-                avatar = settings.avatar.toExercise()
-            )
-        }
-    ),
-    ExerciseDef(
-        id = 8,
-        title = "\uD83C\uDF17 Mission n°8",
-        explanation = { Explanation08() },
-        file = "Exercise05to08Image.kt",
-        result = { Exercise05to08Image() },
-        solution = { settings ->
-            Solution08Animation(
-                firstName = settings.firstName,
-                lastName = settings.lastName,
-                avatar = settings.avatar.toExercise()
-            )
-        }
-    ),
-    ExerciseDef(
-        id = 9,
-        title = "\uD83E\uDE82 Mission n°9",
-        explanation = { Explanation09() },
-        file = "Exercise09Image.kt",
-        result = { Solution09UsePreview() },
-        solution = { settings ->
-            Solution09Complex(
-                firstName = settings.firstName,
-                lastName = settings.lastName,
-                avatar = settings.avatar.toExercise()
-            )
-        }
-    ),
-    ExerciseDef(
-        id = 10,
-        title = "\uD83D\uDDFA\uFE0F Mission n°10",
-        explanation = { Explanation10() },
-        file = "Exercise10to11TwoScreens.kt",
-        result = { Exercise10to11TwoScreens() },
-        solution = { Solution10TwoScreens() }
-    ),
-    ExerciseDef(
-        id = 11,
-        title = "\uD83C\uDFC1 Mission n°11",
-        explanation = { Explanation11() },
-        file = "Exercise10to11TwoScreens.kt",
-        result = { Exercise10to11TwoScreens() },
-        solution = { Solution11AnimationNavigation() }
-    ),
-)*/
 
 private fun Avatar.toExercise(): AvatarFromExercises = when (this) {
     Avatar.RED -> AvatarFromExercises.RED
