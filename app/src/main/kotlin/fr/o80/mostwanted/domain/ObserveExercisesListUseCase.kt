@@ -9,7 +9,7 @@ import javax.inject.Inject
 class ObserveExercisesListUseCase @Inject constructor(
     private val exercisesRepository: ExercisesRepository
 ) {
-    operator fun invoke(): Flow<List<ExerciseDef>> = flowOf(
+    operator fun invoke(): Flow<List<Pair<String, List<ExerciseDef>>>> = flowOf(
         exercisesRepository.listAll()
     )
 }

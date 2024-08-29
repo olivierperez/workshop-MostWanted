@@ -50,13 +50,13 @@ class ExercisesListViewModel @Inject constructor(
 }
 
 sealed interface ExercisesListEvent {
-    object None : ExercisesListEvent
-    class OpenExplanation(val id: Int) : ExercisesListEvent
-    class OpenResult(val id: Int) : ExercisesListEvent
+    data object None : ExercisesListEvent
+    data class OpenExplanation(val id: Int) : ExercisesListEvent
+    data class OpenResult(val id: Int) : ExercisesListEvent
 }
 
 data class ExercisesListUiState(
-    val exerciseDefs: ImmutableList<ExerciseDef>
+    val exerciseDefs: ImmutableList<Pair<String, List<ExerciseDef>>>
 ) {
     companion object {
         fun start(): ExercisesListUiState {

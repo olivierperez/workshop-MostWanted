@@ -27,8 +27,11 @@ class PreferencesRepository @Inject constructor(
 
     suspend fun getSettings(): Settings? = context.dataStore.data
         .map { preferences ->
-            if (preferences[FIRST_NAME] != null && preferences[LAST_NAME] !=
-                null && preferences[AVATAR] != null) {
+            if (
+                preferences[FIRST_NAME] != null &&
+                preferences[LAST_NAME] != null &&
+                preferences[AVATAR] != null
+            ) {
                 Settings(
                     preferences[FIRST_NAME]!!,
                     preferences[LAST_NAME]!!,

@@ -8,6 +8,8 @@ class GetExerciseByIdUseCase @Inject constructor(
     private val exercisesRepository: ExercisesRepository
 ) {
     operator fun invoke(id: Int): ExerciseDef? {
-        return exercisesRepository.listAll().firstOrNull { it.id == id }
+        return exercisesRepository.listAll()
+            .flatMap { (_, exercises) -> exercises }
+            .firstOrNull { it.id == id }
     }
 }

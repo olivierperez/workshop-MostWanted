@@ -13,8 +13,8 @@ fun HomeRoute(
     val viewModel = hiltViewModel<HomeViewModel>()
 
     LaunchedEffect(viewModel) {
-        viewModel.event.collect {event ->
-            when(event){
+        viewModel.event.collect { event ->
+            when (event) {
                 HomeEvent.NONE -> Unit
                 HomeEvent.GO_TO_EXERCISES -> goToExercises()
             }
