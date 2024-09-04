@@ -31,7 +31,7 @@ class ExerciseDetailViewModel @Inject constructor(
 
     private val page: DetailPage = savedStateHandle.get<String>(PARAM_PAGE)
         ?.let { DetailPage.valueOf(it) }
-        ?: DetailPage.Result
+        ?: DetailPage.Instruction
 
     private val _state =
         MutableStateFlow<ExerciseDetailUiState>(ExerciseDetailUiState.Loading)

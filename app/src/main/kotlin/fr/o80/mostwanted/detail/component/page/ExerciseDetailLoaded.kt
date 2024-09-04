@@ -19,8 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
-import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseInstruction
+import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.Avatar
@@ -81,12 +81,19 @@ fun ExerciseDetailLoaded(
                     modifier = Modifier.fillMaxSize()
                 )
 
-                DetailPage.Result.index -> ExerciseResult(
+                DetailPage.Result.index -> ExerciseInstruction(
+                    exerciseDef = exerciseDef,
+                    modifier = Modifier.fillMaxSize()
+
+
+                )
+
+                DetailPage.Sketchup.index -> ExerciseResult(
                     exerciseDef = exerciseDef,
                     modifier = Modifier.fillMaxSize()
                 )
 
-                DetailPage.Sketchup.index -> ExerciseSketchup(
+                2 -> ExerciseSketchup(
                     exerciseDef = exerciseDef,
                     settings = settings,
                     modifier = Modifier.fillMaxSize()
@@ -107,8 +114,8 @@ fun ExerciseDetailLoadedPreview() {
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                            "rendez-vous dans le fichier indiqué."
+                                "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                                "rendez-vous dans le fichier indiqué."
                     )
                 },
                 file = "SimpleText.kt",
