@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.detail.component.template.ExerciseInstruction
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.Avatar
@@ -39,7 +40,7 @@ fun ExerciseDetailLoaded(
     val pagerState = rememberPagerState(
         initialPage = page.index,
         initialPageOffsetFraction = 0f,
-        pageCount = { 2 }
+        pageCount = { 3 }
     )
 
     Column(
@@ -54,7 +55,10 @@ fun ExerciseDetailLoaded(
             },
             navigationIcon = {
                 IconButton(onClick = goBack) {
-                    Icon(Icons.AutoMirrored.Default.KeyboardArrowLeft, contentDescription = "Backs")
+                    Icon(
+                        Icons.AutoMirrored.Default.KeyboardArrowLeft,
+                        contentDescription = "Backs"
+                    )
                 }
             }
         )
@@ -62,18 +66,37 @@ fun ExerciseDetailLoaded(
             Tab(
                 selected = pagerState.currentPage == 0,
                 onClick = { scope.launch { pagerState.animateScrollToPage(0) } },
-                text = { Text("Exercice") }
+                text = { Text("Fiche mission") }
             )
             Tab(
                 selected = pagerState.currentPage == 1,
-                onClick = { scope.launch { pagerState.animateScrollToPage(1) } },
+                onClick = {
+                    scope.launch {
+                        pagerState.animateScrollToPage(1)
+                    }
+                },
+                text = { Text("Rendu") }
+            )
+            Tab(
+                selected = pagerState.currentPage == 2,
+                onClick = { scope.launch { pagerState.animateScrollToPage(2)
+                } },
                 text = { Text("Maquette") }
             )
         }
         HorizontalPager(state = pagerState) { page ->
             when (page) {
-                0 -> ExerciseResult(exerciseDef = exerciseDef, modifier = Modifier.fillMaxSize())
-                1 -> ExerciseSketchup(
+                0 -> ExerciseInstruction(
+                    exerciseDef = exerciseDef,
+                    modifier = Modifier.fillMaxSize()
+                )
+
+                1 -> ExerciseResult(
+                    exerciseDef = exerciseDef,
+                    modifier = Modifier.fillMaxSize()
+                )
+
+                2 -> ExerciseSketchup(
                     exerciseDef = exerciseDef,
                     settings = settings,
                     modifier = Modifier.fillMaxSize()
@@ -84,8 +107,9 @@ fun ExerciseDetailLoaded(
 }
 
 enum class DetailPage(val index: Int) {
-    Result(0),
-    Sketchup(1)
+    Instruction(0),
+    Result(1),
+    Sketchup(2)
 }
 
 @Preview
@@ -99,8 +123,8 @@ fun ExerciseDetailLoadedPreview() {
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                            "rendez-vous dans le fichier indiqué."
+                                "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                                "rendez-vous dans le fichier indiqué."
                     )
                 },
                 file = "SimpleText.kt",

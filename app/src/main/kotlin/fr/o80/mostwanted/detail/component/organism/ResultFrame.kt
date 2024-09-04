@@ -24,7 +24,8 @@ fun ResultFrame(
 ) {
     Box(
         modifier = modifier
-            .aspectRatio(1f)
+            .fillMaxSize()
+            .padding(16.dp)
             .dashedBorder(strokeWidth = 2.dp, color = Color.DarkGray, cornerRadiusDp = 0.dp),
         contentAlignment = Alignment.Center,
         content = content
