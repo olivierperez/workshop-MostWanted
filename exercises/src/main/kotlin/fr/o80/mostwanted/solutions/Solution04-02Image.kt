@@ -3,9 +3,7 @@ package fr.o80.mostwanted.solutions
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,9 +15,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.domain.model.Avatar
 
 @Composable
-fun Solution06ClipCircle(
-    firstName: String,
-    lastName: String,
+fun Solution0402Image(
     avatar: Avatar,
     modifier: Modifier = Modifier
 ) {
@@ -33,32 +29,14 @@ fun Solution06ClipCircle(
             contentDescription = "Avatar",
             modifier = modifier.clip(CircleShape)
         )
-        PersonName(firstName, lastName)
-    }
-}
-
-@Composable
-private fun PersonName(
-    firstName: String,
-    lastName: String,
-    modifier: Modifier = Modifier
-) {
-    Row(
-        modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
-    ) {
-        Text(text = firstName)
-        Text(text = lastName)
     }
 }
 
 @Preview
 @Composable
-private fun Solution06ClipCirclePreview() {
+private fun Solution0402ImagePreview() {
     PreviewTheme {
-        Solution06ClipCircle(
-            firstName = "John",
-            lastName = "Doe",
+        Solution0402Image(
             avatar = Avatar.RED
         )
     }

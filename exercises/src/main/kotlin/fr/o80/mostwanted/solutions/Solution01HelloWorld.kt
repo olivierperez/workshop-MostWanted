@@ -7,9 +7,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
 fun Solution01HelloWorld() {
-    Text(
-        text = "Hello World!"
-    )
+    Text(text = "Hello World!")
 }
 
 @Preview

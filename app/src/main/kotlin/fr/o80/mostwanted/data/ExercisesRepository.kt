@@ -9,7 +9,7 @@ class ExercisesRepository @Inject constructor(
     private val exercisesDataStore: ExercisesDataStore
 ) {
 
-    fun listAll(): List<ExerciseDef> = exercises
+    fun listAll(): List<Pair<String, List<ExerciseDef>>> = exercises
 
     fun listSeenSketchups(): List<Int> = exercisesDataStore.listSeenSketchups()
 
