@@ -48,7 +48,7 @@ import fr.o80.mostwanted.solutions.Solution0602NavigationBar
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
-    "Starter" to listOf(
+    "\uD83D\uDE80 Avant toute chose" to listOf(
         ExerciseDef(
             id = 1,
             title = "Hello World!",
@@ -58,7 +58,7 @@ val exercises = listOf(
             solution = { Solution01HelloWorld() }
         )
     ),
-    "Basics" to listOf(
+    "\uD83E\uDDD1\u200D\uD83D\uDD27 Poser le cadre" to listOf(
         ExerciseDef(
             id = 2,
             title = "Badge Layout",
@@ -84,7 +84,7 @@ val exercises = listOf(
             solution = { Solution0203Scaffold() }
         )
     ),
-    "Profile" to listOf(
+    "✏\uFE0F Profile" to listOf(
         ExerciseDef(
             id = 5,
             title = "Profile Layout",
@@ -112,7 +112,7 @@ val exercises = listOf(
             }
         )
     ),
-    "Avatar" to listOf(
+    "\uD83D\uDC64 Avatar" to listOf(
         ExerciseDef(
             id = 7,
             title = "Avatar Image",
@@ -164,7 +164,7 @@ val exercises = listOf(
             }
         )
     ),
-    "Skills" to listOf(
+    "\uD83D\uDD75\uFE0F Compétences" to listOf(
         ExerciseDef(
             id = 11,
             title = "Agent Skill",
@@ -196,7 +196,7 @@ val exercises = listOf(
             }
         )
     ),
-    "Verso" to listOf(
+    "\uD83E\uDEAA Verso" to listOf(
         ExerciseDef(
             id = 14,
             title = "Navigation Bar",
