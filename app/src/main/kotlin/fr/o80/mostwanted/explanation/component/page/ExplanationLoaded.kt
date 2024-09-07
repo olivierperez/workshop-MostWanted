@@ -46,7 +46,7 @@ fun ExplanationLoaded(
             },
             navigationIcon = {
                 IconButton(onClick = goBack) {
-                    Icon(Icons.AutoMirrored.Default.KeyboardArrowLeft, contentDescription = "Backs")
+                    Icon(Icons.AutoMirrored.Default.KeyboardArrowLeft, contentDescription = "Back")
                 }
             }
         )

@@ -58,7 +58,7 @@ fun ExerciseDetailLoaded(
                 IconButton(onClick = goBack) {
                     Icon(
                         Icons.AutoMirrored.Default.KeyboardArrowLeft,
-                        contentDescription = "Backs"
+                        contentDescription = "Back"
                     )
                 }
             }
