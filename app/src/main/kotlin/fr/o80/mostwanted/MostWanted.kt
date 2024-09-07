@@ -13,8 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.ExerciseDetailRoute
-import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.exercises.ExercisesListRoute
 import fr.o80.mostwanted.explanation.ExplanationRoute
 import fr.o80.mostwanted.home.HomeRoute
