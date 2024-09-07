@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseInstruction
 import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
@@ -84,16 +85,9 @@ fun ExerciseDetailLoaded(
                 DetailPage.Result.index -> ExerciseInstruction(
                     exerciseDef = exerciseDef,
                     modifier = Modifier.fillMaxSize()
-
-
                 )
 
-                DetailPage.Sketchup.index -> ExerciseResult(
-                    exerciseDef = exerciseDef,
-                    modifier = Modifier.fillMaxSize()
-                )
-
-                2 -> ExerciseSketchup(
+                DetailPage.Sketchup.index -> ExerciseSketchup(
                     exerciseDef = exerciseDef,
                     settings = settings,
                     modifier = Modifier.fillMaxSize()
