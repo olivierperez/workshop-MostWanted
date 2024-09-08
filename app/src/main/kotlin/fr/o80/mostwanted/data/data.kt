@@ -9,18 +9,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.data.explanation.Explanation01
-import fr.o80.mostwanted.data.explanation.Explanation02
-import fr.o80.mostwanted.data.explanation.Explanation03
 import fr.o80.mostwanted.data.explanation.Explanation05
 import fr.o80.mostwanted.data.explanation.Explanation06
 import fr.o80.mostwanted.data.explanation.Explanation07
+import fr.o80.mostwanted.data.explanation.Explanation0xRow
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -62,7 +62,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 2,
             title = "Badge Layout",
-            explanation = { Explanation02() },
+            explanation = { ExplanationScaffoldBadgeLayout() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0201Scaffold() }
@@ -70,7 +70,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 3,
             title = "Badge Content",
-            explanation = { Explanation02() },
+            explanation = { ExplanationScaffoldBadgeContent() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0202Scaffold() }
@@ -78,7 +78,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 4,
             title = "Styling",
-            explanation = { Explanation02() },
+            explanation = { ExplanationScaffoldStyling() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0203Scaffold() }
@@ -88,7 +88,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 5,
             title = "Profile Layout",
-            explanation = { Explanation02() },
+            explanation = { Explanation0xRow() },
             file = "CIAProfile.kt",
             result = { CIAProfile() },
             solution = { settings ->
@@ -101,7 +101,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 6,
             title = "Add Profile to Identity",
-            explanation = { Explanation03() },
+            explanation = { Explanation0xRow() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->
@@ -232,10 +232,9 @@ private fun Avatar.toExercise(): AvatarFromExercises = when (this) {
 fun ExplanationTitle(text: String) {
     Text(
         text = text,
-        modifier = Modifier.padding(12.dp),
-        color = Color.Blue,
-        fontSize = 20.sp,
-        fontWeight = FontWeight.Bold
+        modifier = Modifier.padding(top = 16.dp),
+        color = MaterialTheme.colorScheme.primary,
+        style = MaterialTheme.typography.titleMedium
     )
 }
 
