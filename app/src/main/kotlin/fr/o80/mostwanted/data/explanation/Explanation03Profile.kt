@@ -27,8 +27,8 @@ fun ExplanationProfileColumn() {
                 """
         )
         Code("""|Column {
-            |    // ...
-            |}""".trimMargin())
+                |    // ...
+                |}""".trimMargin())
         ExplanationText(
             """Pour commencer simple n'affichez pas une image mais simplement
                         le mot "Image".
@@ -68,6 +68,19 @@ fun ExplanationProfileIntegration() {
     Column(
         Modifier.fillMaxSize()
     ) {
-        ExplanationTitle("Ajouter le profile au badge")
+        ExplanationText(
+            """Votre profil est prêt à intégrer à votre badge. Remplacez simplement
+                        l'ancien "Hello World!" par le composable <b>CIAProfile()</b> que
+                        vous venez de coder.
+                """
+        )
+        Code("""|Box(
+                |    modifier = Modifier
+                |        .fillMaxSize()
+                |        .padding(paddingValues),
+                |    contentAlignment = Alignment.Center
+                |) {
+                |    // ici
+                |}""".trimMargin())
     }
 }
