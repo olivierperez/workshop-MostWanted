@@ -29,7 +29,7 @@ fun Explanation05() {
         ExplanationText(
             """Pour afficher une image, il suffit de donner sa 
                 source à la propriété <b>painter</b> de notre Composable, 
-                comme ceci :
+                comme ceci&nbsp;:
                 """
         )
         Code(

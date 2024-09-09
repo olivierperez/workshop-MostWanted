@@ -38,7 +38,7 @@ fun Explanation04() {
         ExplanationText(
             """Pour cela, il vous suffit de créer une nouvelle méthode 
                 annotée d'un <b>@Preview</b>, puis d'appeler le Composable 
-                que vous souhaitez visualiser à l'intérieur :
+                que vous souhaitez visualiser à l'intérieur&nbsp;:
                 """
         )
         Code(
@@ -56,7 +56,7 @@ fun Explanation04() {
                 """
         )
         ExplanationText(
-            """<i>À noter : Il est préférable de rendre votre fonction privée, 
+            """<i>À noter&nbsp;: Il est préférable de rendre votre fonction privée, 
                 car 
                 elle sera accessible seulement au sein de ce fichier.</i>
                 """

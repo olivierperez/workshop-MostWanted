@@ -45,7 +45,7 @@ fun Explanation10() {
             """Vous pouvez créer une variable <b>currentPage</b> à la racine de
                  la fonction de l'exercice pour vous permettre de stocker la 
                  page sur laquelle nous sommes. Cette variable est un entier. Vous 
-                pourrez l'utiliser dans vos <b>NavigationBarItem</b> :
+                pourrez l'utiliser dans vos <b>NavigationBarItem</b>&nbsp;:
             """
         )
         Code(
@@ -56,7 +56,7 @@ fun Explanation10() {
             """Le contenu de chaque écran sera conditionné par la valeur de 
                 cette variable. Pour cela, vous pouvez utiliser une 
                 <b>Box</b> en lui passant le <b>paddingValues</b> du Scaffold
-                 puis utiliser l'expression <b>when</b> pour  afficher son contenu :
+                 puis utiliser l'expression <b>when</b> pour  afficher son contenu&nbsp;:
             """
         )
         Code(
