@@ -15,9 +15,10 @@ import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation05
 import fr.o80.mostwanted.data.explanation.Explanation06
 import fr.o80.mostwanted.data.explanation.Explanation07
-import fr.o80.mostwanted.data.explanation.Explanation0xRow
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
+import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
+import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
@@ -88,7 +89,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 5,
             title = "Profile Layout",
-            explanation = { Explanation0xRow() },
+            explanation = { ExplanationProfileColumn() },
             file = "CIAProfile.kt",
             result = { CIAProfile() },
             solution = { settings ->
@@ -101,7 +102,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 6,
             title = "Add Profile to Identity",
-            explanation = { Explanation0xRow() },
+            explanation = { ExplanationProfileIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->

@@ -164,4 +164,10 @@ fun ExplanationScaffoldStyling() {
     Code(
         """Modifier.padding(4.dp)"""
     )
+    ExplanationText(
+        """Note&nbsp;: <i>Le Scaffold est souvent utilisé pour poser la structure
+                        des écrans mais plus rarement pour mettre en page leurs
+                        contenus.</i>
+                """
+    )
 }
