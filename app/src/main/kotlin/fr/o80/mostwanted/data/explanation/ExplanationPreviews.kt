@@ -9,7 +9,7 @@ import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
-fun Explanation04() {
+fun Explanation0Previews() {
     Column(
         Modifier.fillMaxSize()
     ) {

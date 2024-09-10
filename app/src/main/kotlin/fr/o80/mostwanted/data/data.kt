@@ -12,11 +12,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.data.explanation.Explanation01
-import fr.o80.mostwanted.data.explanation.Explanation05
-import fr.o80.mostwanted.data.explanation.Explanation06
-import fr.o80.mostwanted.data.explanation.Explanation07
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
+import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
 import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
@@ -117,7 +117,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 7,
             title = "Avatar Image",
-            explanation = { Explanation05() },
+            explanation = { ExplanationAvatarSimple() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
@@ -129,7 +129,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 8,
             title = "Avatar Clip",
-            explanation = { Explanation06() },
+            explanation = { ExplanationAvatarClipped() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
@@ -141,7 +141,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 9,
             title = "Interactive Avatar",
-            explanation = { Explanation07() },
+            explanation = { ExplanationInteractiveAvatar() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
