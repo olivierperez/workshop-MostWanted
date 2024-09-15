@@ -1,5 +1,6 @@
-package fr.o80.mostwanted.explanation.component.page
+package fr.o80.mostwanted.detail.component.template
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,82 +8,77 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.domain.model.ExerciseDef
-import fr.o80.mostwanted.explanation.component.organism.Sketchup
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 
 @Composable
-fun ExplanationLoaded(
+fun ExerciseInstruction(
     exerciseDef: ExerciseDef,
-    goToSketchup: () -> Unit,
-    goBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = modifier
             .verticalScroll(rememberScrollState())
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        TopAppBar(
-            title = {
-                Text(
-                    text = exerciseDef.title,
-                    style = MaterialTheme.typography.headlineSmall
-                )
-            },
-            navigationIcon = {
-                IconButton(onClick = goBack) {
-                    Icon(Icons.AutoMirrored.Default.KeyboardArrowLeft, contentDescription = "Back")
-                }
-            }
-        )
-
-        exerciseDef.explanation()
-        Sketchup(
-            file = exerciseDef.file,
-            goToSketchup = goToSketchup,
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier
-                .align(Alignment.CenterHorizontally)
                 .fillMaxWidth()
-        )
+                .background(
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    shape = MaterialTheme.shapes.large
+                )
+                .padding(16.dp)
+        ) {
+            Text(
+                text = "Fichier de travail",
+                style = MaterialTheme.typography.labelMedium,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+            )
+            Text(
+                text = exerciseDef.file,
+                style = MaterialTheme.typography.bodyMedium.copy(fontFamily = FontFamily.Monospace),
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+            )
+        }
+        exerciseDef.explanation()
     }
 }
 
 @Preview
 @Composable
-fun LoadedPreview() {
+fun ExerciseInstructionPreview() {
     WorkshopMostWantedPreviewTheme {
-        ExplanationLoaded(
+        ExerciseInstruction(
             exerciseDef = ExerciseDef(
                 id = 0,
                 title = "Première étape",
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                            "rendez-vous dans le fichier indiqué."
+                                "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                                "rendez-vous dans le fichier indiqué."
                     )
                 },
                 file = "SimpleText.kt",
                 result = {},
                 solution = {}
             ),
-            goToSketchup = {},
-            goBack = {},
             modifier = Modifier.fillMaxSize()
         )
     }

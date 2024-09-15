@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.o80.mostwanted.PARAM_EXERCISE
 import fr.o80.mostwanted.PARAM_PAGE
-import fr.o80.mostwanted.detail.component.page.DetailPage
 import fr.o80.mostwanted.domain.GetExerciseByIdUseCase
 import fr.o80.mostwanted.domain.GetSettingsUseCase
 import fr.o80.mostwanted.domain.MarkSketchupAsSeenUseCase
@@ -74,4 +73,13 @@ sealed interface ExerciseDetailUiState {
         val page: DetailPage,
         val settings: Settings
     ) : ExerciseDetailUiState
+}
+
+enum class DetailPage(
+    val label: String,
+    val index: Int
+) {
+    Sketchup("Maquette", 0),
+    Result("Rendu", 1),
+    Instruction("Fiche mission", 2),
 }

@@ -19,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
+import fr.o80.mostwanted.detail.DetailPage
+import fr.o80.mostwanted.detail.component.template.ExerciseInstruction
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.Avatar
@@ -39,7 +41,7 @@ fun ExerciseDetailLoaded(
     val pagerState = rememberPagerState(
         initialPage = page.index,
         initialPageOffsetFraction = 0f,
-        pageCount = { 2 }
+        pageCount = { DetailPage.entries.size }
     )
 
     Column(
@@ -54,26 +56,37 @@ fun ExerciseDetailLoaded(
             },
             navigationIcon = {
                 IconButton(onClick = goBack) {
-                    Icon(Icons.AutoMirrored.Default.KeyboardArrowLeft, contentDescription = "Backs")
+                    Icon(
+                        Icons.AutoMirrored.Default.KeyboardArrowLeft,
+                        contentDescription = "Back"
+                    )
                 }
             }
         )
         TabRow(selectedTabIndex = pagerState.currentPage) {
-            Tab(
-                selected = pagerState.currentPage == 0,
-                onClick = { scope.launch { pagerState.animateScrollToPage(0) } },
-                text = { Text("Exercice") }
-            )
-            Tab(
-                selected = pagerState.currentPage == 1,
-                onClick = { scope.launch { pagerState.animateScrollToPage(1) } },
-                text = { Text("Maquette") }
-            )
+            DetailPage.entries.forEach { page ->
+                Tab(
+                    selected = pagerState.currentPage == page.index,
+                    onClick = {
+                        scope.launch { pagerState.animateScrollToPage(page.index) }
+                    },
+                    text = { Text(page.label) }
+                )
+            }
         }
         HorizontalPager(state = pagerState) { page ->
             when (page) {
-                0 -> ExerciseResult(exerciseDef = exerciseDef, modifier = Modifier.fillMaxSize())
-                1 -> ExerciseSketchup(
+                DetailPage.Instruction.index -> ExerciseInstruction(
+                    exerciseDef = exerciseDef,
+                    modifier = Modifier.fillMaxSize()
+                )
+
+                DetailPage.Result.index -> ExerciseResult(
+                    exerciseDef = exerciseDef,
+                    modifier = Modifier.fillMaxSize()
+                )
+
+                DetailPage.Sketchup.index -> ExerciseSketchup(
                     exerciseDef = exerciseDef,
                     settings = settings,
                     modifier = Modifier.fillMaxSize()
@@ -81,11 +94,6 @@ fun ExerciseDetailLoaded(
             }
         }
     }
-}
-
-enum class DetailPage(val index: Int) {
-    Result(0),
-    Sketchup(1)
 }
 
 @Preview

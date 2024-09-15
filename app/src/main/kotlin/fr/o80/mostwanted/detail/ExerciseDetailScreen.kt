@@ -25,7 +25,7 @@ fun ExerciseDetailScreen(
             modifier = modifier
         )
 
-        ExerciseDetailUiState.Error -> TODO()
+        ExerciseDetailUiState.Error -> Unit
     }
 
 }
