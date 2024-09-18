@@ -15,6 +15,7 @@ import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
@@ -153,7 +154,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 10,
             title = "Add Avatar to Identity",
-            explanation = { Explanation10() },
+            explanation = { ExplanationAvatarIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->

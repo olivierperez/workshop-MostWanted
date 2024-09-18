@@ -152,3 +152,17 @@ fun ExplanationInteractiveAvatar() {
         )
     }
 }
+
+@Composable
+fun ExplanationAvatarIntegration() {
+    Column(
+        Modifier.fillMaxSize()
+    ) {
+        ExplanationText(
+            """Votre avatar est prêt à être intégré à votre badge. Remplacez simplement
+                    l'ancien texte "image" par le composable <b>CIAImage()</b> que
+                    vous venez de coder.
+                """
+        )
+    }
+}
