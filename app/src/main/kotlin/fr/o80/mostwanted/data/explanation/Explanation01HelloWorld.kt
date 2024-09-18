@@ -33,7 +33,7 @@ fun Explanation01() {
         ExplanationText(
             """Un des Composables les plus simples fournis par Jetpack Compose est
                         le <b>Text</b>. Pour commencer votre initiation, quoi de mieux que de faire
-                        un magnifique Hello World ? Rendez-vous dans le fichier indiqué et ajoutez-y
+                        un magnifique Hello World&nbsp;? Rendez-vous dans le fichier indiqué et ajoutez-y
                         le code suivant&nbsp;:
                 """
         )

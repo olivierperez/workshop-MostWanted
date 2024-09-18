@@ -15,7 +15,7 @@ fun ExplanationProfileColumn() {
     ) {
         ExplanationTitle("Mise en page")
         ExplanationText(
-            """Mais qui êtes vous ? Cette information devrait être présente
+            """Mais qui êtes vous&nbsp;? Cette information devrait être présente
                         sur votre badge. Disons qu'il serait bien vu d'avoir une photo
                         ainsi que votre prénom et nom.
                 """

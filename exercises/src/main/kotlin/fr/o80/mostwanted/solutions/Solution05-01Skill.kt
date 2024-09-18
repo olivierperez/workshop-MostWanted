@@ -21,11 +21,16 @@ import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
 fun Solution0501Skill() {
-    Skill()
+    Skill(
+        label = "Special Agent",
+        level = "Expert"
+    )
 }
 
 @Composable
 private fun Skill(
+    label: String,
+    level: String,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -48,8 +53,8 @@ private fun Skill(
                 modifier = Modifier,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Text("Special Agent")
-                Text("Expert")
+                Text(label)
+                Text(level)
             }
         }
     }

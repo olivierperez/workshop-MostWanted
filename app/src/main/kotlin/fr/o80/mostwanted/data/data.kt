@@ -23,6 +23,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
+import fr.o80.mostwanted.data.explanation.ExplanationSkills
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -170,9 +171,15 @@ val exercises = listOf(
         ExerciseDef(
             id = 11,
             title = "Agent Skill",
-            explanation = { Explanation10() },
+            explanation = { ExplanationSkills() },
             file = "CIASkill.kt",
-            result = { CIASkill() },
+            result = {
+                CIASkill(
+                    label = "Special Agent",
+                    level = "Expert",
+                    best = false
+                )
+            },
             solution = { Solution0501Skill() }
         ),
         ExerciseDef(
@@ -180,7 +187,13 @@ val exercises = listOf(
             title = "Best Skill",
             explanation = { Explanation10() },
             file = "CIASkill.kt",
-            result = { CIASkill() },
+            result = {
+                CIASkill(
+                    label = "Special Agent",
+                    level = "Expert",
+                    best = true
+                )
+            },
             solution = { Solution0502Skill() }
         ),
         ExerciseDef(
@@ -253,15 +266,15 @@ fun ExplanationText(text: String) {
 fun Code(code: String) {
     Text(text = code,
         modifier = Modifier
-            .drawBehind {
-                drawLine(
-                    color = Color.Gray,
-                    start = Offset(0f, 0f),
-                    end = Offset(0f, size.height),
-                    strokeWidth = 8f
-                )
-            }
-            .padding(start = 8.dp)
-            .padding(vertical = 4.dp),
+                .drawBehind {
+                    drawLine(
+                        color = Color.Gray,
+                        start = Offset(0f, 0f),
+                        end = Offset(0f, size.height),
+                        strokeWidth = 8f
+                    )
+                }
+                .padding(start = 8.dp)
+                .padding(vertical = 4.dp),
         style = MaterialTheme.typography.bodyMedium)
 }
