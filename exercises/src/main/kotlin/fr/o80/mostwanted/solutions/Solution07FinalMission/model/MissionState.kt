@@ -1,12 +1,10 @@
-package fr.o80.mostwanted.boss.model
-
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.ui.graphics.vector.ImageVector
 
-enum class BossMissionState(
+enum class MissionState(
     val label: String,
     val icon: ImageVector
 ) {

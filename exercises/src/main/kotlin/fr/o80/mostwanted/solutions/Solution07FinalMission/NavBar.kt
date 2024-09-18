@@ -1,5 +1,3 @@
-package fr.o80.mostwanted.boss
-
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -8,19 +6,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import fr.o80.mostwanted.boss.model.BossPage
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-internal fun BossNavBar(
-    currentPage: BossPage,
-    onPageClick: (BossPage) -> Unit,
+internal fun NavBar(
+    currentPage: Page,
+    onPageClick: (Page) -> Unit,
     modifier: Modifier = Modifier
 ) {
     NavigationBar(
         modifier = modifier.fillMaxWidth(),
     ) {
-        BossPage.entries.forEach { page ->
+        Page.entries.forEach { page ->
             NavigationBarItem(
                 selected = page == currentPage,
                 onClick = { onPageClick(page) },
@@ -33,10 +30,10 @@ internal fun BossNavBar(
 
 @Preview
 @Composable
-private fun BossNavBarPreview() {
-    WorkshopMostWantedPreviewTheme {
-        BossNavBar(
-            currentPage = BossPage.MISSIONS,
+private fun NavBarPreview() {
+    PreviewTheme {
+        NavBar(
+            currentPage = Page.MISSIONS,
             onPageClick = {}
         )
     }

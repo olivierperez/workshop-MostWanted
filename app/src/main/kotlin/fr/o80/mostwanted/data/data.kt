@@ -52,6 +52,7 @@ import fr.o80.mostwanted.solutions.Solution0502Skill
 import fr.o80.mostwanted.solutions.Solution0503Skill
 import fr.o80.mostwanted.solutions.Solution0601NavigationBar
 import fr.o80.mostwanted.solutions.Solution0602NavigationBar
+import fr.o80.mostwanted.solutions.Solution07FinalMission.Solution07FinalMission
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
@@ -246,6 +247,22 @@ val exercises = listOf(
                 )
             }
         )
+    ),
+    "Mission finale" to listOf(
+        ExerciseDef(
+            id = 16,
+            title = "Mission finale",
+            explanation = { Explanation11() },
+            file = "CIABadge.kt",
+            result = { CIABadge() },
+            solution = { settings ->
+                Solution07FinalMission(
+                    settings.firstName,
+                    settings.lastName,
+                    settings.avatar.toExercise()
+                )
+            }
+        ),
     ),
 )
 

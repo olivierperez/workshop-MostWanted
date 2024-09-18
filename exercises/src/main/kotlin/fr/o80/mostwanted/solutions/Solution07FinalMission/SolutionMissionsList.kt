@@ -1,5 +1,8 @@
-package fr.o80.mostwanted.boss
+package fr.o80.mostwanted.solutions.Solution07FinalMission
 
+import Mission
+import MissionState
+import MissionType
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -31,41 +34,38 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.o80.mostwanted.boss.model.BossMissionState
-import fr.o80.mostwanted.boss.model.BossMissionType
-import fr.o80.mostwanted.boss.model.Mission
-import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
+import fr.o80.mostwanted.internals.PreviewTheme
 
 private val missions = listOf(
     Mission(
         title = "Configurer Android Studio",
-        type = BossMissionType.GATHER_INFORMATION,
-        state = BossMissionState.COMPLETED
+        type = MissionType.GATHER_INFORMATION,
+        state = MissionState.COMPLETED
     ),
     Mission(
         title = "Apprendre les bases de Jetpack Compose",
-        type = BossMissionType.GATHER_INFORMATION,
-        state = BossMissionState.COMPLETED
+        type = MissionType.GATHER_INFORMATION,
+        state = MissionState.COMPLETED
     ),
     Mission(
         title = "Finir l'atelier",
-        type = BossMissionType.GATHER_INFORMATION,
-        state = BossMissionState.ONGOING
+        type = MissionType.GATHER_INFORMATION,
+        state = MissionState.ONGOING
     ),
     Mission(
         title = "Envoyer une photo de mon badge sur les réseaux sociaux",
-        type = BossMissionType.COMMUNICATION,
-        state = BossMissionState.TODO
+        type = MissionType.COMMUNICATION,
+        state = MissionState.TODO
     ),
     Mission(
         title = "Créer ma propre application mobile",
-        type = BossMissionType.DEVELOPMENT,
-        state = BossMissionState.TODO
+        type = MissionType.DEVELOPMENT,
+        state = MissionState.TODO
     )
 )
 
 @Composable
-internal fun BossMissions(
+internal fun SolutionMissionsList(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
@@ -178,7 +178,7 @@ fun HiddenMission(
 @Preview
 @Composable
 private fun HiddenMissionPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         HiddenMission(13)
     }
 }
@@ -186,12 +186,12 @@ private fun HiddenMissionPreview() {
 @Preview
 @Composable
 private fun RevealedMissionPreview() {
-    WorkshopMostWantedPreviewTheme {
+    PreviewTheme {
         RevealedMission(
             Mission(
                 "Example",
-                BossMissionType.GATHER_INFORMATION,
-                BossMissionState.COMPLETED
+                MissionType.GATHER_INFORMATION,
+                MissionState.COMPLETED
             )
         )
     }
@@ -199,8 +199,8 @@ private fun RevealedMissionPreview() {
 
 @Preview
 @Composable
-private fun BossMissionsPreview() {
-    WorkshopMostWantedPreviewTheme {
-        BossMissions()
+private fun MissionsPreview() {
+    PreviewTheme {
+        SolutionMissionsList()
     }
 }
