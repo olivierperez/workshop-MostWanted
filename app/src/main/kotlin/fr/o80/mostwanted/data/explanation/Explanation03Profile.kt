@@ -69,7 +69,7 @@ fun ExplanationProfileIntegration() {
         Modifier.fillMaxSize()
     ) {
         ExplanationText(
-            """Votre profil est prêt à intégrer à votre badge. Remplacez simplement
+            """Votre profil est prêt à être intégré à votre badge. Remplacez simplement
                         l'ancien "Hello World!" par le composable <b>CIAProfile()</b> que
                         vous venez de coder.
                 """

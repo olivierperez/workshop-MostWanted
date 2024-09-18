@@ -29,7 +29,7 @@ fun ExplanationAvatarSimple() {
         ExplanationTitle("Accès aux ressources")
         ExplanationText(
             """Les images font parties des resources nommées "drawables" en Jetpack Compose,
-                    vous pouvez les utiliser en fournissant un "painter resources" au composable
+                    vous pouvez les utiliser en fournissant un "painter resource" au composable
                     <b>Image</b>. Choisissez la bonne image parmis avatar_blue, avatar_orange
                     et avatar_red.
                     """
@@ -62,13 +62,13 @@ fun ExplanationAvatarClipped() {
     ) {
         ExplanationTitle("Clip d'une image")
         ExplanationText(
-            """En se basant sur le code que vous avez produit lors de
+            """En nous basant sur le code que vous avez produit lors de
                 l'exercice précédent, nous allons essayer d'améliorer le
-                rendu visuel de notre image.
+                rendu visuel de votre avatar.
                 """
         )
         ExplanationText(
-            """Ajoutez un modifier <b>clip</b> au composable de l'avatar
+            """Appliquez un Modifier <b>clip</b> au composable de l'avatar
                     pour modifier sa forme. Un clip <b>CircleShape</b> permettra
                     d'arrondir l'avatar.
                 """
