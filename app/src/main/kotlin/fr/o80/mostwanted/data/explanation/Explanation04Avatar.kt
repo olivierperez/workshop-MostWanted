@@ -90,31 +90,33 @@ fun ExplanationInteractiveAvatar() {
     ) {
         ExplanationTitle("Interaction utilisateur")
         ExplanationText(
-            """Nous allons maintenant rendre notre écran <b>interactif</b> et 
-                obtenir le comportement présent sur la maquette  ! Pour cela,
-                 reprenez le code précédemment écrit.
+            """L'interaction de base sur mobile est le tap, elle est connue sous
+                    le nom de "click" dans Jetpack Compose. Vous la trouverez sous plusieurs
+                    déclinaisons comme "onClick" ou "clickable".
+                """
+        )
+        ExplanationText(
+            """Pour rendre votre badge interactif, reprenez le code précédemment écrit.
                 """
         )
         ExplanationTitle("Gestion d'une variable")
         ExplanationText(
-            """Nous voulons ici faire varier la taille des 4 coins de notre 
-                image. Pour ce faire, nous allons créer une variable dans le 
-                contenu de notre Composable. C'est celle-ci qui contiendra la taille 
-                souhaitée.
+            """Ici, nous voulons faire varier la taille des 4 coins de notre 
+                image. Nous allons créer une variable qui se souviendra de cette taille.
                 """
         )
         ExplanationText(
-            """Nous souhaitons que la valeur de notre variable soit 
-                persistante malgré la potentielle recomposition de notre 
-                écran. Nous allons donc la créer à l'aide d'un <b>remember</b>. 
-                Cette variable sera aussi modifiée afin de faire varier la 
-                forme de l'image. Il faut donc l'assigner avec un 
-                <b>mutableStateOf</b>.
+            """Dans le contexte de Jetpack Compose, les variables sont encapsulées
+                    dans des <b>remember</b>, voyez-les un peu comme de la memoisation.
+                    Nous allons également demander à cette variable d'avoir un impact
+                    sur ce qu'on présente à l'écran, pour ce faire nous devons la déclarer
+                    comme un "mutable state".
                 """
         )
         Code("var corner by remember { mutableIntStateOf(0) }")
         ExplanationText(
-            """La variable <b>corner</b> est ici initialisée à 0.
+            """<i>La variable <b>corner</b> est ici initialisée à 0
+                et peut-être amennée à changer.</i>
                 """
         )
         ExplanationTitle("Modification du clip")
@@ -124,7 +126,7 @@ fun ExplanationInteractiveAvatar() {
                 """
         )
         ExplanationText(
-            """Vous n'avez pas trouvé ? Que pensez-vous de RoundedCornerShape ?"""
+            """Vous n'avez pas trouvé ? Que pensez-vous de <b>RoundedCornerShape</b>&nbsp;?"""
         )
         ExplanationText(
             """Si vous observez votre travail, l'image est maintenant 
@@ -134,9 +136,8 @@ fun ExplanationInteractiveAvatar() {
         )
         ExplanationTitle("Clickable")
         ExplanationText(
-            """Chaque modifier présente un attribut <b>clickable</b> qui 
-                permet de transmettre un comportement au clic sur le 
-                Composable associé.
+            """Cherchez dans la doc le Modifier qui vous permettra de définir
+                un comportement pour réagir à un clic sur l'image.
                 """
         )
         ExplanationText(
