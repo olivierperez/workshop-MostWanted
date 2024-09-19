@@ -35,7 +35,7 @@ fun ExplanationScaffoldBadgeLayout() {
     ExplanationTitle("Modifier")
     ExplanationText(
         """Le Scaffold de Material ne vous oblige pas à afficher le contenu à la
-                    suite de la TopBar, ce la peut-être utile si vous souhaitez avoir
+                    suite de la TopBar, cela peut-être utile si vous souhaitez avoir
                     un contenu qui pourra scroller sous cette TopBar par exemple.
                     Le Scaffold vous met donc à disposition des valeurs pour pouvoir dessiner
                     le contenu entre la TopBar et la BottomBar, et est en train de vous alerter
@@ -51,7 +51,7 @@ fun ExplanationScaffoldBadgeLayout() {
                 """
     )
     ExplanationText(
-        """Utilisez la paramètres <b>paddingValues</b> que le Scaffold fournit,
+        """Utilisez le paramètres <b>paddingValues</b> que le Scaffold fournit,
                     et passez le au Modifier du contenu.  Cela aurait pour effet d'ajouter
                     des marges au dessus et en dessous du contenu pour ne pas déborder
                     sous la TopBar ni sous la BottomBar plus tard.

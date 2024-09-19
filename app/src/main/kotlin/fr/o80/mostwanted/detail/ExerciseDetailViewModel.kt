@@ -79,7 +79,7 @@ enum class DetailPage(
     val label: String,
     val index: Int
 ) {
-    Sketchup("Maquette", 0),
-    Result("Rendu", 1),
-    Instruction("Fiche mission", 2),
+    Sketchup("Maquette\nattendue", 0),
+    Result("Résultat de\nl'exercice", 1),
+    Instruction("Fiche\nmission", 2),
 }

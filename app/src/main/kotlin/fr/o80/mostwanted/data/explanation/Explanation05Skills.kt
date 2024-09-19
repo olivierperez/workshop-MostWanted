@@ -64,7 +64,9 @@ fun ExplanationSkills() {
         )
         Code("""Row / Column
             |fillMaxWidth / padding
-            |verticalAlignment / horizontalArrangement / verticalArrangement
+            |verticalAlignment
+            |horizontalArrangement
+            |verticalArrangement
             """.trimMargin()
         )
     }

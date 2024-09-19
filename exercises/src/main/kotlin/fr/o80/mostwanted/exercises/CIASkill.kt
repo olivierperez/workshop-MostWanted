@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 fun CIASkill(
     label: String,
     level: String,
-    best: Boolean,
+    isBest: Boolean,
     modifier: Modifier = Modifier
 ) {
 
