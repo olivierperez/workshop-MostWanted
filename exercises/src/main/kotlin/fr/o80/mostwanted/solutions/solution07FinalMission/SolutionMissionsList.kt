@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solutions.Solution07FinalMission
+package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import Mission
 import MissionState
@@ -166,7 +166,7 @@ fun HiddenMission(
     ) {
         Icon(
             imageVector = Icons.AutoMirrored.Default.KeyboardArrowRight,
-            contentDescription = null
+            contentDescription = "Keyboard arrow right"
         )
         Text(
             text = "Mission Secrète #$number",

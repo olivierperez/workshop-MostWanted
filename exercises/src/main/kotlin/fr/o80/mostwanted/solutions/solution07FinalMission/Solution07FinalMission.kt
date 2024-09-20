@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solutions.Solution07FinalMission
+package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import Header
 import NavBar

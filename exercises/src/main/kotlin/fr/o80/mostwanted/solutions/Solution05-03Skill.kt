@@ -97,9 +97,11 @@ fun Solution0503Skill(
 private fun Profile(
     firstName: String,
     lastName: String,
-    avatar: Avatar
+    avatar: Avatar,
+    modifier: Modifier = Modifier
 ) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

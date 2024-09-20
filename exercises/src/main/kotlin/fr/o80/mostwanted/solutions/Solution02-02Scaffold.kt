@@ -11,8 +11,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun Solution0202Scaffold() {
+fun Solution0202Scaffold(
+    modifier: Modifier = Modifier
+) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {

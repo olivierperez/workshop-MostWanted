@@ -10,8 +10,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun Solution0201Scaffold() {
-    Scaffold { paddingValues ->
+fun Solution0201Scaffold(
+    modifier: Modifier = Modifier
+) {
+    Scaffold(
+        modifier = modifier,
+    ) { paddingValues ->
         Box(
             modifier = Modifier.padding(paddingValues)
         ) {

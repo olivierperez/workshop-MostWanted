@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solutions.Solution07FinalMission
+package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
@@ -67,10 +66,20 @@ fun SolutionIdentity(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(
-                    count = 2,
-                    itemContent = { Skill() }
-                )
+                item {
+                    Skill(
+                        "Compose",
+                        "Expert",
+                        isBest = true
+                    )
+                }
+                item {
+                    Skill(
+                        "Creating bugs",
+                        "Noob",
+                        isBest = false
+                    )
+                }
             }
         }
     }
@@ -103,6 +112,9 @@ private fun Profile(
 
 @Composable
 private fun Skill(
+    label: String,
+    level: String,
+    isBest: Boolean,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -113,23 +125,26 @@ private fun Skill(
                 .fillMaxWidth()
                 .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Image(
-                painter = painterResource(R.drawable.avatar_red),
-                contentDescription = "Avatar",
-                modifier = Modifier.clip(CircleShape)
+                painter = painterResource(R.drawable.skill),
+                contentDescription = "Skill"
             )
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {
-                Text("Special Agent")
-                Text("Expert")
+                Text(label)
+                Text(level)
             }
-            Icon(
-                imageVector = Icons.Default.Star,
-                contentDescription = "Star",
-            )
+            if (isBest) {
+                Icon(
+                    imageVector = Icons.Default.Star,
+                    contentDescription = "Star",
+                    modifier = Modifier.padding(8.dp)
+                )
+            }
         }
     }
 }

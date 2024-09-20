@@ -19,9 +19,11 @@ import fr.o80.mostwanted.internals.PreviewTheme
 @Composable
 fun Solution0302Profile(
     firstName: String,
-    lastName: String
+    lastName: String,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -54,9 +56,11 @@ fun Solution0302Profile(
 @Composable
 private fun Profile(
     firstName: String,
-    lastName: String
+    lastName: String,
+    modifier: Modifier = Modifier
 ) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
