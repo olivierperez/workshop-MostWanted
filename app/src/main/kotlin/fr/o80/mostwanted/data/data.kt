@@ -23,7 +23,8 @@ import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
-import fr.o80.mostwanted.data.explanation.ExplanationSkills
+import fr.o80.mostwanted.data.explanation.ExplanationSkillIcon
+import fr.o80.mostwanted.data.explanation.ExplanationSkillItem
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -179,7 +180,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 12,
             title = "Agent Skill",
-            explanation = { ExplanationSkills() },
+            explanation = { ExplanationSkillItem() },
             file = "CIASkill.kt",
             result = {
                 CIASkill(
@@ -193,7 +194,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 13,
             title = "Best Skill",
-            explanation = { Explanation10() },
+            explanation = { ExplanationSkillIcon() },
             file = "CIASkill.kt",
             result = {
                 CIASkill(

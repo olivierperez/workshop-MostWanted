@@ -9,7 +9,7 @@ import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
-fun ExplanationSkills() {
+fun ExplanationSkillItem() {
     Column(
         Modifier.fillMaxSize()
     ) {
@@ -68,6 +68,73 @@ fun ExplanationSkills() {
             |horizontalArrangement
             |verticalArrangement
             """.trimMargin()
+        )
+    }
+}
+
+@Composable
+fun ExplanationSkillIcon() {
+    Column(
+        Modifier.fillMaxSize()
+    ) {
+        ExplanationTitle("Mise en avant")
+        ExplanationText(
+            """Vous avez sûrement une compétence particulière, ce petit truc qui
+                    vous différencie de vos collègues. Ça vous dirait de la mettre en
+                    avant sur votre badge ? Quelque chose comme une petite étoile sur
+                    la droite de la <b>Card</b> de compétence.
+                """
+        )
+        ExplanationText(
+            """Il est l'heure de découvrir un autre composable qui déssine une
+                    image, qui dessine plus particulièrement une icône. La différence
+                    ici est qu'une icône pourrait être vue comme une forme plutôt que
+                    comme un dessin. Le composable <b>Icon</b> ressemble beaucoup à
+                    <b>Image</b> et vous propose une méthode simple pour appliquer
+                    une teinte.
+                """
+        )
+        ExplanationText(
+            """Petite astuce, Material vous propos un lot d'icônes permis
+                    lesquels vous trouverez sûrement votre bonheur&nbsp;:
+                    <b>Icons.Default.Star</b>.
+                """
+        )
+        Code("""@Composable
+            |Icon(
+            |   imageVector = Icons.Default.Star,
+            |   // ...
+            |)
+            """.trimMargin()
+        )
+        ExplanationText(
+            """Vous pouvez conditionner l'affichage de ce composable en fonction
+                du paramètre <b>isBest</b> passé au composable <b>CIASkill</b>.
+                """
+        )
+        ExplanationText(
+            """Note&nbsp;: <i>N'hésitez à utiliser l'auto-completion lorsque vous
+                parcourez les icons de Material.</i>
+            """
+        )
+
+        ExplanationTitle("Étirer un élément")
+        ExplanationText(
+            """Vous avez peut-être remarqué que l'icône n'est pas automatiquement
+                    plaquée à droite de la <b>Row</b>. Encore une fois, par défaut,
+                    les composables cherchent à se positionner le plus à gauche possible.
+            """
+        )
+        ExplanationText(
+            """Il existe plusieurs façon d'adresser ce besoin, ici nous allons
+                    demander aux textes de s'étirer à l'horizontal.
+            """
+        )
+        ExplanationText(
+            """Dès qu'un composable se trouve dans une <b>Row</b>, vous pouvez lui
+                    appliquer un Modifier <b>.weight(1f)</b> puis lui demander de prendre
+                    un maximum de place sans marcher sur ses voisins.
+            """
         )
     }
 }
