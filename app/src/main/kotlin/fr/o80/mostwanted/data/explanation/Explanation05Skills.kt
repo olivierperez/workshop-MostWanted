@@ -138,3 +138,65 @@ fun ExplanationSkillIcon() {
         )
     }
 }
+
+@Composable
+fun ExplanationSkillsIntegration() {
+    Column(
+        Modifier.fillMaxSize()
+    ) {
+        ExplanationText(
+            """Il est temps d'ajouter vos compétences à votre badge. On pourrait
+                    leur faire un peu de place sous votre prénom et nom.
+                """
+        )
+        ExplanationText(
+            """La Column était faite pour afficher des Composables les uns
+                    au dessous des autres, vous pourriez penser que c'est le Comopsable
+                    à utiliser ici.
+                """
+        )
+        ExplanationText(
+            """Que nenni&nbsp;! Chaque exercice est l'occasion de découvrir une nouveauté.
+                """
+        )
+        ExplanationTitle("LazyColumn")
+        ExplanationText(
+            """La <b>LazyColumn</b> est un Composable qu'on sera souvent amenés
+                    à utiliser pour afficher une grande liste d'éléments, ce qui demanderai
+                    à l'utilisateur de défiler pour en parcourir l'intégralité.
+                """
+        )
+        ExplanationText(
+            """Cela consommerai trop de resources de calculer les centaines d'éléments
+                    que l'utilisateur ne vera pas avant de défiler. Les téléphones n'étant
+                    pas faits pour gérer autant d'informations, la LazyColumn ne calcule
+                    que les éléments présents à l'écran et retarde le calcul des suivants
+                    à plus tard.
+                """
+        )
+        ExplanationText(
+            """Une petite différence à savoir à l'utilisation, on ne donne pas
+                    directement les Composables à une LazyColumn. On lui donne des
+                    <b>item { ... }</b> à l'intérieur desquels on va définir nos
+                    Composables.
+                """
+        )
+        Code("""LazyColumn(...) {
+            |   item { Text("Hello"") }
+            |   item { Text("World!"") }
+            |)
+            """.trimMargin()
+        )
+        ExplanationText(
+            """Note&nbsp;: <i>La <b>LazyColumn</b> pratique également de recyclage
+                    de Composable en réutilisant ceux disparus d'un côté pour afficher
+                    ceux qui apparaissent de l'autre.</i>
+                """
+        )
+        ExplanationTitle("Intégration")
+        ExplanationText(
+            """Ajoutez 2 compétences à votre badge en utilisant une <b>LazyColumn</b>.
+                """
+        )
+    }
+}

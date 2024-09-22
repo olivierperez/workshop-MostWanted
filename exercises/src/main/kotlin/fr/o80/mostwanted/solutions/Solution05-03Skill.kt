@@ -127,7 +127,7 @@ private fun Skill(
         modifier = modifier.fillMaxWidth()
     ) {
         Row(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically,

@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.data.explanation.Explanation01
-import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
@@ -25,6 +24,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
 import fr.o80.mostwanted.data.explanation.ExplanationSkillIcon
 import fr.o80.mostwanted.data.explanation.ExplanationSkillItem
+import fr.o80.mostwanted.data.explanation.ExplanationSkillsIntegration
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -208,7 +208,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 14,
             title = "Add Skill to Identity",
-            explanation = { Explanation10() },
+            explanation = { ExplanationSkillsIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->
