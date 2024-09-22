@@ -25,6 +25,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
 import fr.o80.mostwanted.data.explanation.ExplanationSkillIcon
 import fr.o80.mostwanted.data.explanation.ExplanationSkillItem
 import fr.o80.mostwanted.data.explanation.ExplanationSkillsIntegration
+import fr.o80.mostwanted.data.explanation.ExplanationTwoSides
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -224,7 +225,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 15,
             title = "Navigation Bar",
-            explanation = { Explanation11() },
+            explanation = { ExplanationTwoSides() },
             file = "ExerciseNavigation.kt",
             result = { ExerciseNavigation() },
             solution = { Solution0601NavigationBar() }
