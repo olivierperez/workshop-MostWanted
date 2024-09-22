@@ -11,12 +11,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
-import fr.o80.mostwanted.data.explanation.Explanation01
 import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
+import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationPreview
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
 import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
@@ -35,6 +36,7 @@ import fr.o80.mostwanted.exercises.CIAProfile
 import fr.o80.mostwanted.exercises.CIASkill
 import fr.o80.mostwanted.exercises.ExerciseHelloWorld
 import fr.o80.mostwanted.exercises.ExerciseNavigation
+import fr.o80.mostwanted.internals.UsePreviewInIDE
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution0201Scaffold
 import fr.o80.mostwanted.solutions.Solution0202Scaffold
@@ -57,7 +59,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 1,
             title = "Hello World!",
-            explanation = { Explanation01() },
+            explanation = { ExplanationHelloWorld() },
             file = "ExerciseHelloWorld.kt",
             result = { ExerciseHelloWorld() },
             solution = { Solution01HelloWorld() }
@@ -65,10 +67,10 @@ val exercises = listOf(
         ExerciseDef(
             id = 2,
             title = "Live Preview",
-            explanation = { Text("TODO : @Preview / Bouton pour voir dans l'IDE") },
+            explanation = { ExplanationPreview() },
             file = "ExerciseHelloWorld.kt",
-            result = { Text("TODO") },
-            solution = { Text("TODO") }
+            result = { UsePreviewInIDE() },
+            solution = { UsePreviewInIDE() }
         )
     ),
     "\uD83E\uDDD1\u200D\uD83D\uDD27 Poser le cadre" to listOf(

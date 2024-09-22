@@ -21,7 +21,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseInstruction
-import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.component.template.ExerciseResult
 import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.Avatar
@@ -82,7 +81,7 @@ fun ExerciseDetailLoaded(
                     modifier = Modifier.fillMaxSize()
                 )
 
-                DetailPage.Result.index -> ExerciseInstruction(
+                DetailPage.Result.index -> ExerciseResult(
                     exerciseDef = exerciseDef,
                     modifier = Modifier.fillMaxSize()
                 )
