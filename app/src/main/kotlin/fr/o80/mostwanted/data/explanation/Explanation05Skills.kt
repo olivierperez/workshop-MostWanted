@@ -32,7 +32,7 @@ fun ExplanationSkillItem() {
             """Pour le mettre un peu en exergue, utilisez le Composable <b>Card</b>
                     du design system Material. Comme son nom l'indique, il 
                     affiche son contenu sous forme de carte, un peu comme si
-                     vous l'aviez posé sur l'écran.
+                    vous l'aviez posé sur l'écran.
                 """
         )
 
