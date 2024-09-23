@@ -121,9 +121,9 @@ fun ExplanationScaffoldStyling() {
                 """
     )
     ExplanationText(
-        """Pour le centrer, nous allons l'encapsuler dans une <b>Box</b> que 
-            nous allons étirer pour occuper toute la place à laquelle elle a 
-            accès (souvenez-vous des marges proposées par le Scaffold), puis 
+        """Pour le centrer, nous allons l'encapsuler dans une <b>Box</b> que
+            nous allons étirer pour occuper toute la place à laquelle elle a
+            accès (souvenez-vous des marges proposées par le Scaffold), puis
             nous demanderons à la <b>Box</b> de centrer son contenu.
                 """
     )
