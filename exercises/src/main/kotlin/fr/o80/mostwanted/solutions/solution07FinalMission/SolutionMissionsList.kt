@@ -7,7 +7,7 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
-import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -30,7 +30,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -92,18 +91,7 @@ fun SecretMission(
     AnimatedContent(
         modifier = modifier
             .height(80.dp)
-            .pointerInput(mission) {
-                awaitEachGesture {
-                    while (true) {
-                        val event = awaitPointerEvent()
-                        event.changes.forEach {
-                            visible = it.pressed
-                            it.consume()
-                        }
-                    }
-
-                }
-            },
+            .clickable { visible = !visible },
         targetState = visible,
         transitionSpec = { fadeIn() togetherWith fadeOut() },
         label = "mission-visibility"
@@ -131,8 +119,8 @@ fun RevealedMission(
 ) {
     Row(
         modifier = modifier
-            .padding(8.dp)
-            .semantics(mergeDescendants = true) { },
+                .padding(8.dp)
+                .semantics(mergeDescendants = true) { },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -159,8 +147,8 @@ fun HiddenMission(
 ) {
     Row(
         modifier = modifier
-            .padding(8.dp)
-            .semantics(mergeDescendants = true) { },
+                .padding(8.dp)
+                .semantics(mergeDescendants = true) { },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
