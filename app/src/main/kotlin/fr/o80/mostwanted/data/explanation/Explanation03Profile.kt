@@ -15,28 +15,29 @@ fun ExplanationProfileColumn() {
     ) {
         ExplanationTitle("Mise en page")
         ExplanationText(
-            """Mais qui êtes vous&nbsp;? Cette information devrait être présente
+            """Mais qui êtes-vous&nbsp;? Cette information devrait être présente
                         sur votre badge. Disons qu'il serait bien vu d'avoir une photo
                         ainsi que votre prénom et nom.
                 """
         )
         ExplanationText(
             """Plus simple que le Scaffold, nous allons utiliser ici la <b>Column</b>.
-                        Sans grand surprise, ce composable affiche ses enfants en colonne,
-                        les uns sous les autres.
+                        Sans grande surprise, ce composable affiche ses 
+                        enfants en colonne, les uns sous les autres.
                 """
         )
         Code("""|Column {
                 |    // ...
                 |}""".trimMargin())
         ExplanationText(
-            """Pour commencer simple n'affichez pas une image mais simplement
+            """Pour commencer, n'affichez pas une image mais simplement
                         le mot "Image".
                 """
         )
         ExplanationText(
             """Sur une premier ligne, affichez donc le mot "Image"
-                        puis sur une seconde affichez votre prénom et votre nom.
+                        puis, sur une seconde, affichez votre prénom et votre 
+                        nom.
                 """
         )
         ExplanationTitle("Alignement")
@@ -50,13 +51,13 @@ fun ExplanationProfileColumn() {
         ExplanationText(
             """Pour jouer sur leur positionnement vertical, la Column propose un autre
                         paramètre&nbsp;: <b>verticalArrangement</b>. Ici nous voulons simplement
-                        laisser un peu d'espaces entre chacun de ses enfants, 4dp devraient
+                        laisser un peu d'espace entre chacun de ses enfants, 4dp devraient
                         être suffisants.
                 """
         )
         Code("verticalArrangement = Arrangement.spacedBy(4.dp)")
         ExplanationText(
-            """Note&nbsp;:<i>La Row propose les paramètres inverses:
+            """Note&nbsp;:<i>La Row propose les paramètres inverses :
                         verticalAlignment et horizontalArrangement.</i>
                 """
         )

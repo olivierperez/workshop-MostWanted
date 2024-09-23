@@ -11,12 +11,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
-import fr.o80.mostwanted.data.explanation.Explanation11
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
 import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationNavigationBar
 import fr.o80.mostwanted.data.explanation.ExplanationPreview
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
 import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
@@ -166,7 +166,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 11,
-            title = "Intégration de l'avatar",
+            title = "Intégration de l'Avatar",
             explanation = { ExplanationAvatarIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
@@ -210,7 +210,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 14,
-            title = "Intégration des cométences",
+            title = "Intégration des Compétences",
             explanation = { ExplanationSkillsIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
@@ -227,15 +227,15 @@ val exercises = listOf(
         ExerciseDef(
             id = 15,
             title = "Barre de Navigation",
-            explanation = { ExplanationTwoSides() },
+            explanation = { ExplanationNavigationBar() },
             file = "ExerciseNavigation.kt",
             result = { ExerciseNavigation() },
             solution = { Solution0601NavigationBar() }
         ),
         ExerciseDef(
             id = 16,
-            title = "Two sided Badge",
-            explanation = { Explanation11() },
+            title = "Badge recto & verso",
+            explanation = { ExplanationTwoSides() },
             file = "CIABadge.kt",
             result = { CIABadge() },
             solution = { settings ->

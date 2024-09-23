@@ -16,7 +16,7 @@ fun ExplanationHelloWorld() {
         ExplanationTitle("Bienvenue")
         ExplanationText(
             """C'est votre premier jour à la CIA, une nouvelle aventure commence ici.
-                        Au fur et à mesure de cet atelier vous allez rencontrer des outils que
+                        Au fur et à mesure de cet atelier, vous allez rencontrer des outils que
                         Jetpack Compose met à notre disposition pour réaliser les plus belles
                         applications en Kotlin.
                 """
@@ -53,7 +53,7 @@ fun ExplanationPreview() {
                 """
         )
         ExplanationText(
-            """La plupart du temps nous vous conseillons de d'abord développer
+            """La plupart du temps, nous vous conseillons de d'abord développer
                     vos Composables sans sortir de l'IDE, en utilisant ce qu'on appelle
                     une <b>Preview</b>. Cela vous permettra de voir le rendu du
                     Composable seul avant de l'intégrer à un écran.
@@ -66,12 +66,14 @@ fun ExplanationPreview() {
                     car il n'a pas vocation à exister en dehors de ce fichier.
                 """
         )
-        Code("""@Preview
+        Code(
+            """@Preview
             |@Composable
             |private fun HelloWorldPreview() {
             |   ExerciseHelloWorld()
             |}
-        """.trimMargin())
+        """.trimMargin()
+        )
         ExplanationText(
             """Pour la suite des exercices, prenez l'habitude de créer
                 vos <b>Preview</b>.
@@ -80,14 +82,14 @@ fun ExplanationPreview() {
 
         ExplanationTitle("Live update")
         ExplanationText(
-            """Il existe un autre mécanisme appelé <b>Live Update</b>, il permet
+            """Il existe un autre mécanisme appelé <b>Live Update</b>. Il permet
                     de voir en live les modifications directement dans l'application
                     tout en modifiant vos Composables.
                 """
         )
         ExplanationText(
-            """Bien que cet outil s'annonce prometteur il a quelques limites,
-                    le Live Update ne détecte pas toutes les modifications.
+            """Bien que cet outil s'annonce prometteur, il a quelques limites.
+                    Le Live Update ne détecte pas toutes les modifications.
                     Pour cet atelier, et pour éviter de vous embrouiller,
                     nous n'allons pas l'utiliser.
                 """

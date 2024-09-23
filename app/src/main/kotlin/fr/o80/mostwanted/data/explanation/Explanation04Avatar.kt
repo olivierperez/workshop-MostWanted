@@ -15,7 +15,7 @@ fun ExplanationAvatarSimple() {
     ) {
         ExplanationTitle("Image")
         ExplanationText(
-            """Vous ne pouvez pas vous trimbaler dans les couloir avec le mot
+            """Vous ne pouvez pas vous trimbaler dans les couloirs avec le mot
                     "Image" sur votre badge, ça n'a aucun sens&nbsp;!
                     """
         )
@@ -28,10 +28,10 @@ fun ExplanationAvatarSimple() {
         )
         ExplanationTitle("Accès aux ressources")
         ExplanationText(
-            """Les images font parties des resources nommées "drawables" en Jetpack Compose,
-                    vous pouvez les utiliser en fournissant un "painter resource" au composable
-                    <b>Image</b>. Choisissez la bonne image parmis avatar_blue, avatar_orange
-                    et avatar_red.
+            """Les images font partie des ressources nommées "drawables" en
+                Jetpack Compose. Vous pouvez les utiliser en fournissant un 
+                "painter resource" au composable <b>Image</b>. Choisissez la 
+                bonne image parmi avatar_blue, avatar_orange et avatar_red.
                     """
         )
         Code(
@@ -42,14 +42,14 @@ fun ExplanationAvatarSimple() {
         )
         ExplanationText(
             """L'accessibilité est un sujet important pour Jetpack Compose,
-                    lorsque vous utilisez une image il faut proposer une alternative
-                    textuelle via le paramètre "contentDescription".
+                    lorsque vous utilisez une image, il faut proposer une 
+                    alternative textuelle via le paramètre "contentDescription".
                 """
         )
         ExplanationText(
             """Note&nbsp;: <i>Ce Composable permet d'afficher une image de type PNG, JPEG, 
-                    WEBP, mais aussi des images vectorielles au format AVD (Android Vector Drawable)
-                    inspiré du SVG.</i>
+                    WEBP, mais aussi des images vectorielles au format AVD 
+                    (Android Vector Drawable), inspiré du SVG.</i>
                     """
         )
     }
@@ -76,8 +76,9 @@ fun ExplanationAvatarClipped() {
         Code("""Modifier.clip(CircleShape)""")
         ExplanationText(
             """Note&nbsp;: <i>Vous pouvez vous en douter, vous pouvez appliquer ce
-                    comportement à n'importe quel Modifier ce qui implique que vous pouvez
-                    arrondir les bords de n'importe quel Composable&nbsp;!</i>
+                    comportement à n'importe quel Modifier, ce qui implique 
+                    que vous pouvez arrondir les bords de n'importe quel 
+                    Composable&nbsp;!</i>
                 """
         )
     }
@@ -109,14 +110,14 @@ fun ExplanationInteractiveAvatar() {
             """Dans le contexte de Jetpack Compose, les variables sont encapsulées
                     dans des <b>remember</b>, voyez-les un peu comme de la memoisation.
                     Nous allons également demander à cette variable d'avoir un impact
-                    sur ce qu'on présente à l'écran, pour ce faire nous devons la déclarer
-                    comme un "mutable state".
+                    sur ce qu'on présente à l'écran. Pour ce faire, nous devons 
+                    la déclarer comme un "mutable state".
                 """
         )
         Code("var corner by remember { mutableIntStateOf(0) }")
         ExplanationText(
-            """<i>La variable <b>corner</b> est ici initialisée à 0
-                et peut-être amennée à changer.</i>
+            """<i>La variable <b>corner</b> est ici initialisée à 0 et peut 
+                être amenée à changer.</i>
                 """
         )
         ExplanationTitle("Modification du clip")

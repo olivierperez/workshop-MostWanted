@@ -44,17 +44,17 @@ fun ExplanationScaffoldBadgeLayout() {
     )
     ExplanationText(
         """Pour positionner le contenu, nous allons utiliser son argument <b>modifier</b>,
-                    Chaque Composable en possède un auquel nous allons passer des modificateurs
+                    Chaque Composable en possède un, auquel nous allons passer des modificateurs
                     pour changer l'apparence ou le comportement de l'élément.
                     Ce paramètre générique vient s'ajouter aux paramètres spécifiques
                     proposés par chaque Composable.
                 """
     )
     ExplanationText(
-        """Utilisez le paramètres <b>paddingValues</b> que le Scaffold fournit,
-                    et passez le au Modifier du contenu.  Cela aurait pour effet d'ajouter
-                    des marges au dessus et en dessous du contenu pour ne pas déborder
-                    sous la TopBar ni sous la BottomBar plus tard.
+        """Utilisez le paramètre <b>paddingValues</b> que le Scaffold fournit,
+                    et passez le au Modifier du contenu. Cela a pour effet 
+                    d'ajouter des marges au dessus et en dessous du contenu 
+                    pour ne pas déborder sous la TopBar ni sous la BottomBar plus tard.
         """
     )
     Code(
@@ -77,7 +77,7 @@ fun ExplanationScaffoldBadgeLayout() {
 fun ExplanationScaffoldBadgeContent() {
     ExplanationTitle("TopBar")
     ExplanationText(
-        """Pour afficher un titre centré nous pouvons utiliser
+        """Pour afficher un titre centré, nous pouvons utiliser
                     le Composable <b>CenterAlignedTopAppBar</b>.
                 """
     )
@@ -101,12 +101,12 @@ fun ExplanationScaffoldBadgeContent() {
     )
     ExplanationTitle("BottomBar")
     ExplanationText(
-        """De même, utilisez le champs <b>bottomBar = { ... }</b>
-                    pour un simple texte "Badge" en bas de la page.
+        """De même, utilisez le champ <b>bottomBar = { ... }</b>
+                    pour afficher un simple texte "Badge" en bas de la page.
                 """
     )
     ExplanationText(
-        """Vous l'avez déjà fait plusieurs fois, vous devriez vous en sortir.
+        """Vous l'avez déjà fait plusieurs fois, vous devriez vous en sortir !
                 """
     )
 }
@@ -115,22 +115,22 @@ fun ExplanationScaffoldBadgeContent() {
 fun ExplanationScaffoldStyling() {
     ExplanationTitle("Centrer le contenu")
     ExplanationText(
-        """Vous avez que le contenu vient se loger en haut à gauche de l'écran,
-                    c'est son comportement par défaut, sans contre-indication il va
-                    se positionner à cet endroit en occupant le moins de place possible.
+        """Le contenu vient se loger en haut à gauche de l'écran, c'est son 
+            comportement par défaut. Sans contre-indication, il va se 
+            positionner à cet endroit en occupant le moins de place possible.
                 """
     )
     ExplanationText(
-        """Pour le centrer nous allons l'encapsuler dans une <b>Box</b> que nous allons
-                    étirer pour occuper toute la place à laquelle elle a accès
-                    (souvenez-vous des marges proposées par le Scaffold), puis nous demanderons
-                    à la <b>Box</b> de centrer son contenu.
+        """Pour le centrer, nous allons l'encapsuler dans une <b>Box</b> que 
+            nous allons étirer pour occuper toute la place à laquelle elle a 
+            accès (souvenez-vous des marges proposées par le Scaffold), puis 
+            nous demanderons à la <b>Box</b> de centrer son contenu.
                 """
     )
     ExplanationText(
         """Attention, maintenant que le Text n'est pas <b>l'enfant direct</b>
-                    du Scaffold ce n'est plus à lui de récupérer les <b>paddingValues</b>
-                    mais à la <b>Box</b>.
+                    du Scaffold, ce n'est plus à lui de récupérer les 
+                    <b>paddingValues</b> mais à la <b>Box</b>.
                 """
     )
     Code(
@@ -152,15 +152,16 @@ fun ExplanationScaffoldStyling() {
     ExplanationTitle("Apparence du texte")
     ExplanationText(
         """Passons au texte de la BottomBar, il ne mérite pas d'être si visible.
-                    Utilisez son champs "style" pour définir son appareance.
+                    Utilisez son champ "style" pour définir son apparence.
                     Material vous propose un lot de "typography" pour donner un peu
                     de sens à nos textes, utilisez <b>MaterialTheme.typography.labelMedium</b>.
                 """
     )
     ExplanationText(
         """Une fois le style défini, ajoutez un peu de marge autour,
-                    4dp (density-independent pixels) devraient suffir&nbsp:
-                """)
+                    4dp (density-independent pixels) devraient suffire&nbsp:
+                """
+    )
     Code(
         """Modifier.padding(4.dp)"""
     )
