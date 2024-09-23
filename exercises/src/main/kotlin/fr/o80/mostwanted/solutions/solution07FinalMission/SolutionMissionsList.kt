@@ -60,6 +60,11 @@ private val missions = listOf(
         title = "Créer ma propre application mobile",
         type = MissionType.DEVELOPMENT,
         state = MissionState.TODO
+    ),
+    Mission(
+        title = "Déployer mon application sur les stores",
+        type = MissionType.DEVELOPMENT,
+        state = MissionState.TODO
     )
 )
 

@@ -16,6 +16,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
 import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationMissionsList
 import fr.o80.mostwanted.data.explanation.ExplanationNavigationBar
 import fr.o80.mostwanted.data.explanation.ExplanationPreview
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
@@ -250,7 +251,7 @@ val exercises = listOf(
         ExerciseDef(
             id = 17,
             title = "Mission finale",
-            explanation = { Explanation11() },
+            explanation = { ExplanationMissionsList() },
             file = "CIABadge.kt",
             result = { CIABadge() },
             solution = { settings ->
