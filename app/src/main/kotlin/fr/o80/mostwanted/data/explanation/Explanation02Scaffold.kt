@@ -106,7 +106,7 @@ fun ExplanationScaffoldBadgeContent() {
                 """
     )
     ExplanationText(
-        """Vous l'avez déjà fait plusieurs fois, vous devriez vous en sortir !
+        """Vous l'avez déjà fait plusieurs fois, vous devriez vous en sortir&nbsp;!
                 """
     )
 }
