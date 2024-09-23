@@ -42,7 +42,7 @@ fun Explanation08() {
         Code("var activate by remember { mutableStateOf(false) }")
         ExplanationText(
             """Nous allons ensuite utiliser cette variable dans l'attribut 
-                <b>visible</b> de notre AnimatedVisibility :
+                <b>visible</b> de notre AnimatedVisibility&nbsp;:
         """
         )
         Code(
@@ -52,7 +52,7 @@ fun Explanation08() {
                 ")"
         )
         ExplanationText(
-            """<i>Note : Vous pouvez modifier l'apparence des transitions de 
+            """<i>Note&nbsp;: Vous pouvez modifier l'apparence des transitions de 
                 l'animation grâce aux propriétés <b>enter</b> et <b>exit</b>.</i>
         """
         )

@@ -4,6 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CIASkill(modifier: Modifier = Modifier) {
+fun CIASkill(
+    label: String,
+    level: String,
+    isBest: Boolean,
+    modifier: Modifier = Modifier
+) {
 
 }

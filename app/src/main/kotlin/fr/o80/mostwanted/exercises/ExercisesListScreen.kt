@@ -40,7 +40,7 @@ fun ExercisesListScreen(
             item {
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleSmall
+                    style = MaterialTheme.typography.titleLarge
                 )
             }
             items(exercises) { exercise ->

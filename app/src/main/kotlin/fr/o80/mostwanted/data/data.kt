@@ -9,18 +9,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import fr.o80.mostwanted.component.atom.toAnnotatedString
-import fr.o80.mostwanted.data.explanation.Explanation01
-import fr.o80.mostwanted.data.explanation.Explanation02
-import fr.o80.mostwanted.data.explanation.Explanation03
-import fr.o80.mostwanted.data.explanation.Explanation05
-import fr.o80.mostwanted.data.explanation.Explanation06
-import fr.o80.mostwanted.data.explanation.Explanation07
-import fr.o80.mostwanted.data.explanation.Explanation10
 import fr.o80.mostwanted.data.explanation.Explanation11
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
+import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
+import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
+import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationPreview
+import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
+import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
+import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
+import fr.o80.mostwanted.data.explanation.ExplanationSkillIcon
+import fr.o80.mostwanted.data.explanation.ExplanationSkillItem
+import fr.o80.mostwanted.data.explanation.ExplanationSkillsIntegration
+import fr.o80.mostwanted.data.explanation.ExplanationTwoSides
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.exercises.CIABadge
@@ -30,6 +36,7 @@ import fr.o80.mostwanted.exercises.CIAProfile
 import fr.o80.mostwanted.exercises.CIASkill
 import fr.o80.mostwanted.exercises.ExerciseHelloWorld
 import fr.o80.mostwanted.exercises.ExerciseNavigation
+import fr.o80.mostwanted.internals.UsePreviewInIDE
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution0201Scaffold
 import fr.o80.mostwanted.solutions.Solution0202Scaffold
@@ -48,47 +55,55 @@ import fr.o80.mostwanted.solutions.Solution0602NavigationBar
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
-    "Starter" to listOf(
+    "\uD83D\uDE80 Avant toute chose" to listOf(
         ExerciseDef(
             id = 1,
             title = "Hello World!",
-            explanation = { Explanation01() },
+            explanation = { ExplanationHelloWorld() },
             file = "ExerciseHelloWorld.kt",
             result = { ExerciseHelloWorld() },
             solution = { Solution01HelloWorld() }
-        )
-    ),
-    "Basics" to listOf(
+        ),
         ExerciseDef(
             id = 2,
-            title = "Badge Layout",
-            explanation = { Explanation02() },
+            title = "Live Preview",
+            explanation = { ExplanationPreview() },
+            file = "ExerciseHelloWorld.kt",
+            result = { UsePreviewInIDE() },
+            solution = { UsePreviewInIDE() }
+        )
+    ),
+    "\uD83E\uDDD1\u200D\uD83D\uDD27 Poser le cadre" to listOf(
+        ExerciseDef(
+            id = 3,
+            title = "Mise en page",
+            explanation = { ExplanationScaffoldBadgeLayout() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0201Scaffold() }
         ),
         ExerciseDef(
-            id = 3,
-            title = "Badge Content",
-            explanation = { Explanation02() },
+            id = 4,
+            title = "Contenu",
+            explanation = { ExplanationScaffoldBadgeContent() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0202Scaffold() }
         ),
         ExerciseDef(
-            id = 4,
-            title = "Styling",
-            explanation = { Explanation02() },
+            id = 5,
+            title = "Mise en forme",
+            explanation = { ExplanationScaffoldStyling() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0203Scaffold() }
         )
     ),
-    "Profile" to listOf(
+    "✏\uFE0F Profil" to listOf(
         ExerciseDef(
-            id = 5,
-            title = "Profile Layout",
-            explanation = { Explanation02() },
+            id = 6,
+            title = "Mise en page",
+            explanation = { ExplanationProfileColumn() },
             file = "CIAProfile.kt",
             result = { CIAProfile() },
             solution = { settings ->
@@ -99,9 +114,9 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 6,
-            title = "Add Profile to Identity",
-            explanation = { Explanation03() },
+            id = 7,
+            title = "Intégration du Profil",
+            explanation = { ExplanationProfileIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->
@@ -112,11 +127,11 @@ val exercises = listOf(
             }
         )
     ),
-    "Avatar" to listOf(
+    "\uD83D\uDC64 Avatar" to listOf(
         ExerciseDef(
-            id = 7,
-            title = "Avatar Image",
-            explanation = { Explanation05() },
+            id = 8,
+            title = "Avatar",
+            explanation = { ExplanationAvatarSimple() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
@@ -126,9 +141,9 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 8,
-            title = "Avatar Clip",
-            explanation = { Explanation06() },
+            id = 9,
+            title = "Détourage",
+            explanation = { ExplanationAvatarClipped() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
@@ -138,9 +153,9 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 9,
-            title = "Interactive Avatar",
-            explanation = { Explanation07() },
+            id = 10,
+            title = "Action utilisateur",
+            explanation = { ExplanationInteractiveAvatar() },
             file = "CIAImage.kt",
             result = { CIAImage() },
             solution = { settings ->
@@ -150,9 +165,9 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 10,
-            title = "Add Avatar to Identity",
-            explanation = { Explanation10() },
+            id = 11,
+            title = "Intégration de l'avatar",
+            explanation = { ExplanationAvatarIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->
@@ -164,27 +179,39 @@ val exercises = listOf(
             }
         )
     ),
-    "Skills" to listOf(
+    "\uD83D\uDD75\uFE0F Compétences" to listOf(
         ExerciseDef(
-            id = 11,
-            title = "Agent Skill",
-            explanation = { Explanation10() },
+            id = 12,
+            title = "Mise en page",
+            explanation = { ExplanationSkillItem() },
             file = "CIASkill.kt",
-            result = { CIASkill() },
+            result = {
+                CIASkill(
+                    label = "Special Agent",
+                    level = "Expert",
+                    isBest = false
+                )
+            },
             solution = { Solution0501Skill() }
         ),
         ExerciseDef(
-            id = 12,
-            title = "Best Skill",
-            explanation = { Explanation10() },
+            id = 13,
+            title = "Compétence principale",
+            explanation = { ExplanationSkillIcon() },
             file = "CIASkill.kt",
-            result = { CIASkill() },
+            result = {
+                CIASkill(
+                    label = "Special Agent",
+                    level = "Expert",
+                    isBest = true
+                )
+            },
             solution = { Solution0502Skill() }
         ),
         ExerciseDef(
-            id = 13,
-            title = "Add Skill to Identity",
-            explanation = { Explanation10() },
+            id = 14,
+            title = "Intégration des cométences",
+            explanation = { ExplanationSkillsIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { settings ->
@@ -196,17 +223,17 @@ val exercises = listOf(
             }
         )
     ),
-    "Verso" to listOf(
+    "\uD83E\uDEAA Verso" to listOf(
         ExerciseDef(
-            id = 14,
-            title = "Navigation Bar",
-            explanation = { Explanation11() },
+            id = 15,
+            title = "Barre de Navigation",
+            explanation = { ExplanationTwoSides() },
             file = "ExerciseNavigation.kt",
             result = { ExerciseNavigation() },
             solution = { Solution0601NavigationBar() }
         ),
         ExerciseDef(
-            id = 15,
+            id = 16,
             title = "Two sided Badge",
             explanation = { Explanation11() },
             file = "CIABadge.kt",
@@ -232,10 +259,9 @@ private fun Avatar.toExercise(): AvatarFromExercises = when (this) {
 fun ExplanationTitle(text: String) {
     Text(
         text = text,
-        modifier = Modifier.padding(12.dp),
-        color = Color.Blue,
-        fontSize = 20.sp,
-        fontWeight = FontWeight.Bold
+        modifier = Modifier.padding(top = 16.dp),
+        color = MaterialTheme.colorScheme.primary,
+        style = MaterialTheme.typography.titleMedium
     )
 }
 
@@ -252,15 +278,15 @@ fun ExplanationText(text: String) {
 fun Code(code: String) {
     Text(text = code,
         modifier = Modifier
-            .drawBehind {
-                drawLine(
-                    color = Color.Gray,
-                    start = Offset(0f, 0f),
-                    end = Offset(0f, size.height),
-                    strokeWidth = 8f
-                )
-            }
-            .padding(start = 8.dp)
-            .padding(vertical = 4.dp),
+                .drawBehind {
+                    drawLine(
+                        color = Color.Gray,
+                        start = Offset(0f, 0f),
+                        end = Offset(0f, size.height),
+                        strokeWidth = 8f
+                    )
+                }
+                .padding(start = 8.dp)
+                .padding(vertical = 4.dp),
         style = MaterialTheme.typography.bodyMedium)
 }

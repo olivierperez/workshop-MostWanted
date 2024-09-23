@@ -107,8 +107,8 @@ fun ExerciseDetailLoadedPreview() {
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                            "rendez-vous dans le fichier indiqué."
+                                "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                                "rendez-vous dans le fichier indiqué."
                     )
                 },
                 file = "SimpleText.kt",

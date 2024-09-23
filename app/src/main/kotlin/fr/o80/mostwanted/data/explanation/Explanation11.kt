@@ -17,7 +17,7 @@ fun Explanation11() {
         ExplanationText(
             """Pour terminer, nous aimerions rendre la transition entre les 
                 deux écrans plus fluide. Reprenez le code créé lors de 
-                l'exercice précédent et ajoutez-y un <b>AnimatedContent</b> :
+                l'exercice précédent et ajoutez-y un <b>AnimatedContent</b>&nbsp;:
             """
         )
         Code(
