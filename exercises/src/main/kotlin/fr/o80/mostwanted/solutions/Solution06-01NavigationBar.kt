@@ -31,7 +31,7 @@ fun Solution0601NavigationBar(
             icon = {
                 Icon(
                     Icons.Default.AccountCircle,
-                    contentDescription = "Account circle"
+                    contentDescription = null
                 )
             },
             label = { Text(text = "BADGE") }
@@ -42,7 +42,7 @@ fun Solution0601NavigationBar(
             icon = {
                 Icon(
                     Icons.AutoMirrored.Default.List,
-                    contentDescription = "List"
+                    contentDescription = null
                 )
             },
             label = { Text(text = "MISSIONS") }
