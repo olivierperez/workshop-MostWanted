@@ -15,36 +15,40 @@ fun ExplanationSkillItem() {
     ) {
         ExplanationTitle("Skills")
         ExplanationText(
-            """Bon... à part la création d'applications en Compose, vous avez sûrement
-                    d'autres compétences, non&nbsp;? Pourquoi ne pas les afficher fièrement
-                    sur votre badge&nbsp;? On va leur trouver un peu de place sous votre profil.
+            """Bon... à part la création d'applications en Compose, vous avez
+                 peut-être d'autres compétences, non&nbsp;? Pourquoi ne pas 
+                 les afficher fièrement sur votre badge&nbsp;? On va leur 
+                 trouver un peu de place sous votre profil.
                 """
         )
         ExplanationText(
             """Commençons par concevoir un Composable <b>CIASkill</b> capable d'afficher
-                    une compétence donnée. Puis si ce Composable est paramètrable on pourra le
-                    réutiliser pour afficher la palette complète de vos talents.
+                    une compétence donnée. Puis, si ce Composable est 
+                    paramétrable, on pourra le réutiliser pour afficher la 
+                    palette complète de vos talents.
                 """
         )
         ExplanationText(
             """Pour le mettre un peu en exergue, utilisez le Composable <b>Card</b>
-                    du design system Material, comme son nom l'indique il affiche son contenu
-                    sous forme d'une carte. Un peu comme si vous l'aviez posé sur l'écran.
+                    du design system Material. Comme son nom l'indique, il 
+                    affiche son contenu sous forme de carte, un peu comme si
+                    vous l'aviez posé sur l'écran.
                 """
         )
 
         ExplanationTitle("Paramètres")
         ExplanationText(
-            """Puis utilisez vos enseignements précédents pour construire le reste de
+            """Utilisez vos enseignements précédents pour construire le reste de
                     <b>CIASkill</b>. La petite nouveauté sera l'utilisation de paramètres
                     passés au Composable pour le rendre configurable.
                 """
         )
         ExplanationText(
-            """Voici un exemple de composable paramètrable&nbsp;:
+            """Voici un exemple de composable paramétrable&nbsp;:
                 """
         )
-        Code("""@Composable
+        Code(
+            """@Composable
             |fun UnComposable(
             |    unNom: String,
             |    modifier: Modifier = Modifier
@@ -62,7 +66,8 @@ fun ExplanationSkillItem() {
             """Voici quelques mots-clés qui peuvent vous aider&nbsp;:
                 """
         )
-        Code("""Row / Column
+        Code(
+            """Row / Column
             |fillMaxWidth / padding
             |verticalAlignment
             |horizontalArrangement
@@ -86,21 +91,22 @@ fun ExplanationSkillIcon() {
                 """
         )
         ExplanationText(
-            """Il est l'heure de découvrir un autre composable qui déssine une
-                    image, qui dessine plus particulièrement une icône. La différence
-                    ici est qu'une icône pourrait être vue comme une forme plutôt que
-                    comme un dessin. Le composable <b>Icon</b> ressemble beaucoup à
-                    <b>Image</b> et vous propose une méthode simple pour appliquer
-                    une teinte.
+            """Il est l'heure de découvrir un autre composable qui dessine une
+                    image, plus particulièrement une icône. La différence ici
+                     est qu'une icône pourrait être vue comme une forme 
+                     plutôt qu'un dessin. Le composable <b>Icon</b> ressemble beaucoup à
+                    <b>Image</b> et vous propose une méthode simple pour 
+                    appliquer une teinte.
                 """
         )
         ExplanationText(
-            """Petite astuce, Material vous propos un lot d'icônes permis
-                    lesquels vous trouverez sûrement votre bonheur&nbsp;:
+            """Petite astuce, Material vous propose un lot d'icônes parmi
+                    lesquelles vous trouverez sûrement votre bonheur&nbsp;:
                     <b>Icons.Default.Star</b>.
                 """
         )
-        Code("""@Composable
+        Code(
+            """@Composable
             |Icon(
             |   imageVector = Icons.Default.Star,
             |   // ...
@@ -113,8 +119,8 @@ fun ExplanationSkillIcon() {
                 """
         )
         ExplanationText(
-            """Note&nbsp;: <i>N'hésitez à utiliser l'auto-completion lorsque vous
-                parcourez les icons de Material.</i>
+            """Note&nbsp;: <i>N'hésitez pas à utiliser l'auto-complétion lorsque
+                 vous parcourez les Icons de Material.</i>
             """
         )
 
@@ -126,7 +132,7 @@ fun ExplanationSkillIcon() {
             """
         )
         ExplanationText(
-            """Il existe plusieurs façon d'adresser ce besoin, ici nous allons
+            """Il existe plusieurs façons d'adresser ce besoin, ici nous allons
                     demander aux textes de s'étirer à l'horizontal.
             """
         )
@@ -151,8 +157,8 @@ fun ExplanationSkillsIntegration() {
         )
         ExplanationText(
             """La Column était faite pour afficher des Composables les uns
-                    au dessous des autres, vous pourriez penser que c'est le Comopsable
-                    à utiliser ici.
+                    en dessous des autres, vous pourriez penser que c'est le 
+                    Compsable à utiliser ici.
                 """
         )
         ExplanationText(
@@ -161,17 +167,18 @@ fun ExplanationSkillsIntegration() {
         )
         ExplanationTitle("LazyColumn")
         ExplanationText(
-            """La <b>LazyColumn</b> est un Composable qu'on sera souvent amenés
-                    à utiliser pour afficher une grande liste d'éléments, ce qui demanderai
-                    à l'utilisateur de défiler pour en parcourir l'intégralité.
+            """La <b>LazyColumn</b> est un Composable qu'on est souvent amené
+                    à utiliser pour afficher une grande liste d'éléments, 
+                    qui demanderait à l'utilisateur de défiler pour en 
+                    parcourir l'intégralité.
                 """
         )
         ExplanationText(
-            """Cela consommerai trop de resources de calculer les centaines d'éléments
-                    que l'utilisateur ne vera pas avant de défiler. Les téléphones n'étant
-                    pas faits pour gérer autant d'informations, la LazyColumn ne calcule
-                    que les éléments présents à l'écran et retarde le calcul des suivants
-                    à plus tard.
+            """Cela consommerait trop de ressources de calculer les centaines
+                 d'éléments que l'utilisateur ne verra pas avant de défiler. 
+                 Les téléphones n'étant pas faits pour gérer autant 
+                 d'informations, la LazyColumn ne calcule que les éléments 
+                 présents à l'écran et retarde le calcul des suivants.
                 """
         )
         ExplanationText(
@@ -181,16 +188,17 @@ fun ExplanationSkillsIntegration() {
                     Composables.
                 """
         )
-        Code("""LazyColumn(...) {
+        Code(
+            """LazyColumn(...) {
             |   item { Text("Hello"") }
             |   item { Text("World!"") }
             |)
             """.trimMargin()
         )
         ExplanationText(
-            """Note&nbsp;: <i>La <b>LazyColumn</b> pratique également de recyclage
-                    de Composable en réutilisant ceux disparus d'un côté pour afficher
-                    ceux qui apparaissent de l'autre.</i>
+            """Note&nbsp;: <i>La <b>LazyColumn</b> pratique également le 
+                recyclage de Composable en réutilisant ceux disparus d'un 
+                côté pour afficher ceux qui apparaissent de l'autre.</i>
                 """
         )
         ExplanationTitle("Intégration")
