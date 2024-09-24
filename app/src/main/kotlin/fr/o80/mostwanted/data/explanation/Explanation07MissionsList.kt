@@ -31,7 +31,7 @@ fun ExplanationMissionsList() {
                 """
         )
         ExplanationText(
-            """Vous êtes une grande personne maintenant.
+            """Vous êtes un·e expert·e maintenant...
                 """
         )
         ExplanationTitle("Bon courage \uD83D\uDCAA")
