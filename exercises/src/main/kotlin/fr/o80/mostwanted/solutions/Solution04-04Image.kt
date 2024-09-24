@@ -30,9 +30,11 @@ import fr.o80.mostwanted.internals.domain.model.Avatar
 fun Solution0404Image(
     firstName: String,
     lastName: String,
-    avatar: Avatar
+    avatar: Avatar,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
+        modifier = modifier,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
@@ -67,9 +69,11 @@ fun Solution0404Image(
 private fun Profile(
     firstName: String,
     lastName: String,
-    avatar: Avatar
+    avatar: Avatar,
+    modifier: Modifier = Modifier
 ) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

@@ -18,7 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
-fun Solution0601NavigationBar(modifier: Modifier = Modifier) {
+fun Solution0601NavigationBar(
+    modifier: Modifier = Modifier
+) {
     var currentPage by rememberSaveable { mutableIntStateOf(0) }
     NavigationBar(
         modifier = modifier.fillMaxSize()
@@ -26,13 +28,23 @@ fun Solution0601NavigationBar(modifier: Modifier = Modifier) {
         NavigationBarItem(
             selected = currentPage == 0,
             onClick = { currentPage = 0 },
-            icon = { Icon(Icons.Default.AccountCircle, contentDescription = "") },
+            icon = {
+                Icon(
+                    Icons.Default.AccountCircle,
+                    contentDescription = null
+                )
+            },
             label = { Text(text = "BADGE") }
         )
         NavigationBarItem(
             selected = currentPage == 1,
             onClick = { currentPage = 1 },
-            icon = { Icon(Icons.AutoMirrored.Default.List, contentDescription = "") },
+            icon = {
+                Icon(
+                    Icons.AutoMirrored.Default.List,
+                    contentDescription = null
+                )
+            },
             label = { Text(text = "MISSIONS") }
         )
     }

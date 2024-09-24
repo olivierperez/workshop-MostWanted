@@ -16,6 +16,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
 import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationMissionsList
 import fr.o80.mostwanted.data.explanation.ExplanationNavigationBar
 import fr.o80.mostwanted.data.explanation.ExplanationPreview
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
@@ -52,6 +53,7 @@ import fr.o80.mostwanted.solutions.Solution0502Skill
 import fr.o80.mostwanted.solutions.Solution0503Skill
 import fr.o80.mostwanted.solutions.Solution0601NavigationBar
 import fr.o80.mostwanted.solutions.Solution0602NavigationBar
+import fr.o80.mostwanted.solutions.solution07FinalMission.Solution07FinalMission
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val exercises = listOf(
@@ -240,6 +242,20 @@ val exercises = listOf(
             result = { CIABadge() },
             solution = { settings ->
                 Solution0602NavigationBar(
+                    settings.firstName,
+                    settings.lastName,
+                    settings.avatar.toExercise()
+                )
+            }
+        ),
+        ExerciseDef(
+            id = 17,
+            title = "Mission finale ?",
+            explanation = { ExplanationMissionsList() },
+            file = "CIABadge.kt",
+            result = { CIABadge() },
+            solution = { settings ->
+                Solution07FinalMission(
                     settings.firstName,
                     settings.lastName,
                     settings.avatar.toExercise()

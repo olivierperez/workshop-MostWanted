@@ -54,7 +54,6 @@ fun ExplanationNavigationBar() {
     }
 }
 
-
 @Composable
 fun ExplanationTwoSides() {
     Column(
@@ -87,4 +86,3 @@ fun ExplanationTwoSides() {
         )
     }
 }
-

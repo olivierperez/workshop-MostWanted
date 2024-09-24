@@ -1,4 +1,4 @@
-package fr.o80.mostwanted.solutions
+package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -14,7 +14,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Card
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -35,7 +34,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.domain.model.Avatar
 
 @Composable
-fun Solution0503Skill(
+fun SolutionIdentity(
     firstName: String,
     lastName: String,
     avatar: Avatar,
@@ -43,13 +42,6 @@ fun Solution0503Skill(
 ) {
     Scaffold(
         modifier = modifier,
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(text = "CIA")
-                }
-            )
-        },
         bottomBar = {
             Text(
                 text = "Badge",
@@ -159,9 +151,9 @@ private fun Skill(
 
 @Preview
 @Composable
-private fun Solution0503SkillPreview() {
+private fun SolutionIdentityPreview() {
     PreviewTheme {
-        Solution0503Skill(
+        SolutionIdentity(
             firstName = "John",
             lastName = "Doe",
             avatar = Avatar.RED
