@@ -12,7 +12,7 @@ fun ExplanationMissionsList() {
     Column(
         Modifier.fillMaxSize()
     ) {
-        ExplanationTitle("Félicitation !")
+        ExplanationTitle("Félicitations !")
         ExplanationText(
             """Vous faites maintenant partie de la
                     <b>Compose Intelligence Agency</b>, tout le monde reconnaît
