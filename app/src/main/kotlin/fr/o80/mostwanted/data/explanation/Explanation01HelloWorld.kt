@@ -46,6 +46,7 @@ fun ExplanationPreview() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Preview")
         ExplanationText(
             """Vous l'avez peut-être remarqué, voir les modifications de votre
                     code immédiatement dans votre application n'est pas évident...
@@ -53,10 +54,11 @@ fun ExplanationPreview() {
                 """
         )
         ExplanationText(
-            """La plupart du temps, nous vous conseillons de d'abord développer
-                    vos Composables sans sortir de l'IDE, en utilisant ce qu'on appelle
-                    une <b>Preview</b>. Cela vous permettra de voir le rendu du
-                    Composable seul avant de l'intégrer à un écran.
+            """La plupart du temps, nous vous conseillons de développer tout
+                 d'abord vos Composables sans sortir de l'IDE, en utilisant ce
+                 qu'on appelle une <b>Preview</b>. Cela vous permettra de 
+                 voir le rendu du Composable seul avant de l'intégrer à un 
+                 écran.
                 """
         )
         ExplanationText(
@@ -74,12 +76,12 @@ fun ExplanationPreview() {
             |}
         """.trimMargin()
         )
+        ExplanationTitle("Dans l'IDE")
         ExplanationText(
-            """Pour la suite des exercices, prenez l'habitude de créer
-                vos <b>Preview</b>.
-                """
+            """Vos Previews sont accessibles dans l'onglet <b>Split</b> situé
+                 dans le coin en haut à droite de votre fichier.
+            """
         )
-
         ExplanationTitle("Live update")
         ExplanationText(
             """Il existe un autre mécanisme appelé <b>Live Update</b>. Il permet
@@ -89,9 +91,9 @@ fun ExplanationPreview() {
         )
         ExplanationText(
             """Bien que cet outil s'annonce prometteur, il a quelques limites.
-                    Le Live Update ne détecte pas toutes les modifications.
-                    Pour cet atelier, et pour éviter de vous embrouiller,
-                    nous n'allons pas l'utiliser.
+                    Le Live Update ne détecte pas toutes les modifications, 
+                    vous devrez donc parfois relancer l'application pour y 
+                    voir vos avancées.
                 """
         )
     }
