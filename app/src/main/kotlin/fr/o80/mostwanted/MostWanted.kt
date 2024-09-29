@@ -16,7 +16,6 @@ import androidx.navigation.navArgument
 import fr.o80.mostwanted.detail.DetailPage
 import fr.o80.mostwanted.detail.ExerciseDetailRoute
 import fr.o80.mostwanted.exercises.ExercisesListRoute
-import fr.o80.mostwanted.explanation.ExplanationRoute
 import fr.o80.mostwanted.home.HomeRoute
 
 const val PARAM_EXERCISE = "exerciseId"
@@ -25,8 +24,8 @@ const val PARAM_PAGE = "page"
 private const val ROUTE_HOME = "home"
 private const val ROUTE_EXERCISES = "exercises-list"
 private const val ROUTE_LOADING = "loading"
-private const val ROUTE_EXPLANATION = "exercises-explanation/{$PARAM_EXERCISE}"
-private const val ROUTE_DETAIL = "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAGE}"
+private const val ROUTE_DETAIL =
+    "exercises-detail/{$PARAM_EXERCISE}/{$PARAM_PAGE}"
 
 @Composable
 fun MostWanted() {
@@ -56,32 +55,17 @@ fun MostWanted() {
         composable(route = ROUTE_EXERCISES) {
             ExercisesListRoute(
                 goToExplanation = { exerciseId ->
-                    navController.navigate(
-                        ROUTE_EXPLANATION.replace(
-                            "{$PARAM_EXERCISE}",
-                            exerciseId.toString()
-                        )
+                    navController.navigateToDetail(
+                        exerciseId,
+                        DetailPage.Instruction
                     )
                 },
                 goToResult = { exerciseId ->
-                    navController.navigateToDetail(exerciseId, DetailPage.Result)
+                    navController.navigateToDetail(
+                        exerciseId,
+                        DetailPage.Result
+                    )
                 },
-                modifier = Modifier.fillMaxSize()
-            )
-        }
-        composable(
-            route = ROUTE_EXPLANATION,
-            arguments = listOf(
-                navArgument(PARAM_EXERCISE) { type = NavType.IntType }
-            )
-        ) {
-            ExplanationRoute(
-                goToSketchup = { exerciseId ->
-                    navController.navigateToDetail(exerciseId, DetailPage.Sketchup) {
-                        popUpTo(ROUTE_EXPLANATION) { inclusive = true }
-                    }
-                },
-                goBack = { navController.navigateUp() },
                 modifier = Modifier.fillMaxSize()
             )
         }
@@ -92,7 +76,15 @@ fun MostWanted() {
             )
         ) {
             ExerciseDetailRoute(
-                goBack = { navController.navigateUp() },
+                goToExercisesList = {
+                    navController.navigate(ROUTE_EXERCISES)
+                },
+                goToNextExercise = { exerciseId ->
+                    navController.navigateToDetail(
+                        exerciseId,
+                        DetailPage.Instruction
+                    )
+                },
                 modifier = Modifier.fillMaxSize()
             )
         }
