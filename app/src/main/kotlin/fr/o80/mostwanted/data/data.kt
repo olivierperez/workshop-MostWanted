@@ -21,7 +21,6 @@ import fr.o80.mostwanted.data.explanation.ExplanationNavigationBar
 import fr.o80.mostwanted.data.explanation.ExplanationPreview
 import fr.o80.mostwanted.data.explanation.ExplanationProfileColumn
 import fr.o80.mostwanted.data.explanation.ExplanationProfileIntegration
-import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeContent
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldBadgeLayout
 import fr.o80.mostwanted.data.explanation.ExplanationScaffoldStyling
 import fr.o80.mostwanted.data.explanation.ExplanationSkillIcon
@@ -41,7 +40,6 @@ import fr.o80.mostwanted.internals.UsePreviewInIDE
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
 import fr.o80.mostwanted.solutions.Solution0201Scaffold
 import fr.o80.mostwanted.solutions.Solution0202Scaffold
-import fr.o80.mostwanted.solutions.Solution0203Scaffold
 import fr.o80.mostwanted.solutions.Solution0301Profile
 import fr.o80.mostwanted.solutions.Solution0302Profile
 import fr.o80.mostwanted.solutions.Solution0401Image
@@ -86,24 +84,16 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 4,
-            title = "Contenu",
-            explanation = { ExplanationScaffoldBadgeContent() },
-            file = "CIAIdentity.kt",
-            result = { CIAIdentity() },
-            solution = { Solution0202Scaffold() }
-        ),
-        ExerciseDef(
-            id = 5,
             title = "Mise en forme",
             explanation = { ExplanationScaffoldStyling() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
-            solution = { Solution0203Scaffold() }
+            solution = { Solution0202Scaffold() }
         )
     ),
     "✏\uFE0F Profil" to listOf(
         ExerciseDef(
-            id = 6,
+            id = 5,
             title = "Mise en page",
             explanation = { ExplanationProfileColumn() },
             file = "CIAProfile.kt",
@@ -116,7 +106,7 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 7,
+            id = 6,
             title = "Intégration du Profil",
             explanation = { ExplanationProfileIntegration() },
             file = "CIAIdentity.kt",
@@ -131,7 +121,7 @@ val exercises = listOf(
     ),
     "\uD83D\uDC64 Avatar" to listOf(
         ExerciseDef(
-            id = 8,
+            id = 7,
             title = "Avatar",
             explanation = { ExplanationAvatarSimple() },
             file = "CIAImage.kt",
@@ -143,7 +133,7 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 9,
+            id = 8,
             title = "Détourage",
             explanation = { ExplanationAvatarClipped() },
             file = "CIAImage.kt",
@@ -155,7 +145,7 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 10,
+            id = 9,
             title = "Action utilisateur",
             explanation = { ExplanationInteractiveAvatar() },
             file = "CIAImage.kt",
@@ -167,7 +157,7 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 11,
+            id = 10,
             title = "Intégration de l'Avatar",
             explanation = { ExplanationAvatarIntegration() },
             file = "CIAIdentity.kt",
@@ -183,7 +173,7 @@ val exercises = listOf(
     ),
     "\uD83D\uDD75\uFE0F Compétences" to listOf(
         ExerciseDef(
-            id = 12,
+            id = 11,
             title = "Mise en page",
             explanation = { ExplanationSkillItem() },
             file = "CIASkill.kt",
@@ -197,7 +187,7 @@ val exercises = listOf(
             solution = { Solution0501Skill() }
         ),
         ExerciseDef(
-            id = 13,
+            id = 12,
             title = "Compétence principale",
             explanation = { ExplanationSkillIcon() },
             file = "CIASkill.kt",
@@ -211,7 +201,7 @@ val exercises = listOf(
             solution = { Solution0502Skill() }
         ),
         ExerciseDef(
-            id = 14,
+            id = 13,
             title = "Intégration des Compétences",
             explanation = { ExplanationSkillsIntegration() },
             file = "CIAIdentity.kt",
@@ -227,7 +217,7 @@ val exercises = listOf(
     ),
     "\uD83E\uDEAA Verso" to listOf(
         ExerciseDef(
-            id = 15,
+            id = 14,
             title = "Barre de Navigation",
             explanation = { ExplanationNavigationBar() },
             file = "ExerciseNavigation.kt",
@@ -235,7 +225,7 @@ val exercises = listOf(
             solution = { Solution0601NavigationBar() }
         ),
         ExerciseDef(
-            id = 16,
+            id = 15,
             title = "Badge recto & verso",
             explanation = { ExplanationTwoSides() },
             file = "CIABadge.kt",
@@ -249,7 +239,7 @@ val exercises = listOf(
             }
         ),
         ExerciseDef(
-            id = 17,
+            id = 16,
             title = "Mission finale ?",
             explanation = { ExplanationMissionsList() },
             file = "CIABadge.kt",
