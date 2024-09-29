@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 fun CIASkill(
     label: String,
     level: String,
+    /// Ce paramètre est utile pour le 2nd exercice de ce chapitre
     isBest: Boolean,
     modifier: Modifier = Modifier
 ) {
