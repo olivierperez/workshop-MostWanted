@@ -63,11 +63,14 @@ fun ExplanationSkillItem() {
 
         ExplanationTitle("Indices")
         ExplanationText(
-            """Voici quelques mots-clés qui peuvent vous aider&nbsp;:
+            """Voici l'identifiant de l'image à utiliser ainsi que quelques 
+                mots-clés qui peuvent vous aider&nbsp;:
                 """
         )
         Code(
-            """Row / Column
+            """|R.drawable.skill
+                |
+                |Row / Column
             |fillMaxWidth / padding
             |verticalAlignment
             |horizontalArrangement
