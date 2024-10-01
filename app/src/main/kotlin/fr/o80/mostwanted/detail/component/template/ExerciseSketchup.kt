@@ -1,15 +1,12 @@
 package fr.o80.mostwanted.detail.component.template
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.detail.component.organism.ResultFrame
 import fr.o80.mostwanted.domain.model.Avatar
@@ -23,14 +20,10 @@ fun ExerciseSketchup(
     settings: Settings,
     modifier: Modifier = Modifier
 ) {
-    Column(
+    ResultFrame(
         modifier = modifier
     ) {
-        ResultFrame(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            exerciseDef.solution(settings)
-        }
+        exerciseDef.solution(settings)
     }
 }
 
@@ -45,8 +38,8 @@ private fun ExerciseSketchupPreview() {
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +
-                            "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
-                            "rendez-vous dans le fichier indiqué."
+                                "Avec Jetpack Compose tout est \"Composable\", pour créer votre premier Composable " +
+                                "rendez-vous dans le fichier indiqué."
                     )
                 },
                 file = "SimpleText.kt",

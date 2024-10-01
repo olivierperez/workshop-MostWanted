@@ -1,5 +1,6 @@
 package fr.o80.mostwanted.detail
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.detail.component.page.ExerciseDetailLoaded
@@ -8,9 +9,11 @@ import fr.o80.mostwanted.detail.component.page.ExerciseDetailLoading
 @Composable
 fun ExerciseDetailScreen(
     state: ExerciseDetailUiState,
-    goBack: () -> Unit,
+    goToExercisesList: () -> Unit,
+    goToNextExercise: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    BackHandler { goToExercisesList() }
 
     when (state) {
         ExerciseDetailUiState.Loading -> ExerciseDetailLoading(
@@ -21,7 +24,8 @@ fun ExerciseDetailScreen(
             exerciseDef = state.exerciseDef,
             page = state.page,
             settings = state.settings,
-            goBack = goBack,
+            goToExercisesList = goToExercisesList,
+            goToNextExercise = goToNextExercise,
             modifier = modifier
         )
 
