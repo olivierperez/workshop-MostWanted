@@ -17,64 +17,10 @@ fun ExplanationScaffoldBadgeLayout() {
     )
     ExplanationText(
         """En Jetpack Compose, il est possible de créer cette 
-                    structure grâce au Composable <b>Scaffold</b>.
+                    structure grâce au Composable <b>Scaffold</b>. Essayez de
+                     l'ajouter.
                 """
     )
-    Code(
-        """|Scaffold(
-                   |    ...
-                   |) {
-                   |    Text("Hello World!")
-                   |}""".trimMargin()
-    )
-    ExplanationText(
-        """Android Studio devrait vous alerter d'un oubli,
-                    passez à la suite.
-                """
-    )
-    ExplanationTitle("Modifier")
-    ExplanationText(
-        """Le Scaffold de Material ne vous oblige pas à afficher le contenu à la
-                    suite de la TopBar, cela peut-être utile si vous souhaitez avoir
-                    un contenu qui pourra scroller sous cette TopBar par exemple.
-                    Le Scaffold vous met donc à disposition des valeurs pour pouvoir dessiner
-                    le contenu entre la TopBar et la BottomBar, et est en train de vous alerter
-                    que vous n'avez encore pas pris en compte ces valeurs.
-                """
-    )
-    ExplanationText(
-        """Pour positionner le contenu, nous allons utiliser son argument <b>modifier</b>,
-                    Chaque Composable en possède un, auquel nous allons passer des modificateurs
-                    pour changer l'apparence ou le comportement de l'élément.
-                    Ce paramètre générique vient s'ajouter aux paramètres spécifiques
-                    proposés par chaque Composable.
-                """
-    )
-    ExplanationText(
-        """Utilisez le paramètre <b>paddingValues</b> que le Scaffold fournit,
-                    et passez le au Modifier du contenu. Cela a pour effet 
-                    d'ajouter des marges au dessus et en dessous du contenu 
-                    pour ne pas déborder sous la TopBar ni sous la BottomBar plus tard.
-        """
-    )
-    Code(
-        """|Scaffold(
-                   |    ...
-                   |) { paddingValues ->
-                   |    Text(
-                   |        modifier = Modifier.padding(paddingValues)
-                   |        // ...
-                   |    )
-                   |}""".trimMargin()
-    )
-    ExplanationText(
-        """L'alerte va disparaître, vous pouvez passer à la suite.
-        """
-    )
-}
-
-@Composable
-fun ExplanationScaffoldBadgeContent() {
     ExplanationTitle("TopBar")
     ExplanationText(
         """Pour afficher un titre centré, nous pouvons utiliser
@@ -96,7 +42,6 @@ fun ExplanationScaffoldBadgeContent() {
            |        )
            |    }
            |) {
-           |    ...
            |}""".trimMargin()
     )
     ExplanationTitle("BottomBar")
@@ -106,8 +51,60 @@ fun ExplanationScaffoldBadgeContent() {
                 """
     )
     ExplanationText(
-        """Vous l'avez déjà fait plusieurs fois, vous devriez vous en sortir&nbsp;!
+        """Android Studio devrait vous alerter d'un oubli, passez à la suite...
                 """
+    )
+    ExplanationTitle("Modifier")
+    ExplanationText(
+        """Ajoutez le texte "Hello World!" réalisé dans l'exercice précédent 
+            dans le contenu du Scaffold.
+            
+        """
+    )
+    ExplanationText(
+        """C'est fait et vous ne le voyez pas apparaitre dans 
+            l'application&nbsp;? C'est normal&nbsp;!
+        """
+    )
+    ExplanationText(
+        """Le Scaffold de Material ne vous oblige pas à afficher le contenu à la
+                    suite de la TopBar, cela peut-être utile si vous souhaitez avoir
+                    un contenu qui pourra scroller sous cette TopBar par exemple.
+                    Le Scaffold vous met donc à disposition des valeurs pour 
+                    pouvoir dessiner le contenu entre la TopBar et la 
+                    BottomBar, et est en train de vous alerter que vous 
+                    n'avez encore pas pris en compte ces valeurs.
+                """
+    )
+
+    ExplanationText(
+        """Pour positionner le contenu, nous allons utiliser son argument 
+            <b>modifier</b>. Chaque Composable en possède un, auquel nous 
+            allons passer des modificateurs pour changer l'apparence ou le 
+            comportement de l'élément. Ce paramètre générique vient s'ajouter
+             aux paramètres spécifiques proposés par chaque Composable.
+                """
+    )
+    ExplanationText(
+        """Utilisez le paramètre <b>paddingValues</b> que le Scaffold 
+            fournit, et passez-le au Modifier <b>padding</b> du contenu. Cela a 
+            pour effet d'ajouter des marges au dessus et en dessous du 
+            contenu pour ne pas déborder sous la TopBar ni sous la BottomBar.
+        """
+    )
+    Code(
+        """|Scaffold(
+                   |    ...
+                   |) { paddingValues ->
+                   |    Text(
+                   |        modifier = Modifier.padding(paddingValues),
+                   |        text = "Hello World!"
+                   |    )
+                   |}""".trimMargin()
+    )
+    ExplanationText(
+        """Vous devriez maintenant voir votre contenu&nbsp;!
+        """
     )
 }
 
@@ -130,13 +127,12 @@ fun ExplanationScaffoldStyling() {
     ExplanationText(
         """Attention, maintenant que le Text n'est pas <b>l'enfant direct</b>
                     du Scaffold, ce n'est plus à lui de récupérer les 
-                    <b>paddingValues</b> mais à la <b>Box</b>.
+                    <b>paddingValues</b>, mais à la <b>Box</b>.
                 """
     )
     Code(
         """|Scaffold(
-           |    topBar = { ... },
-           |    bottomBar = { ... }
+           |    ...
            |) { paddingValues ->
            |    Box(
            |        modifier = Modifier
@@ -167,8 +163,8 @@ fun ExplanationScaffoldStyling() {
     )
     ExplanationText(
         """Note&nbsp;: <i>Le Scaffold est souvent utilisé pour poser la structure
-                        des écrans mais plus rarement pour mettre en page leurs
-                        contenus.</i>
+                        des écrans mais plus rarement pour mettre en page leur
+                        contenu.</i>
                 """
     )
 }

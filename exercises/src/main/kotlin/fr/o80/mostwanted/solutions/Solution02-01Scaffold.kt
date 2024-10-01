@@ -1,7 +1,7 @@
 package fr.o80.mostwanted.solutions
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,18 +15,27 @@ fun Solution0201Scaffold(
 ) {
     Scaffold(
         modifier = modifier,
-    ) { paddingValues ->
-        Box(
-            modifier = Modifier.padding(paddingValues)
-        ) {
-            Text(text = "Hello World!")
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(text = "CIA")
+                }
+            )
+        },
+        bottomBar = {
+            Text(text = "Badge")
         }
+    ) { paddingValues ->
+        Text(
+            modifier = Modifier.padding(paddingValues),
+            text = "Hello World!"
+        )
     }
 }
 
 @Preview
 @Composable
-private fun Solution0201ScaffoldPreview() {
+private fun Solution0202ScaffoldPreview() {
     PreviewTheme {
         Solution0201Scaffold()
     }
