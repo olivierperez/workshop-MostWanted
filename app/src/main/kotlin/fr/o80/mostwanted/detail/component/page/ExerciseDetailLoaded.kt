@@ -87,7 +87,12 @@ fun ExerciseDetailLoaded(
                     horizontalArrangement = Arrangement.End
                 ) {
                     ExtendedFloatingActionButton(
-                        text = { Text(text = "Exercice suivant") },
+                        text = {
+                            Text(
+                                text = "Exercice suivant",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        },
                         icon = {
                             Icon(
                                 Icons.AutoMirrored.Default.KeyboardArrowRight,
