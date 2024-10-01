@@ -87,7 +87,7 @@ fun ExplanationScaffoldBadgeLayout() {
     )
     ExplanationText(
         """Utilisez le paramètre <b>paddingValues</b> que le Scaffold 
-            fournit, et passez le au Modifier <b>padding</b> du contenu. Cela a 
+            fournit, et passez-le au Modifier <b>padding</b> du contenu. Cela a 
             pour effet d'ajouter des marges au dessus et en dessous du 
             contenu pour ne pas déborder sous la TopBar ni sous la BottomBar.
         """
