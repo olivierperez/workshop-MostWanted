@@ -1,8 +1,7 @@
 package fr.o80.mostwanted.detail.component.page
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -79,15 +78,19 @@ fun ExerciseDetailLoaded(
         },
         bottomBar = {
             if (exerciseDef.id != lastExerciseId)
-                Row(
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.End
+                    contentAlignment = Alignment.BottomEnd
                 ) {
                     ExtendedFloatingActionButton(
-                        text = { Text(text = "Exercice suivant") },
+                        text = {
+                            Text(
+                                text = "Exercice suivant",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        },
                         icon = {
                             Icon(
                                 Icons.AutoMirrored.Default.KeyboardArrowRight,
