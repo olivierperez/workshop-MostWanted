@@ -28,20 +28,23 @@ fun SolutionIntro(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        Icon(
-            imageVector = Icons.Filled.Star,
-            contentDescription = null
-        )
+        StarIcon()
         Text(
             text = "Introduction à Compose",
             style = MaterialTheme.typography.displaySmall,
             textAlign = TextAlign.Center
         )
-        Icon(
-            imageVector = Icons.Filled.Star,
-            contentDescription = null
-        )
+        StarIcon()
     }
+}
+
+@Composable
+private fun StarIcon(modifier: Modifier = Modifier) {
+    Icon(
+        modifier = modifier,
+        imageVector = Icons.Filled.Star,
+        contentDescription = null
+    )
 }
 
 @Preview
