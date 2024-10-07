@@ -18,7 +18,7 @@ fun ExplanationIntro() {
         )
         ExplanationTitle("Intro")
         ExplanationText(
-            """En compilant et en laçant l'application vous aurez accès aux intitulés des
+            """En compilant et en lançant l'application vous aurez accès aux intitulés des
                     exercices. Vous pourrez voir la <b>Maquette attendue</b> et le
                     <b>Résultat de l'exercice</b>, résultat que vous allez vous-même construire
                     au fur et à mesure de l'atelier.
