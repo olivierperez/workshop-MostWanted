@@ -16,6 +16,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarSimple
 import fr.o80.mostwanted.data.explanation.ExplanationHelloWorld
 import fr.o80.mostwanted.data.explanation.ExplanationInteractiveAvatar
+import fr.o80.mostwanted.data.explanation.ExplanationIntro
 import fr.o80.mostwanted.data.explanation.ExplanationMissionsList
 import fr.o80.mostwanted.data.explanation.ExplanationNavigationBar
 import fr.o80.mostwanted.data.explanation.ExplanationPreview
@@ -35,6 +36,7 @@ import fr.o80.mostwanted.exercises.CIAImage
 import fr.o80.mostwanted.exercises.CIAProfile
 import fr.o80.mostwanted.exercises.CIASkill
 import fr.o80.mostwanted.exercises.ExerciseHelloWorld
+import fr.o80.mostwanted.exercises.ExerciseIntro
 import fr.o80.mostwanted.exercises.ExerciseNavigation
 import fr.o80.mostwanted.internals.UsePreviewInIDE
 import fr.o80.mostwanted.solutions.Solution01HelloWorld
@@ -51,8 +53,18 @@ import fr.o80.mostwanted.solutions.Solution0502Skill
 import fr.o80.mostwanted.solutions.Solution0503Skill
 import fr.o80.mostwanted.solutions.Solution0601NavigationBar
 import fr.o80.mostwanted.solutions.Solution0602NavigationBar
+import fr.o80.mostwanted.solutions.SolutionIntro
 import fr.o80.mostwanted.solutions.solution07FinalMission.Solution07FinalMission
 import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
+
+val intro = ExerciseDef(
+    id = -1,
+    title = "Intro",
+    explanation = { ExplanationIntro() },
+    file = "ExerciseIntro.kt",
+    result = { ExerciseIntro() },
+    solution = { SolutionIntro() }
+)
 
 val exercises = listOf(
     "\uD83D\uDE80 Avant toute chose" to listOf(
