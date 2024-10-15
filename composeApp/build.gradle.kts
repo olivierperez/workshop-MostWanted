@@ -17,7 +17,10 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive:1.0.0")
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive-layout:1.0.0")
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive-navigation:1.0.0")
+            implementation("org.jetbrains.compose.material3:material3-adaptive-navigation-suite:1.7.0")
         }
 
         commonTest.dependencies {
