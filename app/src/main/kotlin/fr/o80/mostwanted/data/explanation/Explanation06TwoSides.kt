@@ -34,12 +34,12 @@ fun ExplanationNavigationBar() {
                 """
         )
         ExplanationText(
-            """Pour l'instant, nous allons simplement simuler le changement
-                    de face. Pour ce faire, nous allons à nouveau utiliser une
-                    variable qui va se souvenir de la face actuellement
-                    affichée à l'écran.
+            """Installez cette NavigationBar dans la "bottomBar" d'un Scaffold.
+                C'est généralement dans cette "bottomBar" qu'on retrouve les éléments
+                de navigation.
                 """
         )
+        ExplanationTitle("Page courante")
         Code("""var currentPage by rememberSaveable { mutableIntStateOf(0) }""")
         ExplanationText(
             """Utilisez cette variable pour savoir quel <b>NavigationBarItem</b>
@@ -51,6 +51,17 @@ fun ExplanationNavigationBar() {
                     <b>NavigationBarItem</b> est cliqué.
             """
         )
+        ExplanationTitle("D'une face à l'autre")
+        ExplanationText(
+            """Pour l'instant, nous allons simplement simuler le changement
+                    de face.
+                """
+        )
+        ExplanationText(
+            """Pour ce faire, utilisez la variable <b>currentPage</b>
+                    dans un Text présent dans le contenu du Scaffold.
+                """
+        )
     }
 }
 
@@ -59,11 +70,23 @@ fun ExplanationTwoSides() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Recto")
+        ExplanationText(
+            """Réutilisez l'exercice précédent pour poser la structure de votre badge.
+            """
+        )
+        ExplanationText(
+            """Puis remplacez le text simulant les pages par une condition.
+                Si <b>currentPage</b> vaut 0, alors affichez le Composable <b>CIAIdentity</b>.
+                S'il vaut 1, alors affichez un text "Liste des missions".
+            """
+        )
+
         ExplanationTitle("Transition")
         ExplanationText(
             """Pour terminer, nous aimerions rendre la transition entre les 
-                deux écrans plus fluide. Reprenez le code créé lors de 
-                l'exercice précédent et ajoutez-y un <b>AnimatedContent</b>&nbsp;:
+                deux écrans plus fluide. Encapsulez la condition ci-dessus dans
+                un <b>AnimatedContent</b>&nbsp;:
             """
         )
         Code(
@@ -77,11 +100,13 @@ fun ExplanationTwoSides() {
                     "                fadeIn(animationSpec = tween(220, delayMillis = 90))\n" +
                     "                    .togetherWith(fadeOut(tween(90)))\n" +
                     "            }\n" +
-                    "        ) {}"
+                    "        ) { page ->\n" +
+                    "            // ...\n" +
+                    "        }"
         )
         ExplanationText(
-            """Félicitations agent, vous êtes maintenant un·e expert·e du 
-                <b>Jetpack Compose</b> !
+            """Félicitations agent, vous êtes maintenant un·e expert·e de 
+                <b>Jetpack Compose</b>&nbsp;!
             """
         )
     }

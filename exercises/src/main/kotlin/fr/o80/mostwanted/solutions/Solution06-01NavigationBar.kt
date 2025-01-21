@@ -1,12 +1,14 @@
 package fr.o80.mostwanted.solutions
 
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -22,30 +24,39 @@ fun Solution0601NavigationBar(
     modifier: Modifier = Modifier
 ) {
     var currentPage by rememberSaveable { mutableIntStateOf(0) }
-    NavigationBar(
-        modifier = modifier.fillMaxSize()
-    ) {
-        NavigationBarItem(
-            selected = currentPage == 0,
-            onClick = { currentPage = 0 },
-            icon = {
-                Icon(
-                    Icons.Default.AccountCircle,
-                    contentDescription = null
+    Scaffold(
+        bottomBar = {
+            NavigationBar(
+                modifier = modifier.fillMaxWidth()
+            ) {
+                NavigationBarItem(
+                    selected = currentPage == 0,
+                    onClick = { currentPage = 0 },
+                    icon = {
+                        Icon(
+                            Icons.Default.AccountCircle,
+                            contentDescription = null
+                        )
+                    },
+                    label = { Text(text = "BADGE") }
                 )
-            },
-            label = { Text(text = "BADGE") }
-        )
-        NavigationBarItem(
-            selected = currentPage == 1,
-            onClick = { currentPage = 1 },
-            icon = {
-                Icon(
-                    Icons.AutoMirrored.Default.List,
-                    contentDescription = null
+                NavigationBarItem(
+                    selected = currentPage == 1,
+                    onClick = { currentPage = 1 },
+                    icon = {
+                        Icon(
+                            Icons.AutoMirrored.Default.List,
+                            contentDescription = null
+                        )
+                    },
+                    label = { Text(text = "MISSIONS") }
                 )
-            },
-            label = { Text(text = "MISSIONS") }
+            }
+        }
+    ) { paddingValues ->
+        Text(
+            text = "Page $currentPage",
+            modifier = Modifier.padding(paddingValues)
         )
     }
 }
