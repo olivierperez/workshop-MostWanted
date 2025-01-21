@@ -34,12 +34,12 @@ fun ExplanationNavigationBar() {
                 """
         )
         ExplanationText(
-            """Pour l'instant, nous allons simplement simuler le changement
-                    de face. Pour ce faire, nous allons à nouveau utiliser une
-                    variable qui va se souvenir de la face actuellement
-                    affichée à l'écran.
+            """Installez cette NavigationBar dans la "bottomBar" d'un Scaffold.
+                C'est généralement dans cette "bottomBar" qu'on retrouve les éléments
+                de navigation.
                 """
         )
+        ExplanationTitle("Page courante")
         Code("""var currentPage by rememberSaveable { mutableIntStateOf(0) }""")
         ExplanationText(
             """Utilisez cette variable pour savoir quel <b>NavigationBarItem</b>
@@ -50,6 +50,17 @@ fun ExplanationNavigationBar() {
             """Pensez également à mettre à jour cette variable lorsque l'un des
                     <b>NavigationBarItem</b> est cliqué.
             """
+        )
+        ExplanationTitle("D'une face à l'autre")
+        ExplanationText(
+            """Pour l'instant, nous allons simplement simuler le changement
+                    de face.
+                """
+        )
+        ExplanationText(
+            """Pour ce faire, utilisez la variable <b>currentPage</b>
+                    dans un Text présent dans le contenu du Scaffold.
+                """
         )
     }
 }
