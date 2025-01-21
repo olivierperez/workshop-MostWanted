@@ -70,11 +70,23 @@ fun ExplanationTwoSides() {
     Column(
         Modifier.fillMaxSize()
     ) {
+        ExplanationTitle("Recto")
+        ExplanationText(
+            """Réutilisez l'exercice précédent pour poser la structure de votre badge.
+            """
+        )
+        ExplanationText(
+            """Puis remplacez le text simulant les pages par une condition.
+                Si <b>currentPage</b> vaut 0, alors affichez le Composable <b>CIAIdentity</b>.
+                S'il vaut 1, alors affichez un text "Liste des missions".
+            """
+        )
+
         ExplanationTitle("Transition")
         ExplanationText(
             """Pour terminer, nous aimerions rendre la transition entre les 
-                deux écrans plus fluide. Reprenez le code créé lors de 
-                l'exercice précédent et ajoutez-y un <b>AnimatedContent</b>&nbsp;:
+                deux écrans plus fluide. Encapsulez la condition ci-dessus dans
+                un <b>AnimatedContent</b>&nbsp;:
             """
         )
         Code(
@@ -88,11 +100,13 @@ fun ExplanationTwoSides() {
                     "                fadeIn(animationSpec = tween(220, delayMillis = 90))\n" +
                     "                    .togetherWith(fadeOut(tween(90)))\n" +
                     "            }\n" +
-                    "        ) {}"
+                    "        ) { page ->\n" +
+                    "            // ...\n" +
+                    "        }"
         )
         ExplanationText(
-            """Félicitations agent, vous êtes maintenant un·e expert·e du 
-                <b>Jetpack Compose</b> !
+            """Félicitations agent, vous êtes maintenant un·e expert·e de 
+                <b>Jetpack Compose</b>&nbsp;!
             """
         )
     }
