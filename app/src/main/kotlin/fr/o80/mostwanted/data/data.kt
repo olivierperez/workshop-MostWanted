@@ -172,7 +172,7 @@ val exercises = listOf(
             id = 10,
             title = "Intégration de l'Avatar",
             explanation = { ExplanationAvatarIntegration() },
-            file = "CIAIdentity.kt",
+            file = "CIAProfile.kt",
             result = { CIAIdentity() },
             solution = { settings ->
                 Solution0404Image(
@@ -296,15 +296,15 @@ fun ExplanationText(text: String) {
 fun Code(code: String) {
     Text(text = code,
         modifier = Modifier
-                .drawBehind {
-                    drawLine(
-                        color = Color.Gray,
-                        start = Offset(0f, 0f),
-                        end = Offset(0f, size.height),
-                        strokeWidth = 8f
-                    )
-                }
-                .padding(start = 8.dp)
-                .padding(vertical = 4.dp),
+            .drawBehind {
+                drawLine(
+                    color = Color.Gray,
+                    start = Offset(0f, 0f),
+                    end = Offset(0f, size.height),
+                    strokeWidth = 8f
+                )
+            }
+            .padding(start = 8.dp)
+            .padding(vertical = 4.dp),
         style = MaterialTheme.typography.bodyMedium)
 }

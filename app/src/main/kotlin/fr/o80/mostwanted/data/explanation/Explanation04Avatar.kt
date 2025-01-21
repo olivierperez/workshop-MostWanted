@@ -37,6 +37,7 @@ fun ExplanationAvatarSimple() {
         Code(
             """|Image(
                |    painter = painterResource(R.drawable.avatar_blue),
+               |    contentDescription = "Avatar",
                |    // ...
                |)""".trimMargin()
         )

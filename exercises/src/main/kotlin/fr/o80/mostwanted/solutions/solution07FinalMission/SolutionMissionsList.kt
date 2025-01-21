@@ -124,8 +124,8 @@ fun RevealedMission(
 ) {
     Row(
         modifier = modifier
-                .padding(8.dp)
-                .semantics(mergeDescendants = true) { },
+            .padding(8.dp)
+            .semantics(mergeDescendants = true) { },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -152,8 +152,8 @@ fun HiddenMission(
 ) {
     Row(
         modifier = modifier
-                .padding(8.dp)
-                .semantics(mergeDescendants = true) { },
+            .padding(8.dp)
+            .semantics(mergeDescendants = true) { },
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
