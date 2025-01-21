@@ -172,7 +172,7 @@ val exercises = listOf(
             id = 10,
             title = "Intégration de l'Avatar",
             explanation = { ExplanationAvatarIntegration() },
-            file = "CIAIdentity.kt",
+            file = "CIAProfile.kt",
             result = { CIAIdentity() },
             solution = { settings ->
                 Solution0404Image(
