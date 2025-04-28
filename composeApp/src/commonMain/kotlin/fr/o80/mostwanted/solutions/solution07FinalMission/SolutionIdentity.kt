@@ -1,29 +1,16 @@
 package fr.o80.mostwanted.solutions.solution07FinalMission
 
+import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Card
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -98,14 +85,15 @@ private fun Profile(
         verticalArrangement = Arrangement.spacedBy(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        var corner by remember { mutableIntStateOf(0) }
+        var rounded by remember { mutableStateOf(false) }
+        val corner by animateIntAsState(if (rounded) 50 else 0)
 
         Image(
             painter = painterResource(avatar.drawable),
             contentDescription = "Most Wanted Avatar",
             modifier = Modifier
                 .clip(RoundedCornerShape(corner))
-                .clickable { corner = 50 - corner }
+                .clickable { rounded = !rounded }
         )
         Text(text = "$firstName $lastName")
     }
