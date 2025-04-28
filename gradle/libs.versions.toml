@@ -1,7 +1,7 @@
 [versions]
 
 kotlin = "2.0.20"
-compose = "1.7.0-beta02"
+compose = "1.7.3"
 
 [libraries]
 

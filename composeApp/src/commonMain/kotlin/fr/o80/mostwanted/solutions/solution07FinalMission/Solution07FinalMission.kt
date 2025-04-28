@@ -7,7 +7,6 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
@@ -18,7 +17,6 @@ import androidx.compose.ui.Modifier
 import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.domain.model.Avatar
 
-@OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun Solution07FinalMission(
     firstName: String,
