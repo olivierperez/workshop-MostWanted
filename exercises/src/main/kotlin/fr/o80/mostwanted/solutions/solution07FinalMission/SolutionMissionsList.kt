@@ -1,8 +1,8 @@
 package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import Mission
-import MissionState
-import MissionType
+import fr.o80.mostwanted.solutions.solution07FinalMission.model.MissionState
+import fr.o80.mostwanted.solutions.solution07FinalMission.model.MissionType
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -17,8 +17,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -33,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import fr.o80.mostwanted.icons.KeyboardArrowRight
 import fr.o80.mostwanted.internals.PreviewTheme
 
 private val missions = listOf(
@@ -158,7 +157,7 @@ fun HiddenMission(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Icon(
-            imageVector = Icons.AutoMirrored.Default.KeyboardArrowRight,
+            imageVector = KeyboardArrowRight,
             contentDescription = "Keyboard arrow right"
         )
         Text(

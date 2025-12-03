@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import fr.o80.mostwanted.internals.PreviewTheme
+import fr.o80.mostwanted.solutions.solution07FinalMission.model.Page
 
 @Composable
 internal fun NavBar(

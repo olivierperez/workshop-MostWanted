@@ -8,7 +8,7 @@ import javax.inject.Inject
 private const val KEY_SEEN = "seen"
 
 class ExercisesDataStore @Inject constructor(
-    @ApplicationContext
+    @param:ApplicationContext
     private val context: Context
 ) {
 

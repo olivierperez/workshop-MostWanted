@@ -2,9 +2,6 @@ package fr.o80.mostwanted.solutions
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -17,6 +14,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import fr.o80.mostwanted.icons.AccountCircle
+import fr.o80.mostwanted.icons.MenuList
 import fr.o80.mostwanted.internals.PreviewTheme
 
 @Composable
@@ -34,7 +33,7 @@ fun Solution0601NavigationBar(
                     onClick = { currentPage = 0 },
                     icon = {
                         Icon(
-                            Icons.Default.AccountCircle,
+                            AccountCircle,
                             contentDescription = null
                         )
                     },
@@ -45,7 +44,7 @@ fun Solution0601NavigationBar(
                     onClick = { currentPage = 1 },
                     icon = {
                         Icon(
-                            Icons.AutoMirrored.Default.List,
+                            MenuList,
                             contentDescription = null
                         )
                     },

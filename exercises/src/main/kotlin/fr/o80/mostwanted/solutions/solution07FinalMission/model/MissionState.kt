@@ -1,14 +1,15 @@
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material.icons.filled.Done
+package fr.o80.mostwanted.solutions.solution07FinalMission.model
+
 import androidx.compose.ui.graphics.vector.ImageVector
+import fr.o80.mostwanted.icons.Build
+import fr.o80.mostwanted.icons.DateRange
+import fr.o80.mostwanted.icons.Done
 
 enum class MissionState(
     val label: String,
     val icon: ImageVector
 ) {
-    COMPLETED("Completed", Icons.Filled.Done),
-    ONGOING("Ongoing", Icons.Filled.Build),
-    TODO("To do", Icons.Filled.DateRange)
+    COMPLETED("Completed", Done),
+    ONGOING("Ongoing", Build),
+    TODO("To do", DateRange)
 }

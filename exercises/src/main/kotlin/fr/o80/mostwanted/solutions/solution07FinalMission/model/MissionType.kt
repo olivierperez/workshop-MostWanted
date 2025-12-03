@@ -1,23 +1,24 @@
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.Info
+package fr.o80.mostwanted.solutions.solution07FinalMission.model
+
 import androidx.compose.ui.graphics.vector.ImageVector
+import fr.o80.mostwanted.icons.AccountCircle
+import fr.o80.mostwanted.icons.Build
+import fr.o80.mostwanted.icons.Info
 
 enum class MissionType(
     val icon: ImageVector,
     val label: String
 ) {
     GATHER_INFORMATION(
-        icon = Icons.Default.Info,
+        icon = Info,
         label = "Gather information"
     ),
     COMMUNICATION(
-        icon = Icons.Default.AccountCircle,
+        icon = AccountCircle,
         label = "Gather information"
     ),
     DEVELOPMENT(
-        icon = Icons.Default.Build,
+        icon = Build,
         label = "Gather information"
     ),
 }

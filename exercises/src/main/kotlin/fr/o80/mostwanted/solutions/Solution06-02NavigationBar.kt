@@ -7,9 +7,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -22,6 +19,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import fr.o80.mostwanted.icons.AccountCircle
+import fr.o80.mostwanted.icons.MenuList
 import fr.o80.mostwanted.internals.PreviewTheme
 import fr.o80.mostwanted.internals.domain.model.Avatar
 
@@ -42,7 +41,7 @@ fun Solution0602NavigationBar(
                     onClick = { currentPage = 0 },
                     icon = {
                         Icon(
-                            Icons.Default.AccountCircle,
+                            AccountCircle,
                             contentDescription = null
                         )
                     },
@@ -53,7 +52,7 @@ fun Solution0602NavigationBar(
                     onClick = { currentPage = 1 },
                     icon = {
                         Icon(
-                            Icons.AutoMirrored.Default.List,
+                            MenuList,
                             contentDescription = null
                         )
                     },

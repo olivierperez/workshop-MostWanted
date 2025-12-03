@@ -1,12 +1,13 @@
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.AccountCircle
+package fr.o80.mostwanted.solutions.solution07FinalMission.model
+
 import androidx.compose.ui.graphics.vector.ImageVector
+import fr.o80.mostwanted.icons.AccountCircle
+import fr.o80.mostwanted.icons.MenuList
 
 internal enum class Page(
     val title: String,
     val icon: ImageVector
 ) {
-    IDENTITY("BADGE", Icons.Default.AccountCircle),
-    MISSIONS("MISSIONS", Icons.AutoMirrored.Default.List)
+    IDENTITY("BADGE", AccountCircle),
+    MISSIONS("MISSIONS", MenuList)
 }

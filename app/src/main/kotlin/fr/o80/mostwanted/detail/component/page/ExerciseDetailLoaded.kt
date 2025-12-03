@@ -7,17 +7,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -36,6 +33,8 @@ import fr.o80.mostwanted.detail.component.template.ExerciseSketchup
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.domain.model.Settings
+import fr.o80.mostwanted.icons.KeyboardArrowLeft
+import fr.o80.mostwanted.icons.KeyboardArrowRight
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 import kotlinx.coroutines.launch
 
@@ -69,7 +68,7 @@ fun ExerciseDetailLoaded(
                 navigationIcon = {
                     IconButton(onClick = goToExercisesList) {
                         Icon(
-                            Icons.AutoMirrored.Default.KeyboardArrowLeft,
+                            KeyboardArrowLeft,
                             contentDescription = "Back"
                         )
                     }
@@ -93,7 +92,7 @@ fun ExerciseDetailLoaded(
                         },
                         icon = {
                             Icon(
-                                Icons.AutoMirrored.Default.KeyboardArrowRight,
+                                KeyboardArrowRight,
                                 "Next exercise"
                             )
                         },
@@ -111,7 +110,7 @@ fun ExerciseDetailLoaded(
         Column(
             modifier = Modifier.padding(paddingValues),
         ) {
-            TabRow(selectedTabIndex = pagerState.currentPage) {
+            PrimaryTabRow(selectedTabIndex = pagerState.currentPage) {
                 DetailPage.entries.forEach { page ->
                     Tab(
                         selected = pagerState.currentPage == page.index,

@@ -2,7 +2,7 @@ package fr.o80.mostwanted.solutions.solution07FinalMission
 
 import Header
 import NavBar
-import Page
+import fr.o80.mostwanted.solutions.solution07FinalMission.model.Page
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
