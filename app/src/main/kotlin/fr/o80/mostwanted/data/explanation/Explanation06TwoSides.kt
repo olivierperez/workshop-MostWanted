@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.data.ExplanationTitle
@@ -13,55 +15,19 @@ fun ExplanationNavigationBar() {
     Column(
         Modifier.fillMaxSize()
     ) {
-        ExplanationTitle("Deux écrans")
-        ExplanationText(
-            """Nous arrivons aux derniers exercices de cet atelier. Bravo 
-                    d'être arrivé·e jusqu'ici, vous êtes presque prêt·e à aller 
-                    sur le terrain !
-                """
-        )
-        ExplanationText(
-            """Avant de passer à l'exercice final, vous allez préparer le verso
-                    de votre badge en installant un système de navigation pour aller
-                    d'une face de votre badge à l'autre.
-                """
-        )
-        ExplanationTitle("NavigationBar")
-        ExplanationText(
-            """Pour modéliser le recto et le verso de votre badge, nous 
-                allons utiliser une <b>NavigationBar</b>. Elle sera composée 
-                de 2 <b>NavigationBarItem</b> nommés "BADGE" et "MISSIONS".
-                """
-        )
-        ExplanationText(
-            """Installez cette NavigationBar dans la "bottomBar" d'un Scaffold.
-                C'est généralement dans cette "bottomBar" qu'on retrouve les éléments
-                de navigation.
-                """
-        )
-        ExplanationTitle("Page courante")
+        ExplanationTitle(stringResource(R.string.explanation_navigation_title_1))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_1))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_2))
+        ExplanationTitle(stringResource(R.string.explanation_navigation_title_2))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_3))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_4))
+        ExplanationTitle(stringResource(R.string.explanation_navigation_title_3))
         Code("""var currentPage by rememberSaveable { mutableIntStateOf(0) }""")
-        ExplanationText(
-            """Utilisez cette variable pour savoir quel <b>NavigationBarItem</b>
-                    est actuellement sélectionné.
-            """
-        )
-        ExplanationText(
-            """Pensez également à mettre à jour cette variable lorsque l'un des
-                    <b>NavigationBarItem</b> est cliqué.
-            """
-        )
-        ExplanationTitle("D'une face à l'autre")
-        ExplanationText(
-            """Pour l'instant, nous allons simplement simuler le changement
-                    de face.
-                """
-        )
-        ExplanationText(
-            """Pour ce faire, utilisez la variable <b>currentPage</b>
-                    dans un Text présent dans le contenu du Scaffold.
-                """
-        )
+        ExplanationText(stringResource(R.string.explanation_navigation_text_5))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_6))
+        ExplanationTitle(stringResource(R.string.explanation_navigation_title_4))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_7))
+        ExplanationText(stringResource(R.string.explanation_navigation_text_8))
     }
 }
 
@@ -70,25 +36,12 @@ fun ExplanationTwoSides() {
     Column(
         Modifier.fillMaxSize()
     ) {
-        ExplanationTitle("Recto")
-        ExplanationText(
-            """Réutilisez l'exercice précédent pour poser la structure de votre badge.
-            """
-        )
-        ExplanationText(
-            """Puis remplacez le text simulant les pages par une condition.
-                Si <b>currentPage</b> vaut 0, alors affichez le Composable <b>CIAIdentity</b>.
-                S'il vaut 1, alors affichez un text "Liste des missions".
-            """
-        )
+        ExplanationTitle(stringResource(R.string.explanation_two_sides_title_1))
+        ExplanationText(stringResource(R.string.explanation_two_sides_text_1))
+        ExplanationText(stringResource(R.string.explanation_two_sides_text_2))
 
-        ExplanationTitle("Transition")
-        ExplanationText(
-            """Pour terminer, nous aimerions rendre la transition entre les 
-                deux écrans plus fluide. Encapsulez la condition ci-dessus dans
-                un <b>AnimatedContent</b>&nbsp;:
-            """
-        )
+        ExplanationTitle(stringResource(R.string.explanation_two_sides_title_2))
+        ExplanationText(stringResource(R.string.explanation_two_sides_text_3))
         Code(
             "AnimatedContent(\n" +
                     "            targetState = currentPage,\n" +
@@ -104,10 +57,6 @@ fun ExplanationTwoSides() {
                     "            // ...\n" +
                     "        }"
         )
-        ExplanationText(
-            """Félicitations agent, vous êtes maintenant un·e expert·e de 
-                <b>Jetpack Compose</b>&nbsp;!
-            """
-        )
+        ExplanationText(stringResource(R.string.explanation_two_sides_text_4))
     }
 }

@@ -1,37 +1,20 @@
 package fr.o80.mostwanted.data.explanation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.Code
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.data.ExplanationTitle
 
 @Composable
 fun ExplanationScaffoldBadgeLayout() {
-    ExplanationTitle("Scaffold")
-    ExplanationText(
-        """Nous allons maintenant créer un écran structuré dans 
-                    lequel intégrer nos Composables. On peut facilement imaginer
-                    un écran composé d'une <b>topBar</b>, d'une <b>bottomBar</b>
-                    et d'un contenu central.
-                """
-    )
-    ExplanationText(
-        """En Jetpack Compose, il est possible de créer cette 
-                    structure grâce au Composable <b>Scaffold</b>. Essayez de
-                     l'ajouter.
-                """
-    )
-    ExplanationTitle("TopBar")
-    ExplanationText(
-        """Pour afficher un titre centré, nous pouvons utiliser
-                    le Composable <b>CenterAlignedTopAppBar</b>.
-                """
-    )
-    ExplanationText(
-        """Ajoutez-le dans le paramètre <b>topBar = { ... }</b>
-                    du Scaffold&nbsp;:
-                """
-    )
+    ExplanationTitle(stringResource(R.string.explanation_scaffold_title_1))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_1))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_2))
+    ExplanationTitle(stringResource(R.string.explanation_scaffold_title_2))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_3))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_4))
     Code(
         """|Scaffold(
            |    topBar = {
@@ -44,54 +27,15 @@ fun ExplanationScaffoldBadgeLayout() {
            |) {
            |}""".trimMargin()
     )
-    ExplanationTitle("BottomBar")
-    ExplanationText(
-        """De même, utilisez le champ <b>bottomBar = { ... }</b>
-                    pour afficher un simple texte "Badge" en bas de la page.
-                """
-    )
-    ExplanationText(
-        """Android Studio devrait vous alerter d'un oubli, passez à la suite...
-                """
-    )
-    ExplanationTitle("Modifier")
-    ExplanationText(
-        """Ajoutez le texte "Hello World!" réalisé dans l'exercice précédent 
-            dans le contenu du Scaffold.
-            
-        """
-    )
-    ExplanationText(
-        """C'est fait et vous ne le voyez pas apparaitre dans 
-            l'application&nbsp;? C'est normal&nbsp;!
-        """
-    )
-    ExplanationText(
-        """Le Scaffold de Material ne vous oblige pas à afficher le contenu à la
-                    suite de la TopBar, cela peut-être utile si vous souhaitez avoir
-                    un contenu qui pourra scroller sous cette TopBar par exemple.
-                    Le Scaffold vous met donc à disposition des valeurs pour 
-                    pouvoir dessiner le contenu entre la TopBar et la 
-                    BottomBar, et est en train de vous alerter que vous 
-                    n'avez encore pas pris en compte ces valeurs.
-                """
-    )
-
-    ExplanationText(
-        """Pour positionner le contenu, nous allons utiliser son argument 
-            <b>modifier</b>. Chaque Composable en possède un, auquel nous 
-            allons passer des modificateurs pour changer l'apparence ou le 
-            comportement de l'élément. Ce paramètre générique vient s'ajouter
-             aux paramètres spécifiques proposés par chaque Composable.
-                """
-    )
-    ExplanationText(
-        """Utilisez le paramètre <b>paddingValues</b> que le Scaffold 
-            fournit, et passez-le au Modifier <b>padding</b> du contenu. Cela a 
-            pour effet d'ajouter des marges au dessus et en dessous du 
-            contenu pour ne pas déborder sous la TopBar ni sous la BottomBar.
-        """
-    )
+    ExplanationTitle(stringResource(R.string.explanation_scaffold_title_3))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_5))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_6))
+    ExplanationTitle(stringResource(R.string.explanation_scaffold_title_4))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_7))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_8))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_9))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_10))
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_11))
     Code(
         """|Scaffold(
                    |    ...
@@ -102,10 +46,7 @@ fun ExplanationScaffoldBadgeLayout() {
                    |    )
                    |}""".trimMargin()
     )
-    ExplanationText(
-        """Vous devriez maintenant voir votre contenu&nbsp;!
-        """
-    )
+    ExplanationText(stringResource(R.string.explanation_scaffold_text_12))
 }
 
 @Composable
@@ -145,26 +86,11 @@ fun ExplanationScaffoldStyling() {
            |}
         """.trimMargin()
     )
-    ExplanationTitle("Apparence du texte")
-    ExplanationText(
-        """Passons au texte de la BottomBar, il ne mérite pas d'être si visible.
-                    Utilisez son champ "style" pour définir son apparence.
-                    Material vous propose un lot de "typography" pour donner un peu
-                    de sens à nos textes, utilisez <b>MaterialTheme.typography.labelMedium</b>.
-                """
-    )
-    ExplanationText(
-        """Une fois le style défini, ajoutez un peu de marge autour,
-                    4dp (density-independent pixels) devraient suffire&nbsp:
-                """
-    )
+    ExplanationTitle(stringResource(R.string.explanation_scaffold_styling_title_2))
+    ExplanationText(stringResource(R.string.explanation_scaffold_styling_text_4))
+    ExplanationText(stringResource(R.string.explanation_scaffold_styling_text_5))
     Code(
         """Modifier.padding(4.dp)"""
     )
-    ExplanationText(
-        """Note&nbsp;: <i>Le Scaffold est souvent utilisé pour poser la structure
-                        des écrans mais plus rarement pour mettre en page leur
-                        contenu.</i>
-                """
-    )
+    ExplanationText(stringResource(R.string.explanation_scaffold_styling_text_6))
 }
