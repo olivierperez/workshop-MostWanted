@@ -1,5 +1,6 @@
 package fr.o80.mostwanted.home
 
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
@@ -23,6 +24,6 @@ fun HomeRoute(
 
     HomeScreen(
         saveSettings = viewModel::saveSettings,
-        modifier = modifier
+        modifier = modifier.safeDrawingPadding()
     )
 }

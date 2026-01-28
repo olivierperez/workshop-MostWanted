@@ -1,6 +1,7 @@
 package fr.o80.mostwanted.detail.component.page
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -12,7 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 fun ExerciseDetailLoading(
     modifier: Modifier = Modifier
 ) {
-    Box(modifier = modifier) {
+    Box(modifier = modifier.safeDrawingPadding()) {
         Text(
             text = "Chargement\nen cours...",
             style = MaterialTheme.typography.displayMedium,
