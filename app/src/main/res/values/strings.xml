@@ -1,6 +1,30 @@
 <resources>
     <string name="app_name" translatable="false">MostWanted</string>
 
+    <!-- Exercise titles -->
+    <string name="chapter_examiners">Examiners</string>
+    <string name="chapter_before_you_start">🚀 Before you start</string>
+    <string name="chapter_set_the_scene">🧑‍🔧 Set the scene</string>
+    <string name="chapter_profile">✏️ Profile</string>
+    <string name="chapter_avatar">👤 Avatar</string>
+    <string name="chapter_skills">🕵️ Skills</string>
+    <string name="chapter_back_side">🪪 Back side</string>
+    <string name="exercise_intro_title">Intro</string>
+    <string name="exercise_hello_world_title">Hello World!</string>
+    <string name="exercise_live_preview_title">Live Preview</string>
+    <string name="exercise_layout_title">Layout</string>
+    <string name="exercise_styling_title">Styling</string>
+    <string name="exercise_profile_integration_title">Profile integration</string>
+    <string name="exercise_avatar_title">Avatar</string>
+    <string name="exercise_avatar_clipping_title">Clipping</string>
+    <string name="exercise_user_interaction_title">User interaction</string>
+    <string name="exercise_avatar_integration_title">Avatar integration</string>
+    <string name="exercise_main_skill_title">Main skill</string>
+    <string name="exercise_skills_integration_title">Skills integration</string>
+    <string name="exercise_navigation_bar_title">Navigation bar</string>
+    <string name="exercise_front_back_title">Front &amp; back badge</string>
+    <string name="exercise_final_mission_title">Final mission?</string>
+
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">This isn\'t the workshop; this exercise is for examiners.</string>
     <string name="explanation_intro_title_1">Intro</string>

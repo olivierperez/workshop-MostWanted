@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
@@ -67,7 +68,7 @@ fun ExerciseInstructionPreview() {
         ExerciseInstruction(
             exerciseDef = ExerciseDef(
                 id = 0,
-                title = "Première étape",
+                title = R.string.exercise_hello_world_title,
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +

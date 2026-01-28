@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
 import fr.o80.mostwanted.component.ScreenTitle
 import fr.o80.mostwanted.data.exercises
+import fr.o80.mostwanted.domain.Chapter
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import fr.o80.mostwanted.ui.theme.WorkshopMostWantedPreviewTheme
 import kotlinx.collections.immutable.ImmutableList
@@ -21,7 +23,7 @@ import kotlinx.collections.immutable.toPersistentList
 
 @Composable
 fun ExercisesListScreen(
-    exerciseDefs: ImmutableList<Pair<String, List<ExerciseDef>>>,
+    exerciseDefs: ImmutableList<Chapter>,
     onExerciseSelect: (ExerciseDef) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -39,13 +41,13 @@ fun ExercisesListScreen(
         exerciseDefs.forEach { (title, exercises) ->
             item {
                 Text(
-                    text = title,
+                    text = stringResource(id = title),
                     style = MaterialTheme.typography.titleLarge
                 )
             }
             items(exercises) { exercise ->
                 ExerciseCard(
-                    title = exercise.title,
+                    title = stringResource(id = exercise.title),
                     onClick = { onExerciseSelect(exercise) },
                     modifier = Modifier.fillMaxWidth()
                 )

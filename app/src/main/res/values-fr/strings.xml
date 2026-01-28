@@ -1,6 +1,30 @@
 <resources>
     <string name="app_name" translatable="false">MostWanted</string>
 
+    <!-- Exercise titles -->
+    <string name="chapter_examiners">Examinateurs</string>
+    <string name="chapter_before_you_start">🚀 Avant toute chose</string>
+    <string name="chapter_set_the_scene">🧑‍🔧 Poser le cadre</string>
+    <string name="chapter_profile">✏️ Profil</string>
+    <string name="chapter_avatar">👤 Avatar</string>
+    <string name="chapter_skills">🕵️ Compétences</string>
+    <string name="chapter_back_side">🪪 Verso</string>
+    <string name="exercise_intro_title">Intro</string>
+    <string name="exercise_hello_world_title">Hello World!</string>
+    <string name="exercise_live_preview_title">Live Preview</string>
+    <string name="exercise_layout_title">Mise en page</string>
+    <string name="exercise_styling_title">Mise en forme</string>
+    <string name="exercise_profile_integration_title">Intégration du Profil</string>
+    <string name="exercise_avatar_title">Avatar</string>
+    <string name="exercise_avatar_clipping_title">Détourage</string>
+    <string name="exercise_user_interaction_title">Action utilisateur</string>
+    <string name="exercise_avatar_integration_title">Intégration de l\'Avatar</string>
+    <string name="exercise_main_skill_title">Compétence principale</string>
+    <string name="exercise_skills_integration_title">Intégration des Compétences</string>
+    <string name="exercise_navigation_bar_title">Barre de Navigation</string>
+    <string name="exercise_front_back_title">Badge recto &amp; verso</string>
+    <string name="exercise_final_mission_title">Mission finale ?</string>
+
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">Ceci n\'est pas l\'atelier, cet exercice est à destination des examinateurs.</string>
     <string name="explanation_intro_title_1">Intro</string>

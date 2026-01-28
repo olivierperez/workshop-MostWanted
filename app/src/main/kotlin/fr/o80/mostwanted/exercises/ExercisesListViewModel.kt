@@ -3,6 +3,7 @@ package fr.o80.mostwanted.exercises
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.o80.mostwanted.domain.Chapter
 import fr.o80.mostwanted.domain.HasSeenSketchupUseCase
 import fr.o80.mostwanted.domain.ObserveExercisesListUseCase
 import fr.o80.mostwanted.domain.model.ExerciseDef
@@ -56,7 +57,7 @@ sealed interface ExercisesListEvent {
 }
 
 data class ExercisesListUiState(
-    val exerciseDefs: ImmutableList<Pair<String, List<ExerciseDef>>>
+    val exerciseDefs: ImmutableList<Chapter>
 ) {
     companion object {
         fun start(): ExercisesListUiState {

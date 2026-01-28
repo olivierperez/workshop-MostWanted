@@ -1,5 +1,6 @@
 package fr.o80.mostwanted.data
 
+import fr.o80.mostwanted.domain.Chapter
 import fr.o80.mostwanted.domain.model.ExerciseDef
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -9,7 +10,7 @@ class ExercisesRepository @Inject constructor(
     private val exercisesDataStore: ExercisesDataStore
 ) {
 
-    fun listAll(): List<Pair<String, List<ExerciseDef>>> = exercises
+    fun listAll(): List<Chapter> = exercises
 
     fun listSeenSketchups(): List<Int> = exercisesDataStore.listSeenSketchups()
 

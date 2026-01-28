@@ -22,8 +22,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.data.exercises
 import fr.o80.mostwanted.detail.DetailPage
@@ -61,7 +63,7 @@ fun ExerciseDetailLoaded(
             TopAppBar(
                 title = {
                     Text(
-                        text = exerciseDef.title,
+                        text = stringResource(id = exerciseDef.title),
                         style = MaterialTheme.typography.headlineSmall
                     )
                 },
@@ -151,7 +153,7 @@ fun ExerciseDetailLoadedPreview() {
         ExerciseDetailLoaded(
             exerciseDef = ExerciseDef(
                 id = 0,
-                title = "Première étape",
+                title = R.string.exercise_hello_world_title,
                 explanation = {
                     ExplanationText(
                         "À la CIA comme partout on commence toujours par un HelloWorld! " +

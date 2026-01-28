@@ -1,5 +1,6 @@
 package fr.o80.mostwanted.domain
 
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.ExercisesRepository
 import fr.o80.mostwanted.data.PreferencesRepository
 import fr.o80.mostwanted.data.intro
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-typealias Chapter = Pair<String, List<ExerciseDef>>
+typealias Chapter = Pair<Int, List<ExerciseDef>>
 
 class ObserveExercisesListUseCase @Inject constructor(
     private val exercisesRepository: ExercisesRepository,
@@ -25,7 +26,8 @@ class ObserveExercisesListUseCase @Inject constructor(
         }
     }
 
-    private fun getIntroChapter(): Chapter = Pair("Examinateurs", listOf(intro))
+    private fun getIntroChapter(): Chapter =
+        Pair(R.string.chapter_examiners, listOf(intro))
 }
 
 private operator fun Chapter.plus(remaining: List<Chapter>): List<Chapter> = buildList {

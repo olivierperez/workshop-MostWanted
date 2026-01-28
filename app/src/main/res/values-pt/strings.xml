@@ -1,5 +1,27 @@
 <resources>
-    <string name="app_name" translatable="false">MostWanted</string>
+    <!-- Exercise titles -->
+    <string name="chapter_examiners">Examinadores</string>
+    <string name="chapter_before_you_start">🚀 Antes de começar</string>
+    <string name="chapter_set_the_scene">🧑‍🔧 Definir o enquadramento</string>
+    <string name="chapter_profile">✏️ Perfil</string>
+    <string name="chapter_avatar">👤 Avatar</string>
+    <string name="chapter_skills">🕵️ Competências</string>
+    <string name="chapter_back_side">🪪 Verso</string>
+    <string name="exercise_intro_title">Intro</string>
+    <string name="exercise_hello_world_title">Hello World!</string>
+    <string name="exercise_live_preview_title">Pré-visualização ao vivo</string>
+    <string name="exercise_layout_title">Layout</string>
+    <string name="exercise_styling_title">Estilização</string>
+    <string name="exercise_profile_integration_title">Integração do perfil</string>
+    <string name="exercise_avatar_title">Avatar</string>
+    <string name="exercise_avatar_clipping_title">Recorte</string>
+    <string name="exercise_user_interaction_title">Interação do utilizador</string>
+    <string name="exercise_avatar_integration_title">Integração do avatar</string>
+    <string name="exercise_main_skill_title">Competência principal</string>
+    <string name="exercise_skills_integration_title">Integração das competências</string>
+    <string name="exercise_navigation_bar_title">Barra de navegação</string>
+    <string name="exercise_front_back_title">Badge frente e verso</string>
+    <string name="exercise_final_mission_title">Missão final?</string>
 
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">Isto não é o workshop; este exercício é para os examinadores.</string>

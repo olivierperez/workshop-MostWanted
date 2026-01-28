@@ -10,6 +10,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.component.atom.toAnnotatedString
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarClipped
 import fr.o80.mostwanted.data.explanation.ExplanationAvatarIntegration
@@ -30,6 +31,7 @@ import fr.o80.mostwanted.data.explanation.ExplanationSkillsIntegration
 import fr.o80.mostwanted.data.explanation.ExplanationTwoSides
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.domain.model.ExerciseDef
+import fr.o80.mostwanted.domain.Chapter
 import fr.o80.mostwanted.exercises.CIABadge
 import fr.o80.mostwanted.exercises.CIAIdentity
 import fr.o80.mostwanted.exercises.CIAImage
@@ -59,18 +61,18 @@ import fr.o80.mostwanted.internals.domain.model.Avatar as AvatarFromExercises
 
 val intro = ExerciseDef(
     id = -1,
-    title = "Intro",
+    title = R.string.exercise_intro_title,
     explanation = { ExplanationIntro() },
     file = "ExerciseIntro.kt",
     result = { ExerciseIntro() },
     solution = { SolutionIntro() }
 )
 
-val exercises = listOf(
-    "\uD83D\uDE80 Avant toute chose" to listOf(
+val exercises: List<Chapter> = listOf(
+    R.string.chapter_before_you_start to listOf(
         ExerciseDef(
             id = 1,
-            title = "Hello World!",
+            title = R.string.exercise_hello_world_title,
             explanation = { ExplanationHelloWorld() },
             file = "ExerciseHelloWorld.kt",
             result = { ExerciseHelloWorld() },
@@ -78,17 +80,17 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 2,
-            title = "Live Preview",
+            title = R.string.exercise_live_preview_title,
             explanation = { ExplanationPreview() },
             file = "ExerciseHelloWorld.kt",
             result = { UsePreviewInIDE() },
             solution = { UsePreviewInIDE() }
         )
     ),
-    "\uD83E\uDDD1\u200D\uD83D\uDD27 Poser le cadre" to listOf(
+    R.string.chapter_set_the_scene to listOf(
         ExerciseDef(
             id = 3,
-            title = "Mise en page",
+            title = R.string.exercise_layout_title,
             explanation = { ExplanationScaffoldBadgeLayout() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
@@ -96,17 +98,17 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 4,
-            title = "Mise en forme",
+            title = R.string.exercise_styling_title,
             explanation = { ExplanationScaffoldStyling() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
             solution = { Solution0202Scaffold() }
         )
     ),
-    "✏\uFE0F Profil" to listOf(
+    R.string.chapter_profile to listOf(
         ExerciseDef(
             id = 5,
-            title = "Mise en page",
+            title = R.string.exercise_layout_title,
             explanation = { ExplanationProfileColumn() },
             file = "CIAProfile.kt",
             result = { CIAProfile() },
@@ -119,7 +121,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 6,
-            title = "Intégration du Profil",
+            title = R.string.exercise_profile_integration_title,
             explanation = { ExplanationProfileIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
@@ -131,10 +133,10 @@ val exercises = listOf(
             }
         )
     ),
-    "\uD83D\uDC64 Avatar" to listOf(
+    R.string.chapter_avatar to listOf(
         ExerciseDef(
             id = 7,
-            title = "Avatar",
+            title = R.string.exercise_avatar_title,
             explanation = { ExplanationAvatarSimple() },
             file = "CIAImage.kt",
             result = { CIAImage() },
@@ -146,7 +148,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 8,
-            title = "Détourage",
+            title = R.string.exercise_avatar_clipping_title,
             explanation = { ExplanationAvatarClipped() },
             file = "CIAImage.kt",
             result = { CIAImage() },
@@ -158,7 +160,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 9,
-            title = "Action utilisateur",
+            title = R.string.exercise_user_interaction_title,
             explanation = { ExplanationInteractiveAvatar() },
             file = "CIAImage.kt",
             result = { CIAImage() },
@@ -170,7 +172,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 10,
-            title = "Intégration de l'Avatar",
+            title = R.string.exercise_avatar_integration_title,
             explanation = { ExplanationAvatarIntegration() },
             file = "CIAProfile.kt",
             result = { CIAIdentity() },
@@ -183,10 +185,10 @@ val exercises = listOf(
             }
         )
     ),
-    "\uD83D\uDD75\uFE0F Compétences" to listOf(
+    R.string.chapter_skills to listOf(
         ExerciseDef(
             id = 11,
-            title = "Mise en page",
+            title = R.string.exercise_layout_title,
             explanation = { ExplanationSkillItem() },
             file = "CIASkill.kt",
             result = {
@@ -200,7 +202,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 12,
-            title = "Compétence principale",
+            title = R.string.exercise_main_skill_title,
             explanation = { ExplanationSkillIcon() },
             file = "CIASkill.kt",
             result = {
@@ -214,7 +216,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 13,
-            title = "Intégration des Compétences",
+            title = R.string.exercise_skills_integration_title,
             explanation = { ExplanationSkillsIntegration() },
             file = "CIAIdentity.kt",
             result = { CIAIdentity() },
@@ -227,10 +229,10 @@ val exercises = listOf(
             }
         )
     ),
-    "\uD83E\uDEAA Verso" to listOf(
+    R.string.chapter_back_side to listOf(
         ExerciseDef(
             id = 14,
-            title = "Barre de Navigation",
+            title = R.string.exercise_navigation_bar_title,
             explanation = { ExplanationNavigationBar() },
             file = "ExerciseNavigation.kt",
             result = { ExerciseNavigation() },
@@ -238,7 +240,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 15,
-            title = "Badge recto & verso",
+            title = R.string.exercise_front_back_title,
             explanation = { ExplanationTwoSides() },
             file = "CIABadge.kt",
             result = { CIABadge() },
@@ -252,7 +254,7 @@ val exercises = listOf(
         ),
         ExerciseDef(
             id = 16,
-            title = "Mission finale ?",
+            title = R.string.exercise_final_mission_title,
             explanation = { ExplanationMissionsList() },
             file = "CIABadge.kt",
             result = { CIABadge() },
