@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MostWanted</string>
+    <string name="app_name" translatable="false">MostWanted</string>
 
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">Ceci n\'est pas l\'atelier, cet exercice est à destination des examinateurs.</string>
