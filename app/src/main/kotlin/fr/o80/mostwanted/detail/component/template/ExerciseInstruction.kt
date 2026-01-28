@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.stringResource
 import fr.o80.mostwanted.R
 import fr.o80.mostwanted.data.ExplanationText
 import fr.o80.mostwanted.domain.model.ExerciseDef
@@ -45,7 +46,7 @@ fun ExerciseInstruction(
                 .padding(16.dp)
         ) {
             Text(
-                text = "Fichier de travail",
+                text = stringResource(id = R.string.exercise_instruction_work_file),
                 style = MaterialTheme.typography.labelMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier

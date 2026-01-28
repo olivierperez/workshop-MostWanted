@@ -21,11 +21,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.domain.model.Avatar
 import fr.o80.mostwanted.internals.PreviewTheme
 
@@ -44,13 +46,13 @@ fun HomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Bienvenue à la CIA",
+            text = stringResource(id = R.string.home_welcome_title),
             style = MaterialTheme.typography.headlineMedium
         )
         TextField(
             value = firstName,
             onValueChange = { value -> firstName = value },
-            label = { Text(text = "Prénom") },
+            label = { Text(text = stringResource(id = R.string.home_first_name_label)) },
             singleLine = true,
             keyboardOptions = KeyboardOptions(
                 capitalization = KeyboardCapitalization.Sentences,
@@ -60,7 +62,7 @@ fun HomeScreen(
         TextField(
             value = lastName,
             onValueChange = { value -> lastName = value },
-            label = { Text(text = "Nom") },
+            label = { Text(text = stringResource(id = R.string.home_last_name_label)) },
             singleLine = true,
             keyboardOptions = KeyboardOptions(
                 capitalization = KeyboardCapitalization.Sentences,
@@ -68,7 +70,7 @@ fun HomeScreen(
             )
         )
         Text(
-            text = "Choisissez votre avatar",
+            text = stringResource(id = R.string.home_avatar_prompt),
             style = MaterialTheme.typography.bodyLarge
         )
         AvatarSelection(
@@ -81,7 +83,7 @@ fun HomeScreen(
             onClick = { saveSettings(firstName, lastName, avatar) },
             enabled = firstName != "" && lastName != "",
         ) {
-            Text(text = "Valider")
+            Text(text = stringResource(id = R.string.home_submit_button))
         }
     }
 }
@@ -113,21 +115,21 @@ fun AvatarSelection(
     ) {
         Image(
             painter = painterResource(Avatar.RED.drawable),
-            contentDescription = "avatar_red",
+            contentDescription = stringResource(id = R.string.home_avatar_red_description),
             modifier = Modifier
                 .size(redAvatarSize)
                 .clickable { onRedAvatarClick() }
         )
         Image(
             painter = painterResource(Avatar.BLUE.drawable),
-            contentDescription = "avatar_blue",
+            contentDescription = stringResource(id = R.string.home_avatar_blue_description),
             modifier = Modifier
                 .size(blueAvatarSize)
                 .clickable { onBlueAvatarClick() }
         )
         Image(
             painter = painterResource(Avatar.ORANGE.drawable),
-            contentDescription = "avatar_orange",
+            contentDescription = stringResource(id = R.string.home_avatar_orange_description),
             modifier = Modifier
                 .size(orangeAvatarSize)
                 .clickable { onOrangeAvatarClick() }

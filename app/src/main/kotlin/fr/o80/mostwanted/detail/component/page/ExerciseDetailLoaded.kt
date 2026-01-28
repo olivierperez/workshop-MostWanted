@@ -88,7 +88,7 @@ fun ExerciseDetailLoaded(
                     ExtendedFloatingActionButton(
                         text = {
                             Text(
-                                text = "Exercice suivant",
+                                text = stringResource(id = R.string.exercise_next_label),
                                 style = MaterialTheme.typography.bodyMedium
                             )
                         },

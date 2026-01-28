@@ -27,6 +27,16 @@
     <string name="detail_page_instruction_label">Mission\nbrief</string>
     <string name="detail_page_sketchup_label">Expected\nmockup</string>
     <string name="detail_page_result_label">Exercise\nresult</string>
+    <string name="exercise_instruction_work_file">Work file</string>
+    <string name="exercise_next_label">Next exercise</string>
+    <string name="home_welcome_title">Welcome to the CIA</string>
+    <string name="home_first_name_label">First name</string>
+    <string name="home_last_name_label">Last name</string>
+    <string name="home_avatar_prompt">Choose your avatar</string>
+    <string name="home_submit_button">Continue</string>
+    <string name="home_avatar_red_description">Red avatar</string>
+    <string name="home_avatar_blue_description">Blue avatar</string>
+    <string name="home_avatar_orange_description">Orange avatar</string>
 
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">This isn\'t the workshop; this exercise is for examiners.</string>

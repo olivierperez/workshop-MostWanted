@@ -27,6 +27,16 @@
     <string name="detail_page_instruction_label">Fiche\nmission</string>
     <string name="detail_page_sketchup_label">Maquette\nattendue</string>
     <string name="detail_page_result_label">Résultat de\nl\'exercice</string>
+    <string name="exercise_instruction_work_file">Fichier de travail</string>
+    <string name="exercise_next_label">Exercice suivant</string>
+    <string name="home_welcome_title">Bienvenue à la CIA</string>
+    <string name="home_first_name_label">Prénom</string>
+    <string name="home_last_name_label">Nom</string>
+    <string name="home_avatar_prompt">Choisissez votre avatar</string>
+    <string name="home_submit_button">Valider</string>
+    <string name="home_avatar_red_description">Avatar rouge</string>
+    <string name="home_avatar_blue_description">Avatar bleu</string>
+    <string name="home_avatar_orange_description">Avatar orange</string>
 
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">Ceci n\'est pas l\'atelier, cet exercice est à destination des examinateurs.</string>
