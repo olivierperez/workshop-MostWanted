@@ -24,6 +24,9 @@
     <string name="exercise_navigation_bar_title">Barre de Navigation</string>
     <string name="exercise_front_back_title">Badge recto &amp; verso</string>
     <string name="exercise_final_mission_title">Mission finale ?</string>
+    <string name="detail_page_instruction_label">Fiche\nmission</string>
+    <string name="detail_page_sketchup_label">Maquette\nattendue</string>
+    <string name="detail_page_result_label">Résultat de\nl\'exercice</string>
 
     <!-- Explanation 00 - Intro -->
     <string name="explanation_intro_text_1">Ceci n\'est pas l\'atelier, cet exercice est à destination des examinateurs.</string>

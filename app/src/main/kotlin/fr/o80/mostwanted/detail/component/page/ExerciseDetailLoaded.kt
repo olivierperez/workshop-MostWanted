@@ -119,7 +119,7 @@ fun ExerciseDetailLoaded(
                         onClick = {
                             scope.launch { pagerState.animateScrollToPage(page.index) }
                         },
-                        text = { Text(page.label) }
+                        text = { Text(stringResource(id = page.label)) }
                     )
                 }
             }

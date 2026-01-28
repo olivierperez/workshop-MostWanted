@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import fr.o80.mostwanted.R
 import fr.o80.mostwanted.PARAM_EXERCISE
 import fr.o80.mostwanted.PARAM_PAGE
 import fr.o80.mostwanted.domain.GetExerciseByIdUseCase
@@ -76,10 +77,10 @@ sealed interface ExerciseDetailUiState {
 }
 
 enum class DetailPage(
-    val label: String,
+    val label: Int,
     val index: Int
 ) {
-    Instruction("Fiche\nmission", 0),
-    Sketchup("Maquette\nattendue", 1),
-    Result("Résultat de\nl'exercice", 2),
+    Instruction(R.string.detail_page_instruction_label, 0),
+    Sketchup(R.string.detail_page_sketchup_label, 1),
+    Result(R.string.detail_page_result_label, 2),
 }
