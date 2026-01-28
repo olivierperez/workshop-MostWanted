@@ -1,0 +1,169 @@
+<resources>
+    <string name="app_name" translatable="false">MostWanted</string>
+
+    <!-- Explanation 00 - Intro -->
+    <string name="explanation_intro_text_1">Isto não é o workshop; este exercício é para os examinadores.</string>
+    <string name="explanation_intro_title_1">Intro</string>
+    <string name="explanation_intro_text_2"><![CDATA[Ao compilar e iniciar a aplicação, terá acesso aos títulos dos exercícios. Poderá ver a <b>Maquete esperada</b> e o <b>Resultado do exercício</b>, o resultado que irá construir à medida que o workshop avança.]]></string>
+
+    <!-- Explanation 01 - Hello World -->
+    <string name="explanation_hello_world_title_1">Bem-vindo</string>
+    <string name="explanation_hello_world_text_1">É o seu primeiro dia na CIA, uma nova aventura começa aqui. Ao longo deste workshop, você vai conhecer ferramentas que o Jetpack Compose oferece para criar as aplicações mais bonitas em Kotlin.</string>
+    <string name="explanation_hello_world_title_2">Jetpack Compose</string>
+    <string name="explanation_hello_world_text_2"><![CDATA[Com o Jetpack Compose <b>tudo é "Composable"</b> e um Composable é <b>uma função Kotlin</b> que traz a anotação @Composable. Pode torná-lo configurável com parâmetros passados ao chamar esta função.]]></string>
+    <string name="explanation_hello_world_title_3">Primeiro Hello World</string>
+    <string name="explanation_hello_world_text_3"><![CDATA[Um dos Composables mais simples fornecidos pelo Jetpack Compose é o <b>Text</b>. Para começar a sua iniciação, que tal fazer um belo Hello World\u00A0? Vá ao ficheiro indicado e adicione o seguinte código\u00A0:]]></string>
+
+    <!-- Explanation 01 - Preview -->
+    <string name="explanation_preview_title_1">Preview</string>
+    <string name="explanation_preview_text_1">Talvez tenha notado que não é fácil ver as alterações do seu código imediatamente na aplicação… Tem de relançar a aplicação e isso pode demorar…</string>
+    <string name="explanation_preview_text_2"><![CDATA[Na maioria das vezes, recomendamos que primeiro construa os seus Composables sem sair do IDE, usando o que chamamos de <b>Preview</b>. Isso permite ver o Composable sozinho antes de o integrar num ecrã.]]></string>
+    <string name="explanation_preview_text_3"><![CDATA[Para isso, por baixo do Composable <b>ExerciseHelloWorld</b>, crie um Composable chamado ExerciseHelloWorld<b>Preview</b> e anote-o com <b>@Preview</b>. Pode até torná-lo <b>private</b> pois não tem razão para existir fora deste ficheiro.]]></string>
+    <string name="explanation_preview_title_2">No IDE</string>
+    <string name="explanation_preview_text_4"><![CDATA[As suas Previews estão disponíveis no separador <b>Split</b> no canto superior direito do seu ficheiro.]]></string>
+    <string name="explanation_preview_title_3">Atualização em tempo real</string>
+    <string name="explanation_preview_text_5"><![CDATA[Há outro mecanismo chamado <b>Live Update</b>. Permite ver as alterações em tempo real diretamente na aplicação enquanto edita os seus Composables.]]></string>
+    <string name="explanation_preview_text_6">Embora esta ferramenta pareça promissora, tem alguns limites. O Live Update não deteta todas as alterações, portanto por vezes terá de relançar a aplicação para ver o progresso.</string>
+
+    <!-- Explanation 02 - Scaffold Badge Layout -->
+    <string name="explanation_scaffold_title_1">Scaffold</string>
+    <string name="explanation_scaffold_text_1"><![CDATA[Agora vamos criar um ecrã estruturado para integrar os nossos Composables. É fácil imaginar um ecrã composto por uma <b>topBar</b>, uma <b>bottomBar</b> e um conteúdo central.]]></string>
+    <string name="explanation_scaffold_text_2"><![CDATA[No Jetpack Compose, pode criar esta estrutura graças ao Composable <b>Scaffold</b>. Tente adicioná-lo.]]></string>
+    <string name="explanation_scaffold_title_2">TopBar</string>
+    <string name="explanation_scaffold_text_3"><![CDATA[Para mostrar um título centrado, podemos usar o Composable <b>CenterAlignedTopAppBar</b>.]]></string>
+    <string name="explanation_scaffold_text_4"><![CDATA[Adicione-o no parâmetro <b>topBar = { … }</b> do Scaffold\u00A0:]]></string>
+    <string name="explanation_scaffold_title_3">BottomBar</string>
+    <string name="explanation_scaffold_text_5"><![CDATA[Da mesma forma, use o campo <b>bottomBar = { … }</b> para mostrar um texto simples "Badge" na parte inferior da página.]]></string>
+    <string name="explanation_scaffold_text_6">O Android Studio deve avisá-lo de algo em falta, siga em frente…</string>
+    <string name="explanation_scaffold_title_4">Editar</string>
+    <string name="explanation_scaffold_text_7">Adicione o texto "Hello World!" do exercício anterior no conteúdo do Scaffold.</string>
+    <string name="explanation_scaffold_text_8">Feito e não o vê aparecer na aplicação\u00A0? É normal\u00A0!</string>
+    <string name="explanation_scaffold_text_9">O Scaffold do Material não o obriga a mostrar o conteúdo abaixo da TopBar; isso pode ser útil se quiser conteúdo que possa fazer scroll por baixo da TopBar, por exemplo. O Scaffold fornece valores para que possa desenhar o conteúdo entre a TopBar e a BottomBar, e está a avisá-lo de que ainda não usou esses valores.</string>
+    <string name="explanation_scaffold_text_10"><![CDATA[Para posicionar o conteúdo, vamos usar o seu argumento <b>modifier</b>. Cada Composable tem um; vamos passar modificadores para mudar a aparência ou o comportamento do elemento. Este parâmetro genérico soma-se aos parâmetros específicos oferecidos por cada Composable.]]></string>
+    <string name="explanation_scaffold_text_11"><![CDATA[Use o parâmetro <b>paddingValues</b> que o Scaffold fornece e passe-o ao Modifier <b>padding</b> do conteúdo. Isso adiciona margens acima e abaixo do conteúdo para não transbordar sob a TopBar nem sob a BottomBar.]]></string>
+    <string name="explanation_scaffold_text_12">Agora deve ver o seu conteúdo\u00A0!</string>
+
+    <!-- Explanation 02 - Scaffold Styling -->
+    <string name="explanation_scaffold_styling_title_1">Centrar o conteúdo</string>
+    <string name="explanation_scaffold_styling_text_1">O conteúdo fica no canto superior esquerdo do ecrã; esse é o comportamento por defeito. Sem instruções em contrário, posiciona-se aí ocupando o mínimo de espaço possível.</string>
+    <string name="explanation_scaffold_styling_text_2"><![CDATA[Para o centrar, vamos envolvê-lo numa <b>Box</b> que vamos esticar para ocupar todo o espaço a que tem acesso (lembre-se das margens do Scaffold), e depois pediremos à <b>Box</b> para centrar o seu conteúdo.]]></string>
+    <string name="explanation_scaffold_styling_text_3"><![CDATA[Atenção: agora que o Text já não é o <b>filho direto</b> do Scaffold, já não é ele que deve receber os <b>paddingValues</b>; é a <b>Box</b>.]]></string>
+    <string name="explanation_scaffold_styling_title_2">Aparência do texto</string>
+    <string name="explanation_scaffold_styling_text_4"><![CDATA[Passemos ao texto da BottomBar; ele não merece ser tão visível. Use o campo "style" para definir a sua aparência. O Material oferece um conjunto de "typography" para dar algum sentido aos textos; use <b>MaterialTheme.typography.labelMedium</b>.]]></string>
+    <string name="explanation_scaffold_styling_text_5">Depois de definir o estilo, adicione alguma margem em volta, 4dp (density-independent pixels) devem chegar\u00A0:</string>
+    <string name="explanation_scaffold_styling_text_6"><![CDATA[Nota\u00A0: <i>O Scaffold é frequentemente usado para estruturar ecrãs mas mais raramente para dispor o seu conteúdo.</i>]]></string>
+
+    <!-- Explanation 03 - Profile Column -->
+    <string name="explanation_profile_title_1">Layout</string>
+    <string name="explanation_profile_text_1">Mas quem é você\u00A0? Esta informação deve estar no seu badge. Digamos que ficaria bem ter uma foto e também o seu primeiro e último nome.</string>
+    <string name="explanation_profile_text_2"><![CDATA[Mais simples que o Scaffold, vamos usar aqui uma <b>Column</b>. Como seria de esperar, este composable mostra os seus filhos em coluna, um abaixo do outro.]]></string>
+    <string name="explanation_profile_text_3">Para começar, não mostre uma imagem mas apenas a palavra "Image".</string>
+    <string name="explanation_profile_text_4">Numa primeira linha, mostre a palavra "Image" e, numa segunda, mostre o seu primeiro e último nome.</string>
+    <string name="explanation_profile_title_2">Alinhamento</string>
+    <string name="explanation_profile_text_5"><![CDATA[Como sempre, por defeito os composables tentam alinhar à esquerda. Para os centrar, a <b>Column</b> fornece um parâmetro <b>horizontalAlignment</b>.]]></string>
+    <string name="explanation_profile_text_6"><![CDATA[Para controlar o posicionamento vertical, a Column fornece outro parâmetro\u00A0: <b>verticalArrangement</b>. Aqui queremos apenas um pouco de espaço entre cada filho; 4dp devem ser suficientes.]]></string>
+    <string name="explanation_profile_text_7"><![CDATA[Nota\u00A0:<i>A Row fornece os parâmetros inversos: verticalAlignment e horizontalArrangement.</i>]]></string>
+
+    <!-- Explanation 03 - Profile Integration -->
+    <string name="explanation_profile_integration_text_1"><![CDATA[O seu perfil está pronto para ser integrado no seu badge. Substitua simplesmente o antigo "Hello World!" pelo composable <b>CIAProfile()</b> que acabou de codificar.]]></string>
+
+    <!-- Explanation 04 - Avatar Simple -->
+    <string name="explanation_avatar_title_1">Imagem</string>
+    <string name="explanation_avatar_text_1">Você não pode andar pelos corredores com a palavra "Image" no seu badge, isso não faz sentido\u00A0!</string>
+    <string name="explanation_avatar_text_2"><![CDATA[Então substitua este texto pelo composable <b>Image</b>. Ele vai tornar o seu badge mais visual, mais pertinente. Mas não mostre a sua foto; na CIA usamos avatars para desfocar a nossa identidade.]]></string>
+    <string name="explanation_avatar_title_2">Aceder aos recursos</string>
+    <string name="explanation_avatar_text_3"><![CDATA[As imagens fazem parte dos recursos chamados "drawables" no Jetpack Compose. Pode usá-las fornecendo um "painter resource" ao composable <b>Image</b>. Escolha a imagem correta entre avatar_blue, avatar_orange e avatar_red.]]></string>
+    <string name="explanation_avatar_text_4">A acessibilidade é um tema importante no Jetpack Compose; quando usa uma imagem, deve fornecer uma alternativa textual através do parâmetro "contentDescription".</string>
+    <string name="explanation_avatar_text_5"><![CDATA[Nota\u00A0: <i>Este Composable pode mostrar imagens PNG, JPEG, WEBP, bem como imagens vetoriais em AVD (Android Vector Drawable), inspirado no SVG.</i>]]></string>
+
+    <!-- Explanation 04 - Avatar Clipped -->
+    <string name="explanation_avatar_clipped_title_1">Recortar uma imagem</string>
+    <string name="explanation_avatar_clipped_text_1">Com base no código que produziu no exercício anterior, vamos tentar melhorar o aspeto visual do seu avatar.</string>
+    <string name="explanation_avatar_clipped_text_2"><![CDATA[Aplique um Modifier <b>clip</b> ao composable do avatar para alterar a sua forma. Um clip <b>CircleShape</b> irá arredondar o avatar.]]></string>
+    <string name="explanation_avatar_clipped_text_3"><![CDATA[Nota\u00A0: <i>Como pode imaginar, pode aplicar este comportamento a qualquer Modifier, o que significa que pode arredondar os cantos de qualquer Composable\u00A0!</i>]]></string>
+
+    <!-- Explanation 04 - Interactive Avatar -->
+    <string name="explanation_avatar_interactive_title_1">Interação do utilizador</string>
+    <string name="explanation_avatar_interactive_text_1">A interação básica no telemóvel é o toque; em Jetpack Compose é conhecida como "click". Vai encontrá-la em várias formas como "onClick" ou "clickable".</string>
+    <string name="explanation_avatar_interactive_text_2">Para tornar o seu badge interativo, reutilize o código previamente escrito.</string>
+    <string name="explanation_avatar_interactive_title_2">Gerir uma variável</string>
+    <string name="explanation_avatar_interactive_text_3">Aqui, queremos variar o tamanho dos 4 cantos da nossa imagem. Vamos criar uma variável que se lembra desse tamanho.</string>
+    <string name="explanation_avatar_interactive_text_4"><![CDATA[No contexto do Jetpack Compose, as variáveis são encapsuladas em <b>remember</b>; veja-as como memorização. Também vamos pedir a esta variável que tenha impacto no que mostramos no ecrã. Para isso, temos de a declarar como um "mutable state".]]></string>
+    <string name="explanation_avatar_interactive_text_5"><![CDATA[<i>A variável <b>corner</b> é inicializada a 0 e pode mudar.</i>]]></string>
+    <string name="explanation_avatar_interactive_title_3">Alterar o recorte</string>
+    <string name="explanation_avatar_interactive_text_6">Consegue ver como variar a forma do recorte com base noutra forma além de CircleShape?</string>
+    <string name="explanation_avatar_interactive_text_7"><![CDATA[Não encontrou? Que tal <b>RoundedCornerShape</b>\u00A0?]]></string>
+    <string name="explanation_avatar_interactive_text_8"><![CDATA[Se olhar para o seu trabalho, a imagem agora voltou a ser quadrada. Para ficar redonda, a nossa variável <b>corner</b> deve ser igual a 50.]]></string>
+    <string name="explanation_avatar_interactive_title_4">Clicável</string>
+    <string name="explanation_avatar_interactive_text_9">Procure na documentação o Modifier que lhe permite definir um comportamento para reagir a um clique na imagem.</string>
+    <string name="explanation_avatar_interactive_text_10">Então experimente alterar o valor da nossa variável para brincar com a forma da imagem.</string>
+    <string name="explanation_avatar_interactive_text_11">Agora pode ver a imagem interativa no seu preview!</string>
+
+    <!-- Explanation 04 - Avatar Integration -->
+    <string name="explanation_avatar_integration_text_1"><![CDATA[O seu avatar está pronto para ser integrado no seu badge. Substitua simplesmente o antigo texto "image" pelo composable <b>CIAImage()</b> que acabou de codificar.]]></string>
+
+    <!-- Explanation 05 - Skill Item -->
+    <string name="explanation_skill_title_1">Competências</string>
+    <string name="explanation_skill_text_1">Bem… para além de criar aplicações em Compose, talvez tenha outras competências, certo\u00A0? Porque não mostrá-las orgulhosamente no seu badge\u00A0? Vamos encontrar algum espaço por baixo do seu perfil.</string>
+    <string name="explanation_skill_text_2"><![CDATA[Vamos começar por conceber um Composable <b>CIASkill</b> capaz de mostrar uma competência dada. Depois, se esse Composable for configurável, poderemos reutilizá-lo para mostrar a sua paleta completa de talentos.]]></string>
+    <string name="explanation_skill_text_3"><![CDATA[Para o destacar um pouco, use o Composable <b>Card</b> do design system Material. Como o nome sugere, ele mostra o seu conteúdo sob a forma de cartão, como se estivesse pousado no ecrã.]]></string>
+    <string name="explanation_skill_title_2">Parâmetros</string>
+    <string name="explanation_skill_text_4"><![CDATA[Use as lições anteriores para construir o resto de <b>CIASkill</b>. A novidade será o uso de parâmetros passados ao Composable para o tornar configurável.]]></string>
+    <string name="explanation_skill_text_5">Aqui está um exemplo de composable parametrizado\u00A0:</string>
+    <string name="explanation_skill_title_3">Dicas</string>
+    <string name="explanation_skill_text_6">Aqui está o id da imagem a usar juntamente com algumas palavras-chave que podem ajudar\u00A0:</string>
+
+    <!-- Explanation 05 - Skill Icon -->
+    <string name="explanation_skill_icon_title_1">Destaque</string>
+    <string name="explanation_skill_icon_text_1"><![CDATA[Certamente tem uma competência particular, aquele pequeno detalhe que o diferencia dos seus colegas. Que tal destacá-la no seu badge? Algo como uma pequena estrela à direita do <b>Card</b> de competência.]]></string>
+    <string name="explanation_skill_icon_text_2"><![CDATA[Está na hora de descobrir outro composable que desenha uma imagem, mais precisamente um ícone. A diferença aqui é que um ícone pode ser visto como uma forma em vez de um desenho. O composable <b>Icon</b> é muito parecido com <b>Image</b> e oferece uma forma simples de aplicar uma cor.]]></string>
+    <string name="explanation_skill_icon_text_3"><![CDATA[Pequena dica: o Material fornece um conjunto de ícones onde com certeza encontrará o que precisa\u00A0: <b>Icons.Default.Star</b>.]]></string>
+    <string name="explanation_skill_icon_text_4"><![CDATA[Pode mostrar este composable de forma condicional com base no parâmetro <b>isBest</b> passado ao composable <b>CIASkill</b>.]]></string>
+    <string name="explanation_skill_icon_text_5"><![CDATA[Nota\u00A0: <i>Não hesite em usar o auto-complete ao navegar pelos Icons do Material.</i>]]></string>
+    <string name="explanation_skill_icon_title_2">Esticar um elemento</string>
+    <string name="explanation_skill_icon_text_6"><![CDATA[Talvez tenha notado que o ícone não fica automaticamente colado à direita da <b>Row</b>. Mais uma vez, por defeito, os composables tentam posicionar-se o mais à esquerda possível.]]></string>
+    <string name="explanation_skill_icon_text_7">Existem várias formas de resolver isto; aqui vamos pedir aos textos para se esticarem na horizontal.</string>
+    <string name="explanation_skill_icon_text_8"><![CDATA[Assim que um composable está dentro de uma <b>Row</b>, pode aplicar um Modifier <b>.weight(1f)</b> e depois pedir-lhe que ocupe o máximo de espaço possível sem pisar os vizinhos.]]></string>
+
+    <!-- Explanation 05 - Skills Integration -->
+    <string name="explanation_skills_integration_text_1">Está na hora de adicionar as suas competências ao seu badge. Podemos arranjar algum espaço por baixo do seu primeiro e último nome.</string>
+    <string name="explanation_skills_integration_text_2">A Column foi feita para mostrar Composables um abaixo do outro; poderia pensar que é ela a usar aqui.</string>
+    <string name="explanation_skills_integration_text_3">Nada disso\u00A0! Cada exercício é uma oportunidade para descobrir algo novo.</string>
+    <string name="explanation_skills_integration_title_1">LazyColumn</string>
+    <string name="explanation_skills_integration_text_4"><![CDATA[<b>LazyColumn</b> é um Composable que usamos frequentemente para mostrar uma grande lista de itens que exigiria que o utilizador deslizasse para os ver todos.]]></string>
+    <string name="explanation_skills_integration_text_5">Isto consumiria demasiados recursos para calcular centenas de itens que o utilizador não verá antes de deslizar. Os telemóveis não foram feitos para lidar com tanta informação, por isso a LazyColumn calcula apenas os itens no ecrã e adia o cálculo dos seguintes.</string>
+    <string name="explanation_skills_integration_text_6"><![CDATA[Uma pequena diferença de utilização: não se fornecem Composables diretamente a uma LazyColumn. Fornecem-se blocos <b>item { … }</b> dentro dos quais se definem os Composables.]]></string>
+    <string name="explanation_skills_integration_text_7"><![CDATA[Nota\u00A0: <i>A <b>LazyColumn</b> também pratica reciclagem de composables, reutilizando os que desapareceram de um lado para mostrar os que aparecem do outro.</i>]]></string>
+    <string name="explanation_skills_integration_title_2">Integração</string>
+    <string name="explanation_skills_integration_text_8"><![CDATA[Adicione 2 competências ao seu badge usando uma <b>LazyColumn</b>.]]></string>
+
+    <!-- Explanation 06 - Navigation Bar -->
+    <string name="explanation_navigation_title_1">Dois ecrãs</string>
+    <string name="explanation_navigation_text_1">Estamos a chegar aos últimos exercícios deste workshop. Parabéns por ter chegado até aqui, está quase pronto para ir para o terreno!</string>
+    <string name="explanation_navigation_text_2">Antes de passar para o exercício final, vai preparar o verso do seu badge instalando um sistema de navegação para ir de um lado do badge ao outro.</string>
+    <string name="explanation_navigation_title_2">NavigationBar</string>
+    <string name="explanation_navigation_text_3"><![CDATA[Para modelar a frente e o verso do seu badge, vamos usar uma <b>NavigationBar</b>. Ela será composta por 2 <b>NavigationBarItem</b> chamados "BADGE" e "MISSIONS".]]></string>
+    <string name="explanation_navigation_text_4">Instale esta NavigationBar na "bottomBar" de um Scaffold. É geralmente na "bottomBar" que se encontram os elementos de navegação.</string>
+    <string name="explanation_navigation_title_3">Página atual</string>
+    <string name="explanation_navigation_text_5"><![CDATA[Use esta variável para saber qual <b>NavigationBarItem</b> está atualmente selecionado.]]></string>
+    <string name="explanation_navigation_text_6"><![CDATA[Lembre-se também de atualizar esta variável quando um dos <b>NavigationBarItem</b> é clicado.]]></string>
+    <string name="explanation_navigation_title_4">De um lado ao outro</string>
+    <string name="explanation_navigation_text_7">Por agora, vamos apenas simular a mudança de página.</string>
+    <string name="explanation_navigation_text_8"><![CDATA[Para isso, use a variável <b>currentPage</b> num Text presente no conteúdo do Scaffold.]]></string>
+
+    <!-- Explanation 06 - Two Sides -->
+    <string name="explanation_two_sides_title_1">Frente</string>
+    <string name="explanation_two_sides_text_1">Reutilize o exercício anterior para estruturar o seu badge.</string>
+    <string name="explanation_two_sides_text_2"><![CDATA[Depois substitua o texto que simula as páginas por uma condição. Se <b>currentPage</b> for 0, então mostre o Composable <b>CIAIdentity</b>. Se for 1, então mostre um texto "Lista de missões".]]></string>
+    <string name="explanation_two_sides_title_2">Transição</string>
+    <string name="explanation_two_sides_text_3"><![CDATA[Para terminar, gostaríamos de tornar a transição entre os dois ecrãs mais fluida. Envolva a condição acima num <b>AnimatedContent</b>\u00A0:]]></string>
+    <string name="explanation_two_sides_text_4"><![CDATA[Parabéns agente, agora é especialista em <b>Jetpack Compose</b>\u00A0!]]></string>
+
+    <!-- Explanation 07 - Missions List -->
+    <string name="explanation_missions_title_1">Parabéns!</string>
+    <string name="explanation_missions_text_1"><![CDATA[Agora faz parte da <b>Compose Intelligence Agency</b>, todos reconhecem o seu talento sem limites.]]></string>
+    <string name="explanation_missions_text_2">Os seus colegas admiram você, e isto é apenas o começo. Está na hora de listar as suas missões, concluídas e por fazer.</string>
+    <string name="explanation_missions_text_3">Use todo o seu conhecimento para montar esta lista no verso do seu badge.</string>
+    <string name="explanation_missions_text_4">Agora é especialista…</string>
+    <string name="explanation_missions_title_2">Boa sorte 💪</string>
+</resources>
