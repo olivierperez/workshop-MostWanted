@@ -9,7 +9,7 @@ import fr.o80.mostwanted.internals.PreviewTheme
 fun CIASkill(
     label: String,
     level: String,
-    /// Ce paramètre est utile pour le 2nd exercice de ce chapitre
+    /// This parameter will be useful for the 2nd exercise of this chapter
     isBest: Boolean,
     modifier: Modifier = Modifier
 ) {
